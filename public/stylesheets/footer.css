@@ -1,0 +1,13 @@
+.footer{
+    right:0;
+    bottom:0;
+    width:100%;
+    height:60px;
+    line-height:60px;
+    font-size:16px;
+    position:absolute;
+}
+.copyright{
+    width:60px;
+    margin:0 auto;
+}
