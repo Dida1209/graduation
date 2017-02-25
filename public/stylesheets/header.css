@@ -1,0 +1,96 @@
+.header{
+    width:100%;
+    height:150px;
+    font-size:16px;
+}
+.header-panel{
+    width:1260px;
+    height:150px;
+    padding-top:20px;
+    padding-bottom:50px;
+    margin:0 auto;
+}
+.logo{
+    display:inline-block;
+    width:241px;
+    height:34px;
+    background:url('/img/logo.png') no-repeat 0 -35px;
+    background-size:100%;
+}
+.panel-right > div,
+.search-box > div{
+    display:inline-block;
+    line-height:38px;
+}
+.panel-right{
+    width:420px;
+    height:40px;
+    float:right;
+}
+.search-box{
+    letter-spacing:-5px;
+    width:260px;
+    height:40px;
+    border:1px solid #1abc9c;
+    box-sizing:border-box;
+}
+.searchKey{
+    width:222px;
+    height:38px;
+}
+.searchKey input{
+    width:100%;
+    height:100%;
+    border:none;
+    padding:11px;
+    font-size:16px;
+    vertical-align:top;
+}
+.search-icon{
+    padding-left: 3px;
+    width:36px;
+    height:38px;
+    background:#1abc9c;
+}
+.search-icon img{
+    vertical-align:middle;
+    width:30px;
+    height:35px;
+    border:none;
+    background:url('/img/search.png') no-repeat 0 0;
+}
+.login-panel{
+    width:160px;
+    height:40px;
+    float:right;
+    text-align:right;
+}
+.login-panel span,
+.login-panel a{
+    display:inline-block;
+}
+.login-panel span{
+    width:40px;
+    text-align:center;
+}
+.login-panel a{
+    width:40px;
+    text-align:center;
+}
+.login-panel .login-text{
+    background:url('/img/user.png') no-repeat 0 10px;
+}
+.login-panel .login-text{
+    padding-left:20px;
+    width:100px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.login-panel .loginout{
+    vertical-align:top;
+    text-align:right;
+}
+.modal-dialog{
+    width:360px;
+}

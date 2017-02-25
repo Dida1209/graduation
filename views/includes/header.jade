@@ -1,24 +1,24 @@
 //
+   Created by lenovo-pc on 2017/2/24.
+//
    Created by lenovo-pc on 2017/2/23.
 .header
-    .header-panel
+    .header-panel.clear
         .logo
         .panel-right
             .search-box
-                input
-                label
+                .searchKey
+                    input(name="searchKey",type="text",placeholder="搜索感兴趣的课程")
                 .search-icon
-                    img
+                    img(src="/img/blank.png")
             .login-panel
-                if user
-                    p.navbar-text.navbar-right
-                        a(href="/user") 欢迎您，#{user.name}
-                        span &nbsp;&nbsp;
-                        a.navbar-link(href="/loginout") 退出
-                else
-                    a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal") 注册
-                    span.hyphen /
-                    a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
+                //if user
+                a.login-text(href="/user") =user.name
+                a.loginout(href="/loginout") 退出
+                //else
+                //    a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal") 注册
+                //    span |
+                //    a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
 #signupModal.modal.fade
     .modal-dialog
         .modal-content

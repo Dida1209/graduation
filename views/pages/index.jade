@@ -1,3 +1,17 @@
 //
    Created by lenovo-pc on 2017/2/23.
 extend ../layout
+
+block append style
+    link(rel='stylesheet',href='/stylesheets/index.css')
+    link(rel='stylesheet',href='/stylesheets/aside.css')
+    link(rel='stylesheet',href='/stylesheets/enter.css')
+block content
+    include ../includes/header
+    include ../includes/aside
+    include ../includes/enter
+    .index-carousel
+        .carousel-block
+            include ../includes/carousel
+
+

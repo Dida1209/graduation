@@ -1,0 +1,31 @@
+.courseContent{
+    margin:20px;
+    margin-left:72px;
+    width:860px;
+    float:left;
+    background:#fff;
+    box-shadow:rgba(0,0,0,.35) 1px 0 5px;
+}
+.shareBlock{
+    min-height:100px;
+}
+.publish{
+    width:100%;
+    background:#D7DCDE;
+    padding:20px 30px;
+}
+.publish .form-group textarea{
+    min-height:80px;
+    margin-bottom:10px;
+}
+.publish .form-group button{
+    float:right;
+    width:72px;
+    height:30px;
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:3px;
+    color:#fff;
+    background:#E74C3C;
+    border-radius:0;
+}

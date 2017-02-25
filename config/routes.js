@@ -12,5 +12,10 @@ module.exports = function(app){
         })
     })
 
-//
+//资源
+    app.get('/resource',function(req,res){
+        res.render('resource',{
+
+        })
+    })
 }

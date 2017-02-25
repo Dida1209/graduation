@@ -1,0 +1,51 @@
+.header{
+    height:50px;
+    background-color:#2E323E;
+}
+.header-panel{
+    padding:11px 0;
+}
+.logo{
+    height:28px;
+    background:url('/img/logo.png') no-repeat 0 0;
+    background-size:80%;
+}
+.panel-right{
+    height:30px;
+}
+.panel-right > div,
+.search-box > div{
+    line-height:28px;
+}
+.search-box{
+    letter-spacing:-7px;
+    height:30px;
+}
+.searchKey{
+    width:230px;
+    height:28px;
+}
+.searchKey input{
+    padding:7px;
+    font-size:14px;
+}
+.search-icon{
+    padding-left:5px;
+    width:30px;
+    height:28px;
+}
+.search-icon img{
+    width:20px;
+    height:20px;
+    background-size:90%;
+}
+.login-panel{
+    height:30px;
+}
+.login-panel span,
+.login-panel a{
+    color:#fff;
+}
+.login-panel .login-text{
+    background:url('/img/user.png') no-repeat 0 5px;
+}

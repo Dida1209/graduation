@@ -1,0 +1,19 @@
+.login-container{
+    width:100%;
+    top:0;
+    left:0;
+    position:fixed;
+}
+.login-block{
+    width:1260px;
+    height:480px;
+    margin:0 auto;
+    padding-top:220px;
+    padding-left:1040px;
+}
+.login{
+    width:220px;
+    height:260px;
+    border:1px solid #000;
+    background:#fff;
+}

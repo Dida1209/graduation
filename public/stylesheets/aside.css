@@ -1,0 +1,54 @@
+.aside{
+    top:100px;
+    left:0px;
+    width:100%;
+    position:absolute;
+}
+.menu{
+    width:1260px;
+    margin:0 auto;
+}
+.menu ul{
+    width:220px;
+    border:1px solid #E4E4E4;
+}
+.menu ul li{
+    width:220px;
+    height:70px;
+    padding:0 15px;
+    font-size:16px;
+    border-bottom:2px solid #fff;
+    background-color:#ECF0F1;
+}
+.menu ul li:last-child{
+    border-bottom:none;
+}
+.menu ul .course{
+    height:52px;
+    line-height:50px;
+}
+.menu ul .course span{
+    display:inline-block;
+    width:28px;
+    height:50px;
+    background:url('/img/hamburger.png') no-repeat 0 16px;
+    vertical-align:bottom;
+}
+.menu ul .subCourse a,
+.menu ul .subCourse p{
+    display:block;
+    width:100%;
+    height:35px;
+    line-height:35px;
+}
+.menu ul .subCourse a{
+    cursor:pointer;
+    line-height:48px;
+    background:url('/img/crumb.png') no-repeat 100% 15px;
+    background-size:20px;
+}
+.menu ul .subCourse p span{
+    display:inline-block;
+    margin-right:20px;
+    font-size:14px;
+}

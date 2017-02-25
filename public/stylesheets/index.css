@@ -1,0 +1,21 @@
+body{
+    position:relative;
+}
+.index-carousel{
+    width:100%;
+}
+.carousel-block{
+    width:1260px;
+    height:424px;
+    padding:0 220px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.carousel-inner > .item > a > img{
+    width:820px;
+    height:424px;
+}
+.carousel-control.left,
+.carousel-control.right{
+    background:none;
+}
