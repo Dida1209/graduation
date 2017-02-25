@@ -1,0 +1,62 @@
+.sumCourse{
+    corsor:pointer;
+    width:100%;
+}
+.courseLeft{
+    float:left;
+    width:620px;
+}
+.courseLeft .courseFirst{
+    height:24px;
+    line-height:24px;
+}
+.courseName{
+    font-size:20px;
+    color:#2F4B93;
+}
+.courseFirst span:not(.courseName){
+    width:20px;
+    height:20px;
+    float:right;
+    margin-left:10px;
+}
+.courseSecond{
+    float:left;
+    width:620px;
+    font-size:16px;
+    color:#333;
+}
+.courseSecond .courseDetail {
+    padding-top:20px;
+    font-size:16px;
+}
+.courseSecond .courseDetail span{
+    display:inline-block;
+    float:left;
+    height:20px;
+    padding-right:20px;
+}
+.courseSecond .courseDetail p{
+    display:inline-block;
+    width:495px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    /*溢出等咯号隐藏*/
+    word-wrap:break-word;
+    word-break:break-all;
+    /*强制换行*/
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:3;
+    line-height:1.2;
+}
+.courseRight{
+    float:right;
+    width:160px;
+    height:160px;
+    margin-left:20px;
+}
+.courseRight img{
+    width:160px;
+    height:160px;
+}

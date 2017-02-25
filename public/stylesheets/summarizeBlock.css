@@ -1,0 +1,30 @@
+.summarizeContainer{
+    margin-left:72px;
+    padding:30px;
+    width:860px;
+    background:#fff;
+    box-shadow:rgba(0,0,0,.35) 1px 0 5px;
+}
+.summarizeTop{
+    padding-bottom:10px;
+    width:100%;
+    height:40px;
+    color:#2F4B93;
+}
+.summarizeTop a{
+    float:right;
+    margin-left:10px;
+    display:inline-block;
+    width:70px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    font-size:13px;
+    box-shadow:rgba(33,33,33,.35) 1px 0 3px;
+    cursor:pointer;
+}
+.sumCourseContainer{
+    width:100%;
+    padding-top:5px;
+    border-top:1px solid #D7DCDE;
+}

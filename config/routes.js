@@ -18,4 +18,11 @@ module.exports = function(app){
 
         })
     })
+
+//总结
+    app.get('/summarize',function(req,res){
+        res.render('summarize',{
+
+        })
+    })
 }
