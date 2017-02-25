@@ -1,0 +1,57 @@
+.commentContainer{
+    width:100%;
+    padding:32px 30px;
+    font-size:20px;
+    font-weight:bold;
+    color:#333;
+}
+/*.commentList:first-child{*/
+    /*margin-top:19px;*/
+/*}*/
+.commentList{
+    margin-top:19px;
+    margin-bottom:4px;
+    padding-top:15px;
+    width:100%;
+    border-top:1px solid #D7DCDE;
+}
+.commentList .picBox{
+    float:left;
+    margin-right:20px;
+    width:60px;
+    height:60px;
+}
+.commentList .picBox img{
+    width:100%;
+    height:100%;
+}
+.commentList .commentBox{
+    float:left;
+    width:720px;
+    font-size:16px;
+}
+.commentList .commentBox .firstLine{
+    padding-left:20px;
+    margin-bottom:10px;
+    background:url('/img/user.png') no-repeat 0 -1px;
+}
+.commentList .commentBox .secondLine{
+    margin-bottom:8px;
+    font-size:13px;
+    font-weight:400;
+}
+.thirdLine span{
+    display:inline-block;
+    height:16px;
+    line-height:16px;
+    font-size:13px;
+    font-weight:400;
+}
+.thirdLine span:nth-child(1){
+    float:left;
+    padding-left:16px;
+}
+.thirdLine span:nth-child(2){
+    float:right;
+    cursor:pointer;
+}
