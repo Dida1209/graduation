@@ -1,5 +1,5 @@
 .sumCourse{
-    corsor:pointer;
+    cursor:pointer;
     width:100%;
 }
 .courseLeft{
@@ -27,7 +27,7 @@
     color:#333;
 }
 .courseSecond .courseDetail {
-    padding-top:20px;
+    padding-top:15px;
     font-size:16px;
 }
 .courseSecond .courseDetail span{
@@ -54,6 +54,7 @@
     float:right;
     width:160px;
     height:160px;
+    margin-top:5px;
     margin-left:20px;
 }
 .courseRight img{

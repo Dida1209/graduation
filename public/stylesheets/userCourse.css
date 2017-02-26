@@ -1,0 +1,14 @@
+.userCourse{
+    display:inline-block;
+    margin-top:20px;
+    margin-left:72px;
+    padding:30px;
+    width:860px;
+    background:#fff;
+    box-shadow:rgba(0,0,0,.35) 1px 0 5px;
+}
+.userfocus{
+    height:40px;
+    font-size:20px;
+    font-weight:bold;
+}

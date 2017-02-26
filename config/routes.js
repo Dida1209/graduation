@@ -25,4 +25,11 @@ module.exports = function(app){
 
         })
     })
+
+//用户
+    app.get('/user',function(req,res){
+        res.render('user',{
+
+        })
+    })
 }

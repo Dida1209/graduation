@@ -1,0 +1,35 @@
+.hotContainer{
+    display:inline-block;
+    margin-left:20px;
+    padding:20px;
+    width:325px;
+    background:#fff;
+    box-shadow:rgba(0,0,0,.35) 1px 0 5px;
+    vertical-align:top;
+}
+.hotList{
+    margin-bottom:3px;
+    height:30px;
+    border-bottom:2px solid #D7DCDE;
+}
+.hotList span{
+    display:inline-block;
+    padding-right:20px;
+    font-size:18px;
+    font-weight:bold;
+    background:url('/img/crumb.png') no-repeat 100% 0;
+}
+.hotDetail{
+    width:100%;
+    height:50px;
+    padding:15px 0;
+}
+.hotDetail span{
+    cursor:pointer;
+    display:inline-block;
+    height:20px;
+    padding:0 30px;
+    font-size:16px;
+    color:#333;
+    background:url('/img/crumb.png') no-repeat 0 0;
+}
