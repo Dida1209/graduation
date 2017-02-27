@@ -2,7 +2,7 @@
     width:100%;
     top:0;
     left:0;
-    position:fixed;
+    position:absolute;
 }
 .login-block{
     width:1260px;
@@ -12,8 +12,38 @@
     padding-left:1040px;
 }
 .login{
+    padding:16px 24px;
     width:220px;
     height:260px;
     border:1px solid #000;
     background:#fff;
+}
+.login .prompt{
+    padding-top:14px;
+    width:100%;
+    height:44px;
+    font-size:16px;
+    text-align:center;
+}
+.login .figure{
+    margin:0 auto;
+    padding-top:8px;
+    width:114px;
+    height:122px;
+}
+.login .figure img{
+    width:114px;
+    height:114px;
+    border-radius:50%;
+    border:none;
+}
+.enter{
+    margin-top:8px;
+    width:100%;
+    height:40px;
+    line-height:40px;
+    background-color:#1abc9c;
+    font-size:16px;
+    color:#fff;
+    text-align:center;
 }
