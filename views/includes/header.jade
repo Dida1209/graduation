@@ -12,42 +12,41 @@
                 .search-icon
                     img(src="/img/blank.png")
             .login-panel
-                //if user
-                a.login-text(href="/user") =user.name
-                a.loginout(href="/loginout") 退出
-                //else
-                //    a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal") 注册
-                //    span |
-                //    a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
+                if user
+                    a.login-text(href="/user") =user.name
+                    a.loginout(href="/loginout") 退出
+                else
+                    a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal") 注册
+                    span |
+                    a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
 #signupModal.modal.fade
     .modal-dialog
         .modal-content
-            form(method="POST",action="/user/signup")
-                .modal-header 注册
-                .modal-body
-                    .form-group
-                        label(for="signupName") 用户名：
-                        input#signupName.form-control(name="user[name]",type="text")
-                    .form-group
-                        label(for="signupPassword") 密码：
-                        input#signupPassword.form-control(name="user[password]",type="text")
-                .modal-footer
-                    button.btn.btn-default(type="button",data-dismiss="modal") 关闭
-                    button.btn.btn-primary(type="submit") 注册
+            .modal-header 注册
+            .modal-body
+                .form-group
+                    label(for="signupName") 用户名：
+                    input#signupName.form-control(name="user[name]",type="text")
+                .form-group
+                    label(for="signupPassword") 密码：
+                    input#signupPassword.form-control(name="user[password]",type="text")
+            .modal-footer
+                button.btn.btn-default(type="button",data-dismiss="modal") 关闭
+                button#signupBtn.btn.btn-primary() 注册
 #signinModal.modal.fade
     .modal-dialog
         .modal-content
-            form(method="POST",action="/user/signin")
-                .modal-header 登录
-                .modal-body
-                    .form-group
-                        label(for="signinName") 用户名：
-                        input#signinName.form-control(name="user[name]",type="text")
-                    .form-group
-                        label(for="signinPassword") 密码：
-                        input#signinPassword.form-control(name="user[password]",type="password")
-                .modal-footer
-                    button.btn.btn-default(type="button",data-dismiss="modal") 关闭
+            .modal-header 登录
+            .modal-body
+                .form-group
+                    label(for="signinName") 用户名：
+                    input#signinName.form-control(name="user[name]",type="text")
+                .form-group
+                    label(for="signinPassword") 密码：
+                    input#signinPassword.form-control(name="user[password]",type="password")
+            .modal-footer
+                button.btn.btn-default(type="button",data-dismiss="modal") 关闭
+                button#signinBtn.btn.btn-success() 登录
 
 
 

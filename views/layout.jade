@@ -10,9 +10,14 @@ html
             link(rel='stylesheet',href='/stylesheets/general.css')
             link(rel='stylesheet',href='/stylesheets/header.css')
             link(rel='stylesheet',href='/stylesheets/footer.css')
+            link(rel='stylesheet',href='/stylesheets/errorMessage.css')
     body
         block content
+        include includes/errorMessage
         include includes/footer
         block script
             script(src='/libs/jquery/dist/jquery.js')
             script(src='/libs/bootstrap/dist/js/bootstrap.js')
+            script(src='/js/tool.js')
+            script(src='/js/errorMessage.js')
+
