@@ -1,16 +1,16 @@
-.login-container{
-    width:100%;
-    top:0;
-    left:0;
-    position:absolute;
-}
-.login-block{
-    width:1260px;
-    height:480px;
-    margin:0 auto;
-    padding-top:220px;
-    padding-left:1040px;
-}
+/*.login-container{*/
+    /*width:100%;*/
+    /*top:0;*/
+    /*left:0;*/
+    /*position:absolute;*/
+/*}*/
+/*.login-block{*/
+    /*width:1260px;*/
+    /*height:480px;*/
+    /*margin:0 auto;*/
+    /*padding-top:220px;*/
+    /*padding-left:1040px;*/
+/*}*/
 .login{
     padding:16px 24px;
     width:220px;
@@ -38,6 +38,7 @@
     border:none;
 }
 .enter{
+    cursor:pointer;
     margin-top:8px;
     width:100%;
     height:40px;
@@ -46,4 +47,7 @@
     font-size:16px;
     color:#fff;
     text-align:center;
+}
+.enterIn {
+    cursor:none;
 }

@@ -9,10 +9,16 @@ block append style
     link(rel='stylesheet',href='/stylesheets/carousel.css')
 block content
     include ../includes/header
-    include ../includes/aside
-    .index-carousel
-        .carousel-block
-            include ../includes/carousel
-    include ../includes/enter
+    .contentContainer
+        .carouselBgBox
+        .marginBox
+            .carousel-block
+                include ../includes/carousel
+            .aside-block
+                include ../includes/aside
+            .enter-block
+                include ../includes/enter
+
+
 
 

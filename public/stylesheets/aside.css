@@ -1,13 +1,13 @@
-.aside{
-    top:100px;
-    left:0px;
-    width:100%;
-    position:absolute;
-}
-.menu{
-    width:1260px;
-    margin:0 auto;
-}
+/*.aside{*/
+    /*top:100px;*/
+    /*left:0px;*/
+    /*width:100%;*/
+    /*position:absolute;*/
+/*}*/
+/*.menu{*/
+    /*width:1260px;*/
+    /*margin:0 auto;*/
+/*}*/
 .menu ul{
     width:220px;
     border:1px solid #E4E4E4;
@@ -21,6 +21,7 @@
     background-color:#ECF0F1;
 }
 .menu ul li:last-child{
+    height:71px;
     border-bottom:none;
 }
 .menu ul .course{

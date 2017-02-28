@@ -32,4 +32,11 @@ module.exports = function(app){
 
         })
     })
+
+    //测试submenu
+    app.get('/submenu',function(req,res){
+        res.render('submenu',{
+
+        })
+    })
 }
