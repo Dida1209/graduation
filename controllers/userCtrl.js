@@ -31,3 +31,34 @@ exports.signup=function(req,res){
         }
     })
 }
+
+exports.signin = function(req,res) {
+    var _userName = req.body.name;
+    var _userPass = req.body.password;
+    User.findOne({name: _userName}, function (err, user) {
+        if (err) {
+            res.json({message: '找不到用户，请先注册，后登陆！'});
+        }
+        user.comparePassword(_userPass, function (err, isMatch) {
+            if (err) {
+                res.json(message
+            :
+                '密码错误！'
+            )
+                ;
+            }
+            if (isMatch) {
+                req.session.user = user;
+                console.log('match ' + user);
+                res.redirect('/');
+            }
+            else {
+                console.log('no match');
+            }
+        })
+    })
+}
+exports.loginout=function(req,res){
+    delete req.session.user;
+    res.redirect('/');
+}

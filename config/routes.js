@@ -37,6 +37,7 @@ module.exports = function(app){
 
 //用户功能
     app.post('/user/signup',user.signup);
+    app.post('/user/signin',user.signin);
 
 //做测试尝试
     //测试submenu
