@@ -41,11 +41,7 @@ exports.signin = function(req,res) {
         }
         user.comparePassword(_userPass, function (err, isMatch) {
             if (err) {
-                res.json(message
-            :
-                '密码错误！'
-            )
-                ;
+                res.json({message:'密码错误！'});
             }
             if (isMatch) {
                 req.session.user = user;
