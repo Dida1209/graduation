@@ -13,13 +13,13 @@
                     img(src="/img/blank.png")
             .login-panel
                 if user
-                    a.login-text(href="/user") =user.name
-                    a.loginout(href="/loginout") 退出
+                    a.login-text(href="/user")= user.name
+                    a#loginout.loginout(href="/") 退出
                 else
-                    a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal") 注册
+                    a.data-aim.navbar-link(href="javascript:void(0);",data-aim="#signupModal") 注册
                     span |
-                    a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
-#signupModal.modal.fade
+                    a.data-aim.navbar-link(href="javascript:void(0);",data-aim="#signinModal") 登录
+#signupModal.modelAim
     .modal-dialog
         .modal-content
             .modal-header 注册
@@ -31,9 +31,9 @@
                     label(for="signupPassword") 密码：
                     input#signupPassword.form-control(name="user[password]",type="text")
             .modal-footer
-                button.btn.btn-default(type="button",data-dismiss="modal") 关闭
-                button#signupBtn.btn.btn-primary() 注册
-#signinModal.modal.fade
+                button.closeBtn.btn.btn-default(type="button",data-dismiss="modal") 关闭
+                button#signupSubmit.btn.btn-primary() 注册
+#signinModal.modelAim
     .modal-dialog
         .modal-content
             .modal-header 登录
@@ -45,8 +45,8 @@
                     label(for="signinPassword") 密码：
                     input#signinPassword.form-control(name="user[password]",type="password")
             .modal-footer
-                button.btn.btn-default(type="button",data-dismiss="modal") 关闭
-                button#signinBtn.btn.btn-success() 登录
+                button.closeBtn.btn.btn-default(type="button",data-dismiss="modal") 关闭
+                button#signinSubmit.btn.btn-success() 登录
 
 
 

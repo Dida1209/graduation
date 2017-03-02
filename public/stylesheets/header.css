@@ -83,6 +83,7 @@
     padding-left:20px;
     width:100px;
     overflow:hidden;
+    text-align:left;
     text-overflow:ellipsis;
     white-space:nowrap;
 }
@@ -92,4 +93,17 @@
 }
 .modal-dialog{
     width:360px;
+}
+.modelAim{
+    display:none;
+}
+.modelAim.in{
+    display:block;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position:fixed;
+    background:rgba(0,0,0,.3);
+    z-index:1040;
 }

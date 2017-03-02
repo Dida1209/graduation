@@ -45,7 +45,7 @@ exports.signin = function(req,res) {
             }
             if (isMatch) {
                 req.session.user = user;
-                console.log('match ' + user);
+                console.log('match ' + req.session.user);
                 res.redirect('/');
             }
             else {

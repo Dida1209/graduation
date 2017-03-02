@@ -6,6 +6,13 @@
 var user=require('../controllers/userCtrl');
 
 module.exports = function(app){
+//pre heandle user
+    app.use(function(req,res,next){
+        var _user=req.session.user;
+            app.locals.user=_user;
+            next();
+            console.log(req.session.user);
+    });
 //所以要加载的页面
     //首页
         app.get('/',function(req,res){
@@ -38,6 +45,7 @@ module.exports = function(app){
 //用户功能
     app.post('/user/signup',user.signup);
     app.post('/user/signin',user.signin);
+    app.get('/user/loginout',user.loginout);
 
 //做测试尝试
     //测试submenu
