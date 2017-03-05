@@ -50,6 +50,7 @@ ResourceSchema.pre('save',function(next){
     }else{
         this.updateAt=Date.now();
     }
+    next();
 })
 
 var Resource=mongoose.model('Resource',ResourceSchema);
