@@ -1,0 +1,13 @@
+.container{
+    width:760px;
+    margin:20px auto;
+    padding:20px;
+    border:1px solid #eee;
+    background:#f8f8f8;
+}
+.row{
+    margin:0;
+}
+#reBtn{
+    float:right;
+}

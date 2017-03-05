@@ -15,7 +15,7 @@
     padding:16px 24px;
     width:220px;
     height:260px;
-    border:1px solid #000;
+    /*border:1px solid #000;*/
     background:#fff;
 }
 .login .prompt{
@@ -38,6 +38,7 @@
     border:none;
 }
 .enter{
+    display:block;
     cursor:pointer;
     margin-top:8px;
     width:100%;

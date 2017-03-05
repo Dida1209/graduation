@@ -1,0 +1,38 @@
+//
+   Created by lenovo-pc on 2017/3/3.
+
+extends ../layout
+
+block append style
+    link(rel='stylesheet',href='/stylesheets/head.css')
+    link(rel='stylesheet',href='/stylesheets/backstage.css')
+block content
+    include ../includes/header
+    .container
+        .row
+            form.form-horizontal(method="post",action="/admin/course/new")
+                //-隐藏的表单域存储course._id方便更新电影数据,post时如果电影的id是有的，那么说明是更新数据，如果没有说明只是录入新数据
+                input(type="hidden",name="course[_id]")
+                .form-group
+                    label.col-sm-2.control-label(for="inputTitle") 课程名字
+                    .col-sm-10
+                        input#inputTitle.form-control(type="text",name="course[title]")
+                .form-group
+                    label.col-sm-2.control-label(for="inputType") 内容类型
+                    .col-sm-10
+                        input#inputType.form-control(type="text",name="course[type]")
+                .form-group
+                    label.col-sm-2.control-label(for="inputSubjection") 课程分类
+                    .col-sm-10
+                        input#inputSubjection.form-control(type="text",name="course[subjection]")
+                .form-group
+                    label.col-sm-2.control-label(for="inputSummary") 课程简介
+                    .col-sm-10
+                        input#inputSummary.form-control(type="text",name="course[summary]")
+                .form-group
+                    label.col-sm-2.control-label(for="inputFlash") 片源地址
+                    .col-sm-10
+                        input#inputFlash.form-control(type="text",name="course[flash]")
+                .form-group
+                    .col-sm-offset-2.col-sm-10
+                    button#reBtn.btn.btn-default(type="submit") 录入

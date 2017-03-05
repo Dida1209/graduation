@@ -4,6 +4,7 @@
 //var
 
 var user=require('../controllers/userCtrl');
+var resource=require('../controllers/resourceCtrl');
 
 module.exports = function(app){
 //pre heandle user
@@ -11,7 +12,7 @@ module.exports = function(app){
         var _user=req.session.user;
             app.locals.user=_user;
             next();
-            console.log(req.session.user);
+            //console.log(req.session.user);
     });
 //所以要加载的页面
     //首页
@@ -41,11 +42,18 @@ module.exports = function(app){
 
             })
         })
+    //背景
+        app.get('/backstage',function(req,res){
+            res.render('backstage',{})
+        })
 
 //用户功能
     app.post('/user/signup',user.signup);
     app.post('/user/signin',user.signin);
     app.get('/user/loginout',user.loginout);
+
+//后台功能
+    app.post('/admin/course/new',resource.save);
 
 //做测试尝试
     //测试submenu
