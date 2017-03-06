@@ -1,16 +1,7 @@
-/*.aside{*/
-    /*top:100px;*/
-    /*left:0px;*/
-    /*width:100%;*/
-    /*position:absolute;*/
-/*}*/
-/*.menu{*/
-    /*width:1260px;*/
-    /*margin:0 auto;*/
-/*}*/
 .menu ul{
     width:220px;
     border:1px solid #E4E4E4;
+    position:relative;
 }
 .menu ul li{
     width:220px;
@@ -24,11 +15,11 @@
     height:71px;
     border-bottom:none;
 }
-.menu ul .course{
+.menu ul #course{
     height:52px;
     line-height:50px;
 }
-.menu ul .course span{
+.menu ul #course span{
     display:inline-block;
     width:28px;
     height:50px;
@@ -52,4 +43,27 @@
     display:inline-block;
     margin-right:20px;
     font-size:14px;
+}
+#submenu{
+    display:none;
+    padding:20px;
+    position:relative;
+    left:221px;
+    top:-425px;
+    background:rgba(233,233,233,.5);
+}
+#submenu ul{
+    height:30px;
+    line-height:30px;
+}
+#submenu ul li{
+    display:inline-block;
+    margin-right:20px;
+    font-size:15px;
+}
+#submenu ul li:nth-child(1){
+    font-weight:bold;
+}
+#submenu ul li a{
+    cursor:pointer;
 }

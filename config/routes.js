@@ -23,11 +23,7 @@ module.exports = function(app){
         })
 
     //资源
-        app.get('/resource',function(req,res){
-            res.render('resource',{
-
-            })
-        })
+        app.get('/resource/:id',resource.findRes)
 
     //总结
         app.get('/summarize',function(req,res){
