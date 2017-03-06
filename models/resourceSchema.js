@@ -49,6 +49,7 @@ ResourceSchema.pre('save',function(next){
         this.meta.creatAt=this.meta.updateAt=Date.now();
     }else{
         this.updateAt=Date.now();
+        console.log('presave');
     }
     next();
 })

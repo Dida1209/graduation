@@ -12,7 +12,7 @@ block content
         .row
             form.form-horizontal(method="post",action="/admin/course/new")
                 //-隐藏的表单域存储course._id方便更新电影数据,post时如果电影的id是有的，那么说明是更新数据，如果没有说明只是录入新数据
-                input(type="hidden",name="course[_id]")
+                //input(type="hidden",name="course[_id]")
                 .form-group
                     label.col-sm-2.control-label(for="inputTitle") 课程名字
                     .col-sm-10
@@ -35,4 +35,4 @@ block content
                         input#inputFlash.form-control(type="text",name="course[flash]")
                 .form-group
                     .col-sm-offset-2.col-sm-10
-                    button.btn.btn-default(type="submit") 录入
+                    button#reBtn.btn.btn-default(type="submit") 录入

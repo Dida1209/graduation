@@ -1,19 +1,41 @@
 //
    Created by lenovo-pc on 2017/2/25.
 
+
 .commentContainer 评论
-    .commentList.clear
-        .picBox
-            img(src='/img/0.jpg')
-        .commentBox
-            p.firstLine
-                a.personName 评论者1
-                a.zan
-            p.secondLine Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
-            p.thirdLine
-                span 2017-1-1
-                span
-                    a.reply 回复
+    each item in comments
+        .commentList.clear
+            .picBox
+                img(src='/img/0.jpg')
+            .commentBox
+                p.firstLine
+                    a.personName #{item.from.name}
+                    a.zan
+                p.secondLine #{item.content}
+                p.thirdLine
+                    span 2017-1-1
+                    span
+                        a.reply 回复
+                            form.replayForm(method='POST',action='/user/comment',style='display:none;')
+                                input(type='hidden',name='comment[cid]',value='#{item._id}')//comment的id
+                                input(type='hidden',name='comment[tid]',value='#{item.from._id}')//评论谁
+                                input(type='hidden',name='comment[resource]',value='#{resource._id}')//评论这条resource
+                                input(type='hidden',name='comment[from]',value='#{user._id}')//谁评论
+                                .form-group
+                                    textarea.form-control(name='comment[content]',row='3')
+                                button.btn.btn-primary(type='submit') 提交
+                        if item.reply &&item.reply.length>0
+                            each reply in item.reply
+                                .media
+                                    .pull-left
+                                        img(src='/img/0.jpg')
+                                    .media-body
+                                        h4.media-heading
+                                            |#{reply.from.name}
+                                            span.text-info &nbsp;回复&nbsp;
+                                            |#{reply.to.name}
+                                        p#{reply.content}
+
 
 
 
