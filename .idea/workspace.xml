@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d367fd7-777a-41cb-ab96-6414c4636b73" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/commentSchema.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/resourceCtrl.js" afterPath="$PROJECT_DIR$/controllers/resourceCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/resourceSchema.js" afterPath="$PROJECT_DIR$/models/resourceSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/backstage.css" afterPath="$PROJECT_DIR$/public/stylesheets/backstage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/comment.jade" afterPath="$PROJECT_DIR$/views/includes/comment.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/video.jade" afterPath="$PROJECT_DIR$/views/includes/video.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/backstage.jade" afterPath="$PROJECT_DIR$/views/pages/backstage.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/userSchema.js" afterPath="$PROJECT_DIR$/models/userSchema.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,7 +26,7 @@
       <file leaf-file-name="resourceCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/resourceCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="931">
               <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
@@ -51,24 +48,50 @@
       <file leaf-file-name="resourceSchema.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/resourceSchema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="1189">
+              <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+              <folding>
+                <marker date="1488786172821" expanded="true" signature="195:201" ph="{&quot;type&quot;: Number...}" />
+                <marker date="1488786172821" expanded="true" signature="218:225" ph="{&quot;type&quot;: String...}" />
+                <marker date="1488786172821" expanded="true" signature="238:244" ph="{&quot;type&quot;: String...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comment.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="commentSchema.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/commentSchema.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comment.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/includes/comment.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="36" column="57" lean-forward="true" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+            <state relative-caret-position="203">
+              <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
               <folding>
                 <marker date="1488784909367" expanded="true" signature="110:470" ph="..." />
                 <marker date="1488784909367" expanded="true" signature="198:470" ph="..." />
                 <marker date="1488784909367" expanded="true" signature="366:470" ph="..." />
                 <marker date="1488784909367" expanded="true" signature="435:470" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userSchema.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/userSchema.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/stylesheets/comment.css" />
         <option value="$PROJECT_DIR$/views/includes/nav.jade" />
         <option value="$PROJECT_DIR$/views/includes/sumCourse.pug" />
         <option value="$PROJECT_DIR$/public/stylesheets/nav.css" />
@@ -131,7 +153,6 @@
         <option value="$PROJECT_DIR$/public/js/tool.js" />
         <option value="$PROJECT_DIR$/views/includes/errorMessage.jade" />
         <option value="$PROJECT_DIR$/public/js/errorMessage.js" />
-        <option value="$PROJECT_DIR$/models/userSchema.js" />
         <option value="$PROJECT_DIR$/controllers/user.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/errorMessage.css" />
         <option value="$PROJECT_DIR$/app.js" />
@@ -150,11 +171,13 @@
         <option value="$PROJECT_DIR$/views/includes/courseContent.jade" />
         <option value="$PROJECT_DIR$/config/routes.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/backstage.css" />
-        <option value="$PROJECT_DIR$/models/resourceSchema.js" />
         <option value="$PROJECT_DIR$/views/includes/video.jade" />
         <option value="$PROJECT_DIR$/views/pages/backstage.jade" />
         <option value="$PROJECT_DIR$/controllers/resourceCtrl.js" />
         <option value="$PROJECT_DIR$/views/includes/comment.jade" />
+        <option value="$PROJECT_DIR$/models/commentSchema.js" />
+        <option value="$PROJECT_DIR$/models/resourceSchema.js" />
+        <option value="$PROJECT_DIR$/models/userSchema.js" />
       </list>
     </option>
   </component>
@@ -168,8 +191,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="width" value="1370" />
+    <option name="x" value="683" />
+    <option name="width" value="683" />
     <option name="height" value="728" />
   </component>
   <component name="ProjectView">
@@ -403,7 +426,7 @@
       <workItem from="1488678804524" duration="1869000" />
       <workItem from="1488707172645" duration="7977000" />
       <workItem from="1488761709313" duration="7092000" />
-      <workItem from="1488773757897" duration="7179000" />
+      <workItem from="1488773757897" duration="8423000" />
     </task>
     <task id="LOCAL-00001" summary="resource">
       <created>1488010962014</created>
@@ -489,17 +512,24 @@
       <option name="project" value="LOCAL" />
       <updated>1488778947035</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="comment.jade">
+      <created>1488784951376</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1488784951376</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149283000" />
+    <option name="totallyTimeSpent" value="150527000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="0" width="1370" height="728" extended-state="0" />
+    <frame x="683" y="0" width="683" height="728" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23123123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4775194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -536,7 +566,8 @@
     <MESSAGE value="loginin&amp;&amp;loginout   except  handle error&#10;" />
     <MESSAGE value="course.save" />
     <MESSAGE value="submenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="submenu" />
+    <MESSAGE value="comment.jade" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment.jade" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -545,13 +576,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/nav.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/includes/coursetable.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -815,14 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/userSchema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1102">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/resource.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -900,7 +916,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/resourceCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="931">
           <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
@@ -910,21 +926,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/resourceSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+        <state relative-caret-position="1189">
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding>
+            <marker date="1488786172821" expanded="true" signature="195:201" ph="{&quot;type&quot;: Number...}" />
+            <marker date="1488786172821" expanded="true" signature="218:225" ph="{&quot;type&quot;: String...}" />
+            <marker date="1488786172821" expanded="true" signature="238:244" ph="{&quot;type&quot;: String...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/userSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/includes/comment.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="36" column="57" lean-forward="true" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+        <state relative-caret-position="203">
+          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
           <folding>
             <marker date="1488784909367" expanded="true" signature="110:470" ph="..." />
             <marker date="1488784909367" expanded="true" signature="198:470" ph="..." />
             <marker date="1488784909367" expanded="true" signature="366:470" ph="..." />
             <marker date="1488784909367" expanded="true" signature="435:470" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/commentSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -3,23 +3,14 @@
  */
 var mongoose = require('mongoose');
 
-var ResourceSchema = mongoose.Schema({
+var ResourceSchema = new mongoose.Schema({
     title:{
         type:String,
         unique:true
     },
-    type:{
-        type:Number,
-        unique:true
-    },
-    subjection:{
-        type:String,
-        unique:true
-    },
-    summary:{
-        type:String,
-        unique:true
-    },
+    type:Number,
+    subjection:String,
+    summary:String,
     flash:{
         type:String,
         unique:true
@@ -45,7 +36,7 @@ var ResourceSchema = mongoose.Schema({
 })
 
 ResourceSchema.pre('save',function(next){
-    if(this.isnew){
+    if(this.isNew){
         this.meta.creatAt=this.meta.updateAt=Date.now();
     }else{
         this.updateAt=Date.now();

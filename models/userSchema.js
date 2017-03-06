@@ -6,7 +6,7 @@ var SALT_WORK_FACTOR=10;
 var bcrypt=require('bcryptjs');
 var objectId=mongoose.Schema.Types.ObjectId;
 
-var UserSchema = mongoose.Schema({
+var UserSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: true
@@ -45,7 +45,7 @@ var UserSchema = mongoose.Schema({
 
 UserSchema.pre('save',function(next){
     let user=this;
-    if(this.isnew){
+    if(this.isNew){
         this.meta.creatAt=this.meta.updateAt=Date.now();
     }else{
         this.updateAt=Date.now();
