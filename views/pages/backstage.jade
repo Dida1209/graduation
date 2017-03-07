@@ -19,8 +19,13 @@ block content
                         input#inputTitle.form-control(type="text",name="course[title]")
                 .form-group
                     label.col-sm-2.control-label(for="inputType") 内容类型
-                    .col-sm-10
-                        input#inputType.form-control(type="text",name="course[type]")
+                    .col-sm-3
+                        input#inputType(type="radio",name="course[type]",value="1",checked="checked")
+                        span 视频
+                        input#inputType(type="radio",name="course[type]",value="2")
+                        span 文档
+                        input#inputType(type="radio",name="course[type]",value="3")
+                        span 在线测试
                 .form-group
                     label.col-sm-2.control-label(for="inputSubjection") 课程分类
                     .col-sm-10

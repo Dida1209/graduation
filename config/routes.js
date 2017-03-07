@@ -1,10 +1,9 @@
 /**
  * Created by lenovo-pc on 2017/2/23.
  */
-//var
-
 var user=require('../controllers/userCtrl');
 var resource=require('../controllers/resourceCtrl');
+var comment=require('../controllers/commentCtrl');
 
 module.exports = function(app){
 //pre heandle user
@@ -47,15 +46,16 @@ module.exports = function(app){
     app.post('/user/signup',user.signup);
     app.post('/user/signin',user.signin);
     app.get('/user/loginout',user.loginout);
+    app.post('/user/comment',user.isLogin,comment.save);
 
 //后台功能
     app.post('/admin/course/new',resource.save);
 
 //做测试尝试
     //测试submenu
-    app.get('/submenu',function(req,res){
-        res.render('resource',{
-
-        })
-    })
+    // app.get('/submenu',function(req,res){
+    //     res.render('resource',{
+    //
+    //     })
+    // })
 }

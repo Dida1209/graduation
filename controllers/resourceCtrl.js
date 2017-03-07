@@ -2,6 +2,7 @@
  * Created by lenovo-pc on 2017/3/3.
  */
 var Resource=require('../models/resourceSchema');
+var Comment=require('../models/commentSchema');
 
 exports.save=function(req,res){
     console.log("...............");
@@ -19,36 +20,45 @@ exports.save=function(req,res){
         if(err){
             console.log(err);
         }
-        console.log('11111111111'+resource);
+        console.log('11111111111'+resource._id);
         res.redirect('/resource/'+resource._id);
     })
 }
 exports.findRes=function(req,res){
     var resId=req.params.id;
     console.log(resId);
-    Resource.findOne({_id:resId},function(err,resource){
-        if(err){
-            console.log(err);
-        }
-        console.log(resource);
-        console.log('shsihis'+resource.type);
-        if(resource.type==1){
-            res.render('resource',{
-                resource:resource,
-                video:resource
+    Resource.findOne({_id:resId},function(err,resour){
+        Comment.find({resource:resId})
+            .populate('from','name')
+            .populate('reply.from reply.to','name')
+            .exec(function(err,comments){
+                if(err){
+                    console.log(err);
+                }
+                console.log(resour+"  aaaa  "+comments);
+                console.log('shsihis'+resour.type);
+                if(resour.type==1){
+                    res.render('resource',{
+                        resource:resour,
+                        video:resour,
+                        comments:comments
+                    })
+                }
+                if(resour.type==2){
+                    res.render('resource',{
+                        resource:resour,
+                        document:resour,
+                        comment:comments
+                    })
+                }
+                if(resour.type==3){
+                    res.render('resource',{
+                        resource:resour,
+                        test:resour,
+                        comment:comments
+                    })
+                }
             })
-        }
-        if(resource.type==2){
-            res.render('resource',{
-                resource:resource,
-                document:resource
-            })
-        }
-        if(resource.type==3){
-            res.render('resource',{
-                resource:resource,
-                test:resource
-            })
-        }
     })
+
 }

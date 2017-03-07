@@ -53,8 +53,16 @@ exports.signin = function(req,res) {
     })
 }
 exports.loginout=function(req,res){
-    req.session.user='';
+    delete req.session.user;
     console.log('----------------------asasrasras')
     // res.json({mes:'sucess'})
    res.redirect('/');
+}
+
+exports.isLogin=function(req,res,next){
+    var user=req.session.user;
+    if(!user){
+        console.log('isLogin没登录');
+    }
+    next();
 }

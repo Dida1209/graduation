@@ -6,7 +6,12 @@
     .courseContainer
         .courseDetail
             span 内容类型
-            p #{resource.type}
+            if resource.type==1
+                p 视频
+            if resource.type==2
+                p 文档
+            if resource.type==3
+                p 在线测试
         .courseDetail
             span 课程分类
             p #{resource.subjection}

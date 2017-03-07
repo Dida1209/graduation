@@ -10,8 +10,10 @@
         //if test
         //    include ../includes/test
     .publish.clear
-        .form-group
-            textarea.form-control(type='text')
-            button.btn 发布
+        form#commentForm(method="POST",action="/user/comment")
+            input(type="text",name="comment[resource]",value="#{resource._id}")
+            .form-group
+                textarea.form-control(type='text',name="comment[content]")
+                button.btn(type="submit") 发布
     .commentBlock
         include ../includes/comment
