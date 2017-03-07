@@ -2,19 +2,19 @@
    Created by lenovo-pc on 2017/2/25.
 
 .coursetable
-    .courseName 课程名字
+    .courseName #{resource.title}
     .courseContainer
         .courseDetail
             span 内容类型
-            p 视频
+            p #{resource.type}
         .courseDetail
             span 课程分类
-            p 栈和队列
+            p #{resource.subjection}
         .courseDetail
             span 课程简介
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
+            p #{resource.summary}
     .courseBottom
         .bottom
-            a.zan 12345
-            a.comment 12345
-            a.collect 12345
+            a.zan #{resource.likeNum}
+            a.comment #{resource.commentNum}
+            a.collect #{resource.collectionNum}

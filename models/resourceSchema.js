@@ -29,6 +29,10 @@ var ResourceSchema = new mongoose.Schema({
         type:Number,
         "default":0
     },
+    commentNum:{
+        type:Number,
+        "default":0
+    },
     likeNum:{
         type:Number,
         "default":0

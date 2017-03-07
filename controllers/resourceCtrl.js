@@ -26,10 +26,12 @@ exports.save=function(req,res){
 exports.findRes=function(req,res){
     var resId=req.params.id;
     console.log(resId);
-    Resource.find({_id:resId},function(err,resource){
+    Resource.findOne({_id:resId},function(err,resource){
         if(err){
             console.log(err);
         }
+        console.log(resource);
+        console.log('shsihis'+resource.type);
         if(resource.type==1){
             res.render('resource',{
                 resource:resource,
