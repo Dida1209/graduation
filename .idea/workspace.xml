@@ -2,17 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d367fd7-777a-41cb-ab96-6414c4636b73" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/shareCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/userPocketCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reply.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/zan.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/includes/test.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Function.txt" afterPath="$PROJECT_DIR$/Function.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.js" afterPath="$PROJECT_DIR$/config/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/commentCtrl.js" afterPath="$PROJECT_DIR$/controllers/commentCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/resourceCtrl.js" afterPath="$PROJECT_DIR$/controllers/resourceCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/userCtrl.js" afterPath="$PROJECT_DIR$/controllers/userCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/courseContent.css" afterPath="$PROJECT_DIR$/public/stylesheets/courseContent.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/userSchema.js" afterPath="$PROJECT_DIR$/models/userSchema.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/comment.css" afterPath="$PROJECT_DIR$/public/stylesheets/comment.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/coursetable.css" afterPath="$PROJECT_DIR$/public/stylesheets/coursetable.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/head.css" afterPath="$PROJECT_DIR$/public/stylesheets/head.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/sumCourse.css" afterPath="$PROJECT_DIR$/public/stylesheets/sumCourse.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/summarizeBlock.css" afterPath="$PROJECT_DIR$/public/stylesheets/summarizeBlock.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/comment.jade" afterPath="$PROJECT_DIR$/views/includes/comment.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/courseContent.jade" afterPath="$PROJECT_DIR$/views/includes/courseContent.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/coursetable.jade" afterPath="$PROJECT_DIR$/views/includes/coursetable.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/video.jade" afterPath="$PROJECT_DIR$/views/includes/video.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/backstage.jade" afterPath="$PROJECT_DIR$/views/pages/backstage.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/header.jade" afterPath="$PROJECT_DIR$/views/includes/header.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/sumCourse.jade" afterPath="$PROJECT_DIR$/views/includes/sumCourse.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/userBlock.jade" afterPath="$PROJECT_DIR$/views/includes/userBlock.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/userCourse.jade" afterPath="$PROJECT_DIR$/views/includes/userCourse.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/resource.jade" afterPath="$PROJECT_DIR$/views/pages/resource.jade" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,69 +43,31 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5535714">
+    <splitter split-orientation="horizontal" split-proportion="0.6108631">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/routes.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-435">
-                  <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-                  <folding>
-                    <marker date="1488862456417" expanded="true" signature="1266:1332" ph="{...}" />
-                    <marker date="1488862456417" expanded="true" signature="1301:1322" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="userCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controllers/userCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="163">
-                  <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="courseContent.jade" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/includes/courseContent.jade">
+          <file leaf-file-name="sumCourse.jade" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/includes/sumCourse.jade">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="377">
-                  <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
+                  <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
                   <folding>
-                    <marker date="1488864957426" expanded="true" signature="56:609" ph="..." />
-                    <marker date="1488864957426" expanded="true" signature="72:249" ph="..." />
-                    <marker date="1488864957426" expanded="true" signature="262:555" ph="..." />
-                    <marker date="1488864957426" expanded="true" signature="573:609" ph="..." />
+                    <marker date="1488974365046" expanded="true" signature="94:1225" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="comment.jade" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/includes/comment.jade">
+          <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/config/routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+                <state relative-caret-position="348">
+                  <caret line="48" column="46" lean-forward="true" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
                   <folding>
-                    <marker date="1488852216004" expanded="true" signature="60:1938" ph="..." />
-                    <marker date="1488852216004" expanded="true" signature="134:538" ph="..." />
-                    <marker date="1488852216004" expanded="true" signature="234:538" ph="..." />
-                    <marker date="1488852216004" expanded="true" signature="422:538" ph="..." />
-                    <marker date="1488852216004" expanded="true" signature="499:538" ph="..." />
+                    <marker date="1488958717134" expanded="true" signature="877:878" ph="{...}" />
+                    <marker date="1488958717134" expanded="true" signature="1412:1478" ph="{...}" />
+                    <marker date="1488958717134" expanded="true" signature="1447:1468" ph="{...}" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="resource.jade" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/pages/resource.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="424">
-                  <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -100,15 +75,23 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="commentCtrl.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/controllers/commentCtrl.js">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="userSchema.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/models/userSchema.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="438">
-                  <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-                  <folding>
-                    <element signature="e#0#44#0" expanded="false" />
-                  </folding>
+                <state relative-caret-position="696">
+                  <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="coursetable.jade" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/includes/coursetable.jade">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="348">
+                  <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -122,8 +105,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="Pug File" />
-        <option value="Jade File" />
         <option value="CSS File" />
+        <option value="Jade File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -136,6 +119,8 @@
       <find>value</find>
       <find>course</find>
       <find>:</find>
+      <find>:hover</find>
+      <find>resource</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,20 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/includes/hotRecommend.jade" />
-        <option value="$PROJECT_DIR$/public/stylesheets/summarizeBlock.css" />
-        <option value="$PROJECT_DIR$/views/pages/summarize.jade" />
-        <option value="$PROJECT_DIR$/views/includes/hotBlock.jade" />
-        <option value="$PROJECT_DIR$/views/includes/userCourse.jade" />
-        <option value="$PROJECT_DIR$/views/pages/user.jade" />
-        <option value="$PROJECT_DIR$/views/includes/sumCourse.jade" />
-        <option value="$PROJECT_DIR$/public/stylesheets/userCourse.css" />
-        <option value="$PROJECT_DIR$/views/includes/userBlock.jade" />
-        <option value="$PROJECT_DIR$/public/stylesheets/sumCourse.css" />
-        <option value="$PROJECT_DIR$/public/stylesheets/hotBlock.css" />
-        <option value="$PROJECT_DIR$/public/stylesheets/userBlock.css" />
-        <option value="$PROJECT_DIR$/public/stylesheets/coursetable.css" />
-        <option value="$PROJECT_DIR$/public/stylesheets/footer.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/carousel.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/index.css" />
         <option value="$PROJECT_DIR$/views/pages/submenu.jade" />
@@ -177,7 +148,6 @@
         <option value="$PROJECT_DIR$/public/js/header.js" />
         <option value="$PROJECT_DIR$/views/includes/enter.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/enter.css" />
-        <option value="$PROJECT_DIR$/views/includes/header.jade" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/pages/index.jade" />
         <option value="$PROJECT_DIR$/views/includes/aside.jade" />
@@ -185,19 +155,34 @@
         <option value="$PROJECT_DIR$/public/stylesheets/aside.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/backstage.css" />
         <option value="$PROJECT_DIR$/models/commentSchema.js" />
-        <option value="$PROJECT_DIR$/models/userSchema.js" />
         <option value="$PROJECT_DIR$/models/resourceSchema.js" />
         <option value="$PROJECT_DIR$/views/pages/backstage.jade" />
-        <option value="$PROJECT_DIR$/views/includes/coursetable.jade" />
         <option value="$PROJECT_DIR$/views/includes/video.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/courseContent.css" />
-        <option value="$PROJECT_DIR$/config/routes.js" />
-        <option value="$PROJECT_DIR$/controllers/userCtrl.js" />
-        <option value="$PROJECT_DIR$/controllers/commentCtrl.js" />
-        <option value="$PROJECT_DIR$/controllers/resourceCtrl.js" />
-        <option value="$PROJECT_DIR$/views/includes/courseContent.jade" />
+        <option value="$PROJECT_DIR$/public/js/reply.js" />
         <option value="$PROJECT_DIR$/views/includes/comment.jade" />
+        <option value="$PROJECT_DIR$/controllers/commentCtrl.js" />
+        <option value="$PROJECT_DIR$/views/includes/tets.jade" />
+        <option value="$PROJECT_DIR$/views/includes/test.jade" />
+        <option value="$PROJECT_DIR$/public/stylesheets/comment.css" />
+        <option value="$PROJECT_DIR$/views/includes/header.jade" />
+        <option value="$PROJECT_DIR$/public/stylesheets/head.css" />
         <option value="$PROJECT_DIR$/views/pages/resource.jade" />
+        <option value="$PROJECT_DIR$/views/includes/courseContent.jade" />
+        <option value="$PROJECT_DIR$/public/js/zan.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/coursetable.css" />
+        <option value="$PROJECT_DIR$/controllers/resourceCtrl.js" />
+        <option value="$PROJECT_DIR$/controllers/shareCtrl.js" />
+        <option value="$PROJECT_DIR$/views/includes/userCourse.jade" />
+        <option value="$PROJECT_DIR$/controllers/userCtrl.js" />
+        <option value="$PROJECT_DIR$/config/routes.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/summarizeBlock.css" />
+        <option value="$PROJECT_DIR$/controllers/userPocketCtrl.js" />
+        <option value="$PROJECT_DIR$/views/includes/userBlock.jade" />
+        <option value="$PROJECT_DIR$/models/userSchema.js" />
+        <option value="$PROJECT_DIR$/views/includes/coursetable.jade" />
+        <option value="$PROJECT_DIR$/views/includes/sumCourse.jade" />
+        <option value="$PROJECT_DIR$/public/stylesheets/sumCourse.css" />
       </list>
     </option>
   </component>
@@ -231,6 +216,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,6 +226,56 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,10 +321,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graduation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -415,7 +464,12 @@
       <workItem from="1488786445201" duration="679000" />
       <workItem from="1488804222249" duration="598000" />
       <workItem from="1488850348843" duration="4244000" />
-      <workItem from="1488860625511" duration="4561000" />
+      <workItem from="1488860625511" duration="5373000" />
+      <workItem from="1488879466752" duration="3355000" />
+      <workItem from="1488884144810" duration="478000" />
+      <workItem from="1488888177611" duration="285000" />
+      <workItem from="1488944121251" duration="18276000" />
+      <workItem from="1488966630548" duration="4354000" />
     </task>
     <task id="LOCAL-00001" summary="resource">
       <created>1488010962014</created>
@@ -522,22 +576,29 @@
       <option name="project" value="LOCAL" />
       <updated>1488853262148</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="一级回复 over">
+      <created>1488865226388</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1488865226388</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160698000" />
+    <option name="totallyTimeSpent" value="188258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1845238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20386904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -572,7 +633,8 @@
     <MESSAGE value="comment.jade" />
     <MESSAGE value="commentSchema" />
     <MESSAGE value="video function over" />
-    <option name="LAST_COMMIT_MESSAGE" value="video function over" />
+    <MESSAGE value="一级回复 over" />
+    <option name="LAST_COMMIT_MESSAGE" value="一级回复 over" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -581,119 +643,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/pages/summarize.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/summarizeBlock.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/userCourse.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/sumCourse.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/userCourse.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/summarizeBlock.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/userBlock.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/carousel.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/coursetable.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/hotBlock.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/userBlock.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1015">
-          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/carousel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/npm-debug.log" />
-    <entry file="file://$PROJECT_DIR$/views/pages/user.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="6" column="58" lean-forward="false" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/sumCourse.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1015">
-          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/errorMessage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -722,20 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="8" column="69" lean-forward="true" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/head.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1015">
-          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/header.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2320">
@@ -754,13 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1218">
           <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -793,13 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/includes/aside.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
@@ -821,139 +742,275 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/userSchema.js">
+    <entry file="file://$PROJECT_DIR$/views/includes/video.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/tets.jade" />
+    <entry file="file://$PROJECT_DIR$/views/includes/test.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/comment.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/comment.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/header.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-693">
+          <caret line="15" column="73" lean-forward="false" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/reply.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/head.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/backstage.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
-          <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/summarize.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/zan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/resourceSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/resource.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/user.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/userCourse.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/userCourse.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/courseContent.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/coursetable.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <marker date="1488861023024" expanded="true" signature="131:204" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/video.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/backstage.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/resourceSchema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1488862456417" expanded="true" signature="1266:1332" ph="{...}" />
-            <marker date="1488862456417" expanded="true" signature="1301:1322" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/header.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/commentSchema.js">
+    <entry file="file://$PROJECT_DIR$/views/includes/courseContent.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/resourceCtrl.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/summarizeBlock.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/shareCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
-          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/commentCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <caret line="28" column="54" lean-forward="false" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/courseContent.jade">
+    <entry file="file://$PROJECT_DIR$/models/commentSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
-          <folding>
-            <marker date="1488864957426" expanded="true" signature="56:609" ph="..." />
-            <marker date="1488864957426" expanded="true" signature="72:249" ph="..." />
-            <marker date="1488864957426" expanded="true" signature="262:555" ph="..." />
-            <marker date="1488864957426" expanded="true" signature="573:609" ph="..." />
-          </folding>
+        <state relative-caret-position="203">
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/userBlock.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/userCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        <state relative-caret-position="509">
+          <caret line="57" column="25" lean-forward="true" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/comment.jade">
+    <entry file="file://$PROJECT_DIR$/controllers/commentCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="25" column="93" lean-forward="false" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+        <state relative-caret-position="696">
+          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           <folding>
-            <marker date="1488852216004" expanded="true" signature="60:1938" ph="..." />
-            <marker date="1488852216004" expanded="true" signature="134:538" ph="..." />
-            <marker date="1488852216004" expanded="true" signature="234:538" ph="..." />
-            <marker date="1488852216004" expanded="true" signature="422:538" ph="..." />
-            <marker date="1488852216004" expanded="true" signature="499:538" ph="..." />
+            <element signature="e#0#44#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/resource.jade">
+    <entry file="file://$PROJECT_DIR$/controllers/resourceCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="174">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/userPocketCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+            <marker date="1488970336800" expanded="true" signature="403:1622" ph="{...}" />
+            <marker date="1488970336800" expanded="true" signature="403:1637" ph="{...}" />
+            <marker date="1488970336800" expanded="true" signature="436:510" ph="{...}" />
+            <marker date="1488970336800" expanded="true" signature="454:500" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/coursetable.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/coursetable.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="62" column="46" lean-forward="true" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/sumCourse.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding>
+            <marker date="1488974365046" expanded="true" signature="94:1225" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/sumCourse.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="48" column="46" lean-forward="true" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
+          <folding>
+            <marker date="1488958717134" expanded="true" signature="877:878" ph="{...}" />
+            <marker date="1488958717134" expanded="true" signature="1412:1478" ph="{...}" />
+            <marker date="1488958717134" expanded="true" signature="1447:1468" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/userSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
           <folding />
         </state>
       </provider>

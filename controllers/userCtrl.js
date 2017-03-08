@@ -66,3 +66,9 @@ exports.isLogin=function(req,res,next){
     }
     next();
 }
+
+exports.detail=function(req,res){
+    res.render('user',{
+        resources:''
+    })
+}

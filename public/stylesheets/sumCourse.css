@@ -1,6 +1,8 @@
-.sumCourse{
+.sumCourseContainer{
     cursor:pointer;
+    padding:5px 0 20px 0;
     width:100%;
+    border-top:1px solid #D7DCDE;
 }
 .courseLeft{
     float:left;
@@ -11,24 +13,33 @@
     line-height:24px;
 }
 .courseName{
-    font-size:20px;
+    display:inline-block;
+    width:520px;
+    height:24px;
+    font-size:16px;
     color:#2F4B93;
 }
-.courseFirst span:not(.courseName){
+.courseFirst a:not(.courseName){
+    display:inline-block;
     width:20px;
     height:20px;
-    float:right;
     margin-left:10px;
+    vertical-align:bottom;
 }
+.courseFirst a span:not(.courseName){
+    display:inline-block;
+    width:20px;
+    height:20px;
+}
+
 .courseSecond{
     float:left;
     width:620px;
-    font-size:16px;
+    font-size:14px;
     color:#333;
 }
 .courseSecond .courseDetail {
     padding-top:15px;
-    font-size:16px;
 }
 .courseSecond .courseDetail span{
     display:inline-block;
@@ -61,3 +72,34 @@
     width:160px;
     height:160px;
 }
+.courseFirst a:nth-child(2) span{
+    background:url('/img/icon.png') no-repeat 0 -72px;
+    background-size:18px;
+}
+.courseFirst a:nth-child(3) span{
+    background:url('/img/icon.png') no-repeat 0 -36px;
+    background-size:18px;
+}
+.courseFirst a:nth-child(4) span{
+    background:url('/img/icon.png') no-repeat 0 0px;
+    background-size:18px;
+}
+.courseFirst a:nth-child(2) span:hover{
+    background:url('/img/icon.png') no-repeat 0 -101px;
+}
+.courseFirst a:nth-child(3) span:hover{
+    background:url('/img/icon.png') no-repeat 0 -61px;
+}
+.courseFirst a:nth-child(4) span:hover{
+    background:url('/img/icon.png') no-repeat 0 -22px;
+}
+.courseFirst a:nth-child(2) span.active{
+    background:url('/img/icon.png') no-repeat 0 -101px;
+}
+.courseFirst a:nth-child(3) span.active{
+    background:url('/img/icon.png') no-repeat 0 -61px;
+}
+.courseFirst a:nth-child(4) span.active{
+    background:url('/img/icon.png') no-repeat 0 -22px;
+}
+

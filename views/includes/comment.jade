@@ -13,29 +13,43 @@
                         a.personName #{item.from.name}
                         a.zan
                     p.secondLine #{item.content}
-                    p.thirdLine
+                    p.thirdLine.clearfix
                         span 2017-1-1
                         span
                             a.reply 回复
-                                form.replayForm(method='POST',action='/user/comment',style='display:none;')
-                                    input(type='hidden',name='comment[cid]',value='#{item._id}')
-                                    input(type='hidden',name='comment[tid]',value='#{item.from._id}')
-                                    input(type='hidden',name='comment[resource]',value='#{resource._id}')
-                                    input(type='hidden',name='comment[from]',value='#{user._id}')
-                                    .form-group
-                                        textarea.form-control(name='comment[content]',row='3')
-                                    button.btn.btn-primary(type='submit') 提交
-                            if item.reply &&item.reply.length>0
-                                each reply in item.reply
-                                    .media
-                                        .pull-left
-                                            img(src='/img/0.jpg')
-                                        .media-body
-                                            h4.media-heading
-                                                |#{reply.from.name}
-                                                span.text-info &nbsp;回复&nbsp;
-                                                |#{reply.to.name}
-                                            p #{reply.content}
+                    form.replayForm(method='POST',action='/user/comment',style='display:block;')
+                        input(type='hidden',name='comment[cid]',value='#{item._id}')
+                        input(type='hidden',name='comment[tid]',value='#{item.from._id}')
+                        input(type='hidden',name='comment[resource]',value='#{resource._id}')
+                        if user
+                            input(type='hidden',name='comment[from]',value='#{user._id}')
+                        .form-group
+                            textarea.form-control(name='comment[content]',row='3')
+                        button.btn.btn-primary(type='submit') 提交
+                    if item.reply &&item.reply.length>0
+                        each reply in item.reply
+                            .media
+                                .picBox
+                                    img(src='/img/0.jpg')
+                                .commentBox
+                                    p.firstLine
+                                        | #{reply.from.name}
+                                        span.text-info &nbsp;回复&nbsp;
+                                        | #{reply.to.name}
+                                    p.secondLine #{reply.content}
+                                    p.thirdLine.clearfix
+                                        span 2017-1-1
+                                        span
+                                            a.reply 回复
+                                    form.replayForm(method='POST',action='/user/comment',style='display:block;')
+                                        input(type='hidden',name='comment[cid]',value='#{item._id}')
+                                        input(type='hidden',name='comment[tid]',value='#{reply.from._id}')
+                                        input(type='hidden',name='comment[resource]',value='#{resource._id}')
+                                        if user
+                                            input(type='hidden',name='comment[from]',value='#{user._id}')
+                                        .form-group
+                                            textarea.form-control(name='comment[content]',row='3')
+                                        button.btn.btn-primary(type='submit') 提交
 
 
 

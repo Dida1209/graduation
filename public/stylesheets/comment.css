@@ -15,13 +15,15 @@
     width:100%;
     border-top:1px solid #D7DCDE;
 }
-.commentList .picBox{
+.commentList .picBox,
+.media .picBox{
     float:left;
     margin-right:20px;
     width:60px;
     height:60px;
 }
-.commentList .picBox img{
+.commentList .picBox img,
+.media .picBox img{
     width:100%;
     height:100%;
 }
@@ -30,12 +32,19 @@
     width:720px;
     font-size:16px;
 }
-.commentList .commentBox .firstLine{
+.media .commentBox{
+    float:left;
+    width:640px;
+    font-size:16px;
+}
+.commentList .commentBox .firstLine,
+.media .commentBox .firstLine{
     padding-left:20px;
     margin-bottom:10px;
     background:url('/img/user.png') no-repeat 0 -1px;
 }
-.commentList .commentBox .secondLine{
+.commentList .commentBox .secondLine,
+.media .commentBox .secondLine{
     margin-bottom:8px;
     font-size:13px;
     font-weight:400;
@@ -49,9 +58,14 @@
 }
 .thirdLine span:nth-child(1){
     float:left;
-    padding-left:16px;
+    padding-left:20px;
+    background:url('/img/icon.png') no-repeat 0 -96px;
+    background-size:16px;
 }
 .thirdLine span:nth-child(2){
     float:right;
     cursor:pointer;
+}
+.replayForm{
+    margin-top:10px;
 }

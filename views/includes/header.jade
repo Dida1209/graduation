@@ -13,6 +13,7 @@
                     img(src="/img/blank.png")
             .login-panel
                 if user
+                    input(type="hidden",name="user[id]",value="#{user._id}")
                     a.login-text(href="/user")= user.name
                     a#loginout.loginout(href="/user/loginout") 退出
                 else

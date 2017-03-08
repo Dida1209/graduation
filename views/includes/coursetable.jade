@@ -20,6 +20,18 @@
             p #{resource.summary}
     .courseBottom
         .bottom
-            a.zan #{resource.likeNum}
-            a.comment #{resource.commentNum}
-            a.collect #{resource.collectionNum}
+            a#zan
+                if ifdoLike
+                    span.active #{resource.likeNum}
+                else
+                    span #{resource.likeNum}
+            a#comment
+                if ifdoComment
+                    span.active #{resource.commentNum}
+                else
+                    span #{resource.commentNum}
+            a#collect
+                if ifdoCollect
+                    span.active #{resource.collectionNum}
+                else
+                    span #{resource.collectionNum}

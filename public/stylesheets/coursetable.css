@@ -44,14 +44,45 @@
 }
 .bottom a{
     display:inline-block;
+    padding:15px;
     width:100px;
     height:50px;
-    line-height:50px;
     color:#2F4B93;
     font-size:16px;
-    text-align:center;
     cursor:pointer;
 }
-.bottom a:nth-child(1){
-    background:url('/img/crumb.png') no-repeat 0 15px;
+.bottom a span{
+    display:inline-block;
+    margin:0 10px;
+    padding-left:30px;
+    width:70px;
+    height:20px;
+    vertical-align:middle;
+}
+.bottom a:nth-child(1) span{
+    background:url('/img/icon.png') no-repeat 0 -72px;
+    background-size:18px;
+}
+.bottom a:nth-child(2) span{
+    background:url('/img/icon.png') no-repeat 0 -36px;
+    background-size:18px;
+}
+.bottom a:nth-child(3) span{
+    background:url('/img/icon.png') no-repeat 0 0px;
+    background-size:18px;
+}
+.bottom a:nth-child(1) span:hover{
+    background:url('/img/icon.png') no-repeat 0 -101px;
+}
+.bottom a:nth-child(3) span:hover{
+    background:url('/img/icon.png') no-repeat 0 -22px;
+}
+.bottom a:nth-child(1) span.active{
+    background:url('/img/icon.png') no-repeat 0 -101px;
+}
+.bottom a:nth-child(2) span.active{
+    background:url('/img/icon.png') no-repeat 0 -61px;
+}
+.bottom a:nth-child(3) span.active{
+    background:url('/img/icon.png') no-repeat 0 -22px;
 }

@@ -30,15 +30,15 @@ var UserSchema = new mongoose.Schema({
         }
     },
     myLike:{
-        list:[{type:objectId,ref:"resource"}],
+        reslist:[{type:objectId,ref:"Resource"}],
         "default":[]
     },
     myCollect:{
-        list:[{type:objectId,ref:"resource"}],
+        reslist:[{type:objectId,ref:"Resource"}],
         "default":[]
     },
     myComment:{
-        list:[{type:objectId,ref:"resource"}],
+        reslist:[{type:objectId,ref:"Resource"}],
         "default":[]
     }
 });

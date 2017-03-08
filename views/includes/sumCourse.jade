@@ -1,22 +1,41 @@
 //
    Created by lenovo-pc on 2017/2/25.
 
-a.sumCourse.clearfix
-    .courseLeft
-        .courseFirst
-            span.courseName 课程名字
-            span.collect
-            span.comment
-            span.zan
-        .courseSecond
-            .courseDetail
-                span 内容类型
-                p 视频
-            .courseDetail
-                span 课程分类
-                p 栈和队列
-            .courseDetail
-                span 课程简介
-                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
-    .courseRight
-        img(src='/img/0.jpg')
+each item in resources
+    .sumCourseContainer.clear
+        .courseLeft
+            .courseFirst
+                a.courseName
+                    span.courseName #{item.title}
+                a#zan
+                    if ifdoLike
+                        span.active
+                    else
+                        span
+                a#comment
+                    if ifdoComment
+                        span.active
+                    else
+                        span
+                a#collect
+                    if ifdoCollect
+                        span.active
+                    else
+                        span
+            .courseSecond
+                .courseDetail.clear
+                    span 内容类型
+                    if item.type == 1
+                        p 视频
+                    if item.type == 2
+                        p 文档
+                    if item.type == 3
+                        p 在线测试
+                .courseDetail.clear
+                    span 课程分类
+                    p #{item.subjection}
+                .courseDetail.clear
+                    span 课程简介
+                    p #{item.summary}
+        .courseRight
+            img(src='/img/0.jpg')

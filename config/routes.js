@@ -4,6 +4,8 @@
 var user=require('../controllers/userCtrl');
 var resource=require('../controllers/resourceCtrl');
 var comment=require('../controllers/commentCtrl');
+var share=require('../controllers/shareCtrl');
+var userPocket=require('../controllers/userPocketCtrl');
 
 module.exports = function(app){
 //pre heandle user
@@ -32,11 +34,7 @@ module.exports = function(app){
         })
 
     //用户
-        app.get('/user',function(req,res){
-            res.render('user',{
-
-            })
-        })
+        app.get('/user',user.detail);
     //背景
         app.get('/backstage',function(req,res){
             res.render('backstage',{})
@@ -47,7 +45,8 @@ module.exports = function(app){
     app.post('/user/signin',user.signin);
     app.get('/user/loginout',user.loginout);
     app.post('/user/comment',user.isLogin,comment.save);
-
+    app.post('/user/doLike',user.isLogin,share.doLike);
+    app.get('/user/findLike',userPocket.findLike);
 //后台功能
     app.post('/admin/course/new',resource.save);
 
