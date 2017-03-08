@@ -52,12 +52,12 @@ exports.findRes=function(req,res){
                         }
                     }
                     for(var i=0;i<user.myCollect.reslist.length;i++){
-                        if(user.myCollect.reslist[i]==resour._id){
+                        if(user.myCollect.reslist[i].toString()==resour._id.toString()){
                             ifdoCollect=true;
                         }
                     }
                     for(var i=0;i<user.myComment.reslist.length;i++){
-                        if(user.myComment.reslist[i]==resour._id){
+                        if(user.myComment.reslist[i].toString()==resour._id.toString()){
                             ifdoComment=true;
                         }
                     }

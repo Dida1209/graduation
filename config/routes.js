@@ -46,7 +46,10 @@ module.exports = function(app){
     app.get('/user/loginout',user.loginout);
     app.post('/user/comment',user.isLogin,comment.save);
     app.post('/user/doLike',user.isLogin,share.doLike);
+    app.post('/user/doCollect',user.isLogin,share.doCollect);
     app.get('/user/findLike',userPocket.findLike);
+    app.get('/user/findCollect',userPocket.findCollect);
+    app.get('/user/findComment',userPocket.findComment);
 //后台功能
     app.post('/admin/course/new',resource.save);
 

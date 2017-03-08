@@ -19,19 +19,6 @@
     font-size:16px;
     color:#2F4B93;
 }
-.courseFirst a:not(.courseName){
-    display:inline-block;
-    width:20px;
-    height:20px;
-    margin-left:10px;
-    vertical-align:bottom;
-}
-.courseFirst a span:not(.courseName){
-    display:inline-block;
-    width:20px;
-    height:20px;
-}
-
 .courseSecond{
     float:left;
     width:620px;
@@ -71,35 +58,5 @@
 .courseRight img{
     width:160px;
     height:160px;
-}
-.courseFirst a:nth-child(2) span{
-    background:url('/img/icon.png') no-repeat 0 -72px;
-    background-size:18px;
-}
-.courseFirst a:nth-child(3) span{
-    background:url('/img/icon.png') no-repeat 0 -36px;
-    background-size:18px;
-}
-.courseFirst a:nth-child(4) span{
-    background:url('/img/icon.png') no-repeat 0 0px;
-    background-size:18px;
-}
-.courseFirst a:nth-child(2) span:hover{
-    background:url('/img/icon.png') no-repeat 0 -101px;
-}
-.courseFirst a:nth-child(3) span:hover{
-    background:url('/img/icon.png') no-repeat 0 -61px;
-}
-.courseFirst a:nth-child(4) span:hover{
-    background:url('/img/icon.png') no-repeat 0 -22px;
-}
-.courseFirst a:nth-child(2) span.active{
-    background:url('/img/icon.png') no-repeat 0 -101px;
-}
-.courseFirst a:nth-child(3) span.active{
-    background:url('/img/icon.png') no-repeat 0 -61px;
-}
-.courseFirst a:nth-child(4) span.active{
-    background:url('/img/icon.png') no-repeat 0 -22px;
 }
 

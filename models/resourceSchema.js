@@ -25,7 +25,7 @@ var ResourceSchema = new mongoose.Schema({
             "default":Date.now()
         }
     },
-    collectionNum:{
+    collectNum:{
         type:Number,
         "default":0
     },

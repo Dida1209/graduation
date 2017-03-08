@@ -5,23 +5,7 @@ each item in resources
     .sumCourseContainer.clear
         .courseLeft
             .courseFirst
-                a.courseName
-                    span.courseName #{item.title}
-                a#zan
-                    if ifdoLike
-                        span.active
-                    else
-                        span
-                a#comment
-                    if ifdoComment
-                        span.active
-                    else
-                        span
-                a#collect
-                    if ifdoCollect
-                        span.active
-                    else
-                        span
+                a.courseName #{item.title}
             .courseSecond
                 .courseDetail.clear
                     span 内容类型

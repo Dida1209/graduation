@@ -3,15 +3,17 @@
  */
 var User=require('../models/userSchema');
 var Resource=require('../models/resourceSchema');
+var ifdoCtrl=require('./ifdoCtrl');
 
 exports.findLike=function(req,res){
     var _user=req.session.user;
-    var likeres=[];
+
     // console.log(_user,'                ',_user.myLike.reslist.length);
     User.findOne({_id:_user._id})
         .populate('myLike.reslist')
         .exec(function(err,user) {
             res.render('user', {
+                focus:'点赞',
                 resources: user.myLike.reslist
             });
         })
@@ -46,5 +48,34 @@ exports.findLike=function(req,res){
     //     }
     //
     // })
+
+}
+exports.findCollect=function(req,res) {
+    var _user = req.session.user;
+
+    // console.log(_user,'                ',_user.myLike.reslist.length);
+    User.findOne({_id: _user._id})
+        .populate('myCollect.reslist')
+        .exec(function (err, user) {
+            res.render('user', {
+                focus: '收藏',
+                resources: user.myCollect.reslist
+            });
+        })
+
+}
+
+exports.findComment=function(req,res) {
+    var _user = req.session.user;
+
+    // console.log(_user,'                ',_user.myLike.reslist.length);
+    User.findOne({_id: _user._id})
+        .populate('myComment.reslist')
+        .exec(function (err, user) {
+            res.render('user', {
+                focus: '评论',
+                resources: user.myComment.reslist
+            });
+        })
 
 }

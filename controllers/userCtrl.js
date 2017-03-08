@@ -45,9 +45,8 @@ exports.signin = function(req,res) {
                 console.log('match ' + req.session.user);
                 res.redirect('/');
                 // res.render('index',{user:user});
-            }
-            else {
-                console.log('no match');
+            }else {
+                console.log('no match'+isMatch);
             }
         })
     })

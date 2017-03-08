@@ -106,3 +106,105 @@ exports.doLike=function(req,res){
 
 
 }
+
+exports.doCollect=function(req,res) {
+    console.log('2342432   doCollect');
+    var isCollect = req.body.isCollect;
+    var userId = req.body.userId;
+    var resId = req.body.resId;
+    if (isCollect == 1) {
+        Resource.findOne({_id: resId}, function (err, resource) {
+            if (err) {
+                console.log('收藏时资源查找失败' + err);
+                res.json({
+                    success: 0,
+                    message: '收藏失败'
+                })
+            } else {
+                resource.collectNum++;
+                resource.save(function (err, resour) {
+                    if (err) {
+                        console.log('收藏时资源保存失败' + err);
+                    } else {
+                        User.findOne({_id: userId}, function (err, user) {
+                            if (err) {
+                                console.log('收藏时查找用户失败' + err);
+                            } else {
+                                user.myCollect.reslist.push(resour._id);
+                                user.save(function (err, u) {
+                                    if (err) {
+                                        console.log('收藏时用户保存失败' + err)
+                                    } else {
+                                        res.json({
+                                            success: 1,
+                                            collectNum: resour.collectNum,
+                                            message: '收藏成功'
+                                        })
+                                    }
+                                })
+
+                            }
+
+                        })
+
+                    }
+                })
+            }
+
+        })
+    } else {
+        Resource.findOne({_id: resId}, function (err, resource) {
+            if (err) {
+                console.log('取消收藏时找不到资源' + err);
+                res.json({
+                    success: 0,
+                    message: '取消收藏失败'
+                })
+            } else {
+                resource.collectNum--;
+                resource.save(function (err, resour) {
+                    if (err) {
+                        console.log('取消收藏时资源保存失败' + err);
+                        res.json({
+                            success: 0,
+                            message: '取消收藏失败'
+                        })
+                    } else {
+                        User.findOne({_id: userId}, function (err, user) {
+                            if (err) {
+                                console.log('用户取消收藏查找时失败' + err);
+                                res.json({
+                                    success: 0,
+                                    message: '取消收藏失败'
+                                })
+                            } else {
+                                for (var i = 0; i < user.myCollect.reslist.length; i++) {
+                                    if (user.myCollect.reslist[i].toString() == resour._id.toString()) {
+                                        user.myCollect.reslist.splice(i, 1);
+                                    }
+                                }
+                                user.save(function (err, u) {
+                                    if (err) {
+                                        console.log('用户取消收藏后保存失败' + err);
+                                        res.json({
+                                            success: 0,
+                                            message: '取消收藏失败'
+                                        })
+                                    } else {
+                                        res.json({
+                                            success: 1,
+                                            collectNum: resour.collectNum,
+                                            message: '取消收藏成功'
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+
+
+}
