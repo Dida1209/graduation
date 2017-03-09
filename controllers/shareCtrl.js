@@ -79,6 +79,7 @@ exports.doLike=function(req,res){
                                 for(var i=0;i<user.myLike.reslist.length;i++){
                                     if(user.myLike.reslist[i].toString()==resour._id.toString()){
                                         user.myLike.reslist.splice(i,1);
+                                        i--;
                                     }
                                 }
                                 user.save(function(err,u){
@@ -181,6 +182,7 @@ exports.doCollect=function(req,res) {
                                 for (var i = 0; i < user.myCollect.reslist.length; i++) {
                                     if (user.myCollect.reslist[i].toString() == resour._id.toString()) {
                                         user.myCollect.reslist.splice(i, 1);
+                                        i--;
                                     }
                                 }
                                 user.save(function (err, u) {

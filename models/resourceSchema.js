@@ -15,6 +15,9 @@ var ResourceSchema = new mongoose.Schema({
         type:String,
         unique:true
     },
+    testList:{
+
+    },
     meta:{
         createAt:{
             type:Date,

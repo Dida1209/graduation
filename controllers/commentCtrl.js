@@ -45,6 +45,7 @@ exports.save=function(req,res){
                         for(var i=0;i<user.myComment.reslist.length;i++){
                             if(user.myComment.reslist[i].toString()==com.resource.toString()){
                                 user.myComment.reslist.splice(i,1);
+                                i--;
                             }
                         }
                         user.myComment.reslist.push(com.resource);
