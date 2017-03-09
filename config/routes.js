@@ -44,7 +44,7 @@ module.exports = function(app){
     app.post('/user/signup',user.signup);
     app.post('/user/signin',user.signin);
     app.get('/user/loginout',user.loginout);
-    app.post('/user/comment',user.isLogin,comment.save);
+    app.post('/user/doComment',user.isLogin,comment.save);
     app.post('/user/doLike',user.isLogin,share.doLike);
     app.post('/user/doCollect',user.isLogin,share.doCollect);
     app.get('/user/findLike',userPocket.findLike);

@@ -72,6 +72,7 @@ exports.findComment=function(req,res) {
     User.findOne({_id: _user._id})
         .populate('myComment.reslist')
         .exec(function (err, user) {
+            console.log(user+'llllllllllllllll'+user.myComment.reslist);
             res.render('user', {
                 focus: '评论',
                 resources: user.myComment.reslist

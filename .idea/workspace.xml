@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d367fd7-777a-41cb-ab96-6414c4636b73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/ifdoCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Function.txt" afterPath="$PROJECT_DIR$/Function.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.js" afterPath="$PROJECT_DIR$/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/resourceCtrl.js" afterPath="$PROJECT_DIR$/controllers/resourceCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/shareCtrl.js" afterPath="$PROJECT_DIR$/controllers/shareCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/userCtrl.js" afterPath="$PROJECT_DIR$/controllers/userCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/commentCtrl.js" afterPath="$PROJECT_DIR$/controllers/commentCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/userPocketCtrl.js" afterPath="$PROJECT_DIR$/controllers/userPocketCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/resourceSchema.js" afterPath="$PROJECT_DIR$/models/resourceSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/zan.js" afterPath="$PROJECT_DIR$/public/js/zan.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/sumCourse.css" afterPath="$PROJECT_DIR$/public/stylesheets/sumCourse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/coursetable.jade" afterPath="$PROJECT_DIR$/views/includes/coursetable.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/sumCourse.jade" afterPath="$PROJECT_DIR$/views/includes/sumCourse.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/userBlock.jade" afterPath="$PROJECT_DIR$/views/includes/userBlock.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/userCourse.jade" afterPath="$PROJECT_DIR$/views/includes/userCourse.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/comment.jade" afterPath="$PROJECT_DIR$/views/includes/comment.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/courseContent.jade" afterPath="$PROJECT_DIR$/views/includes/courseContent.jade" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,24 +25,27 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.63988096">
+    <splitter split-orientation="horizontal" split-proportion="0.7626488">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="userSchema.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/models/userSchema.js">
+          <file leaf-file-name="commentCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/controllers/commentCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="351">
-                  <caret line="40" column="44" lean-forward="false" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-                  <folding />
+                <state relative-caret-position="203">
+                  <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+                  <folding>
+                    <marker date="1489025649298" expanded="true" signature="216:2593" ph="{...}" />
+                    <marker date="1489025649298" expanded="true" signature="984:2591" ph="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="commentCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controllers/commentCtrl.js">
+          <file leaf-file-name="Function.txt" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Function.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-232">
-                  <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+                <state relative-caret-position="134">
+                  <caret line="73" column="15" lean-forward="false" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -58,25 +54,23 @@
           <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
-                  <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+                <state relative-caret-position="409">
+                  <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
                   <folding>
-                    <marker date="1488985589288" expanded="true" signature="877:878" ph="{...}" />
-                    <marker date="1488985589288" expanded="true" signature="1588:1654" ph="{...}" />
-                    <marker date="1488985589288" expanded="true" signature="1623:1644" ph="{...}" />
+                    <marker date="1489024456569" expanded="true" signature="877:878" ph="{...}" />
+                    <marker date="1489024456569" expanded="true" signature="1590:1656" ph="{...}" />
+                    <marker date="1489024456569" expanded="true" signature="1625:1646" ph="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="userPocketCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controllers/userPocketCtrl.js">
+          <file leaf-file-name="courseContent.jade" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/includes/courseContent.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2120">
-                  <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#0#44#0" expanded="false" />
-                  </folding>
+                <state relative-caret-position="178">
+                  <caret line="13" column="56" lean-forward="false" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -84,31 +78,11 @@
           <file leaf-file-name="shareCtrl.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/controllers/shareCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="406">
+                <state relative-caret-position="1450">
                   <caret line="123" column="37" lean-forward="false" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#44#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="resourceCtrl.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/controllers/resourceCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="290">
-                  <caret line="59" column="86" lean-forward="false" selection-start-line="59" selection-start-column="86" selection-end-line="59" selection-end-column="86" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="userCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controllers/userCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1102">
-                  <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -127,11 +101,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="coursetable.jade" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/includes/coursetable.jade">
+          <file leaf-file-name="resourceSchema.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/models/resourceSchema.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="351">
-                  <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+                <state relative-caret-position="87">
+                  <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -175,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/stylesheets/index.css" />
         <option value="$PROJECT_DIR$/views/pages/submenu.jade" />
         <option value="$PROJECT_DIR$/models/resource.js" />
         <option value="$PROJECT_DIR$/views/layout.jade" />
@@ -201,15 +174,12 @@
         <option value="$PROJECT_DIR$/views/includes/video.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/courseContent.css" />
         <option value="$PROJECT_DIR$/public/js/reply.js" />
-        <option value="$PROJECT_DIR$/views/includes/comment.jade" />
-        <option value="$PROJECT_DIR$/controllers/commentCtrl.js" />
         <option value="$PROJECT_DIR$/views/includes/tets.jade" />
         <option value="$PROJECT_DIR$/views/includes/test.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/comment.css" />
         <option value="$PROJECT_DIR$/views/includes/header.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/head.css" />
         <option value="$PROJECT_DIR$/views/pages/resource.jade" />
-        <option value="$PROJECT_DIR$/views/includes/courseContent.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/coursetable.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/summarizeBlock.css" />
         <option value="$PROJECT_DIR$/models/userSchema.js" />
@@ -222,10 +192,14 @@
         <option value="$PROJECT_DIR$/views/includes/coursetable.jade" />
         <option value="$PROJECT_DIR$/controllers/shareCtrl.js" />
         <option value="$PROJECT_DIR$/public/js/zan.js" />
-        <option value="$PROJECT_DIR$/controllers/userPocketCtrl.js" />
-        <option value="$PROJECT_DIR$/config/routes.js" />
         <option value="$PROJECT_DIR$/views/includes/userBlock.jade" />
         <option value="$PROJECT_DIR$/controllers/resourceCtrl.js" />
+        <option value="$PROJECT_DIR$/views/includes/comment.jade" />
+        <option value="$PROJECT_DIR$/views/includes/courseContent.jade" />
+        <option value="$PROJECT_DIR$/config/routes.js" />
+        <option value="$PROJECT_DIR$/controllers/userPocketCtrl.js" />
+        <option value="$PROJECT_DIR$/controllers/commentCtrl.js" />
+        <option value="$PROJECT_DIR$/Function.txt" />
       </list>
     </option>
   </component>
@@ -259,6 +233,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -333,8 +309,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,7 +442,8 @@
       <workItem from="1488944121251" duration="18276000" />
       <workItem from="1488966630548" duration="6457000" />
       <workItem from="1488980966634" duration="1358000" />
-      <workItem from="1488984241041" duration="1778000" />
+      <workItem from="1488984241041" duration="1980000" />
+      <workItem from="1489019829254" duration="3622000" />
     </task>
     <task id="LOCAL-00001" summary="resource">
       <created>1488010962014</created>
@@ -589,17 +564,24 @@
       <option name="project" value="LOCAL" />
       <updated>1488974566822</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="user expect comment">
+      <created>1488986053885</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1488986053885</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193497000" />
+    <option name="totallyTimeSpent" value="197321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22470239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -641,7 +623,8 @@
     <MESSAGE value="video function over" />
     <MESSAGE value="一级回复 over" />
     <MESSAGE value="comment over" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment over" />
+    <MESSAGE value="user expect comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="user expect comment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -650,13 +633,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/tool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/errorMessage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
@@ -769,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/comment.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/includes/header.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-693">
@@ -846,13 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/courseContent.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/summarizeBlock.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
@@ -916,40 +878,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/resourceSchema.js">
+    <entry file="file://$PROJECT_DIR$/public/js/zan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        <state relative-caret-position="380">
+          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/coursetable.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/userCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
+        <state relative-caret-position="-548">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/zan.js">
+    <entry file="file://$PROJECT_DIR$/controllers/resourceCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-            <marker date="1488985170842" expanded="true" signature="57:2152" ph="{...}" />
-            <marker date="1488985170842" expanded="true" signature="1194:2148" ph="{...}" />
-          </folding>
+        <state relative-caret-position="290">
+          <caret line="59" column="86" lean-forward="false" selection-start-line="59" selection-start-column="86" selection-end-line="59" selection-end-column="86" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/shareCtrl.js">
+    <entry file="file://$PROJECT_DIR$/views/includes/comment.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="123" column="37" lean-forward="false" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
+        <state relative-caret-position="203">
+          <caret line="43" column="81" lean-forward="false" selection-start-line="43" selection-start-column="81" selection-end-line="43" selection-end-column="81" />
           <folding>
-            <element signature="e#0#44#0" expanded="false" />
+            <marker date="1489024456488" expanded="true" signature="60:2837" ph="..." />
           </folding>
         </state>
       </provider>
@@ -962,22 +927,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.js">
+    <entry file="file://$PROJECT_DIR$/models/resourceSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
-          <folding>
-            <marker date="1488985589288" expanded="true" signature="877:878" ph="{...}" />
-            <marker date="1488985589288" expanded="true" signature="1588:1654" ph="{...}" />
-            <marker date="1488985589288" expanded="true" signature="1623:1644" ph="{...}" />
-          </folding>
+        <state relative-caret-position="87">
+          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/userPocketCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2120">
-          <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+        <state relative-caret-position="960">
+          <caret line="74" column="46" lean-forward="false" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
@@ -986,32 +947,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/userSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state relative-caret-position="-635">
           <caret line="40" column="44" lean-forward="false" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/coursetable.jade">
+    <entry file="file://$PROJECT_DIR$/views/includes/courseContent.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="178">
+          <caret line="13" column="56" lean-forward="false" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding>
+            <marker date="1489024456569" expanded="true" signature="877:878" ph="{...}" />
+            <marker date="1489024456569" expanded="true" signature="1590:1656" ph="{...}" />
+            <marker date="1489024456569" expanded="true" signature="1625:1646" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/commentCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-232">
-          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="203">
+          <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+          <folding>
+            <marker date="1489025649298" expanded="true" signature="216:2593" ph="{...}" />
+            <marker date="1489025649298" expanded="true" signature="984:2591" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/resourceCtrl.js">
+    <entry file="file://$PROJECT_DIR$/controllers/shareCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="59" column="86" lean-forward="false" selection-start-line="59" selection-start-column="86" selection-end-line="59" selection-end-column="86" />
+        <state relative-caret-position="1450">
+          <caret line="123" column="37" lean-forward="false" selection-start-line="123" selection-start-column="37" selection-end-line="123" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="73" column="15" lean-forward="false" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
           <folding />
         </state>
       </provider>
