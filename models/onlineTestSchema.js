@@ -10,16 +10,20 @@ var OnlineTestSchema=new mongoose.Schema({
     },
     choose:{
        A:{
-            type:String
+           type:String,
+           "default":''
        } ,
         B:{
-           type:String
+           type:String,
+            "default":''
         },
         C:{
-           type:String
+           type:String,
+            "default":''
         },
         D:{
-           type:String
+           type:String,
+            "default":''
         }
     },
     answer:{
@@ -31,5 +35,4 @@ var OnlineTestSchema=new mongoose.Schema({
     }
 })
 
-var OnlineTest=mongoose.model('OnlineTest',OnlineTestSchema);
-module.exports=OnlineTest;
+module.exports=OnlineTestSchema;

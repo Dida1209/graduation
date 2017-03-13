@@ -8,7 +8,69 @@
 .row{
     margin:0;
 }
+#testAdd{
+    width:22px ;
+    height:22px;
+    margin-right:10px;
+    line-height:16px;
+    padding:3px;
+    vertical-align:baseline;
+    border-color:#999;
+    color:#999;
+}
+#testAdd:hover{
+    background-color:#ccc;
+    color:#fff;
+}
+.testAdd{
+    display:inline-block;
+    height:22px;
+    line-height:22px;
+}
+.testLandBtn{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    text-align:center;
+    line-height:18px;
+    margin-right:1px;
+}
 #reBtn{
     float:right;
     margin-right:15px;
+}
+#bgblack{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,.2);
+    display:none;
+}
+#testSubmit{
+    margin-left:-300px;
+    padding:50px;
+    width:600px;
+    top: -700px;
+    left: 50%;
+    position: fixed;
+    font-size: 16px;
+    color: #000;
+    background: #eee;
+    z-index: 1010;
+    box-shadow: rgba(0,0,0,.5) 0 5px 15px;
+
+}
+#group1,#group2,#group3{
+    display:none;
+}
+#testSubmit.active{
+    animation: testIn .2s;
+    animation-fill-mode: forwards;
+}
+@keyframes testIn
+{
+    to {top: 70px;}
 }
