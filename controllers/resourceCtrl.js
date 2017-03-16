@@ -2,13 +2,13 @@
  * Created by lenovo-pc on 2017/3/3.
  */
 var Resource=require('../models/resourceSchema');
+var OnlineTest=require('../models/onlineTestSchema');
 var User=require('../models/userSchema');
 var Comment=require('../models/commentSchema');
 
 exports.save=function(req,res){
     console.log("...............");
     var _course=req.body.course;
-    //console.log(resource);
     var _resource=new Resource({
         title:_course.title,
         type:_course.type,
@@ -16,14 +16,35 @@ exports.save=function(req,res){
         summary:_course.summary,
         flash:_course.flash
     });
-    console.log('000000000'+_resource);
-    _resource.save(function(err,resource){
-        if(err){
-            console.log(err);
-        }
-        console.log('11111111111'+resource._id);
-        res.redirect('/resource/'+resource._id);
-    })
+    if(_resource.type==1) {
+        _resource.save(function (err, resource) {
+            if (err) {
+                console.log(err);
+            }
+            res.redirect('/resource/' + resource._id);
+        })
+    }
+    if(_resource.type==3) {
+        var _testList = JSON.parse(_course.test);
+        // console.log("_course is",_testList[0]);
+        _resource.save(function (err, resource) {
+            if (err) {
+                console.log(err);
+            }
+            // console.log(resource);
+            for (var i = 0; i < _testList.length; i++) {
+                var _onlineTest = new OnlineTest(_testList[i]);
+                _onlineTest.resourId = resource._id;
+                _onlineTest.save(function (err, onlineTest) {
+                    if (err) {
+                        console.log('save test err' + err);
+                    }
+                    // resource.testList.push(onlineTest._id);
+                })
+            }
+            res.redirect('/resource/' + resource._id);
+        })
+    }
 }
 exports.findRes=function(req,res){
     var resId=req.params.id;
@@ -80,24 +101,28 @@ exports.findRes=function(req,res){
                             comments:comments
                         });
                     }
-                    if(resour.type==2){
-                        res.render('resource',{
-                            ifdoLike:ifdoLike,
-                            ifdoCollect:ifdoCollect,
-                            ifdoComment:ifdoComment,
-                            resource:resour,
-                            document:resour,
-                            comment:comments
-                        })
-                    }
+                    // if(resour.type==2){
+                    //     res.render('resource',{
+                    //         ifdoLike:ifdoLike,
+                    //         ifdoCollect:ifdoCollect,
+                    //         ifdoComment:ifdoComment,
+                    //         resource:resour,
+                    //         document:resour,
+                    //         comment:comments
+                    //     })
+                    // }
                     if(resour.type==3){
-                        res.render('resource',{
-                            ifdoLike:ifdoLike,
-                            ifdoCollect:ifdoCollect,
-                            ifdoComment:ifdoComment,
-                            resource:resour,
-                            test:resour,
-                            comment:comments
+                        OnlineTest.find({resourId:resour._id},function(err,onlinetests){
+                            console.log(onlinetests);
+                            res.render('resource',{
+                                ifdoLike:ifdoLike,
+                                ifdoCollect:ifdoCollect,
+                                ifdoComment:ifdoComment,
+                                resource:resour,
+                                test:resour,
+                                comment:comments,
+                                onlineTest:onlinetests
+                            })
                         })
                     }
                 })
@@ -105,4 +130,3 @@ exports.findRes=function(req,res){
             })
     })
 }
-

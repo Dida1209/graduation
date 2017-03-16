@@ -1,38 +1,42 @@
 /**
  * Created by lenovo-pc on 2017/3/9.
  */
-var mongoose=require('mongoose');
+var mongoose = require('mongoose');
+var ObjectId=mongoose.Schema.Types.ObjectId;
 
-var OnlineTestSchema=new mongoose.Schema({
-    quetion:{
-        type:String,
-        unique:true
+var OnlineTestSchema = new mongoose.Schema({
+    resourId:{
+        type:ObjectId,
+        ref:'Resource'
     },
-    choose:{
-       A:{
-           type:String,
-           "default":''
-       } ,
-        B:{
-           type:String,
-            "default":''
-        },
-        C:{
-           type:String,
-            "default":''
-        },
-        D:{
-           type:String,
-            "default":''
-        }
+    question: {
+        type: String,
+        unique: true
     },
-    answer:{
-        type:String,
-        unique:true
+    A: {
+        type: String,
+        "default": ''
     },
-    why:{
-        type:String
+    B: {
+        type: String,
+        "default": ''
+    },
+    C: {
+        type: String,
+        "default": ''
+    },
+    D: {
+        type: String,
+        "default": ''
+    },
+    answer: {
+        type: String,
+        unique: true
+    },
+    why: {
+        type: String
     }
 })
 
-module.exports=OnlineTestSchema;
+var OnlineTest = mongoose.model('OnlineTest', OnlineTestSchema);
+module.exports = OnlineTest;

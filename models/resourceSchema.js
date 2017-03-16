@@ -2,7 +2,7 @@
  * Created by lenovo-pc on 2017/2/28.
  */
 var mongoose = require('mongoose');
-var OnlineTestSchema=require('./onlineTestSchema');
+var ObjectId=mongoose.Schema.Types.ObjectId;
 
 var ResourceSchema = new mongoose.Schema({
     title:{
@@ -12,11 +12,8 @@ var ResourceSchema = new mongoose.Schema({
     type:Number,
     subjection:String,
     summary:String,
-    flash:{
-        type:String,
-        unique:true
-    },
-    testList:[OnlineTestSchema],
+    flash:String,
+    // testList:[{type:ObjectId,ref:'OnlineTest'}],
     meta:{
         createAt:{
             type:Date,
@@ -51,17 +48,6 @@ ResourceSchema.pre('save',function(next){
     next();
 })
 
-OnlineTestSchema.pre('save',function(next){
-    if(this.isNew){
-        this.meta.creatAt=this.meta.updateAt=Date.now();
-    }else{
-        this.updateAt=Date.now();
-        console.log('onlinetest presave');
-    }
-    next();
-})
 
 var Resource=mongoose.model('Resource',ResourceSchema);
-var OnlineTest=mongoose.model('OnlineTest',OnlineTestSchema);
 module.exports=Resource;
-module.exports=OnlineTest;

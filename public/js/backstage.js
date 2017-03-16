@@ -17,7 +17,7 @@
     var testModify=document.getElementById('testModify');  //修改
     var testDel=document.getElementById('testDel');    //删除
     //测试题目的数组
-    var testList=[],testAns,greenKey;
+    var testList=[],testAns,greenKey,typeKey;
 
     //数组事件
     //把题目添加到testList数组
@@ -64,6 +64,7 @@
         }else if(del){
             errorShow('测试题目和详解是必填项，请检查是否已填写！')
         }else;
+        console.log(testList);
         greenBtn();
     }
     //添加小绿钮
@@ -99,7 +100,8 @@
     //课程类型radio的点击，不同类型，显示不同的group
     $.each($('input[name="course[type]"]'),function(){
         $(this).click(function(e){
-            console.log('each '+$(this).val())
+            console.log('each '+$(this).val());
+            typeKey=$(this).val();
             resGroup($(this).val());
             e.stopPropagation();
         })
@@ -163,12 +165,19 @@
         e.stopPropagation();
     })
     //最后资源表单的提交，提交前把隐藏域放进form
-    resForm.addEventListener('submit',function(){
-        console.log(this);
-        if(test.length>0){
-
-        }else{
-            this.submit();
+    resForm.addEventListener('submit',function(e){
+        if(typeKey==3){
+            var _testList=JSON.stringify(testList);
+            console.log(_testList);
+            // console.log(t);
+            // console.log(JSON.parse(t));
+            $('input[name="course[test]"]').val(_testList);
+            console.log(this);
+            // var data=$(this).serialize();
+            //data+=testList;
+            // console.log(data);
         }
+       // e.preventDefault();
+        this.submit();
     })
 })()

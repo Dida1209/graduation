@@ -43,10 +43,11 @@ block content
                     .col-sm-10
                         input#inputDoc.form-control(type="text",name="course[doc]")
                 .form-group.resGroup#group3
-                    label.col-sm-2.control-label(for="inputFlash") 在线测试题目
+                    label.col-sm-2.control-label 在线测试题目
                     .col-sm-10
                         a#testAdd.btn +
                         span.testAdd 添加
+                        input(type="hidden",name="course[test]")
                 .form-group
                     .col-sm-2
                     .col-sm-10#testLand

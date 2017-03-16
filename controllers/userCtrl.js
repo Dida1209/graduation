@@ -17,11 +17,12 @@ exports.signup=function(req,res){
             res.json({message:'用户已存在'});
         }else{
             var user=new User(_user);
-            user.save(function(err,user){
+            user.save(function(err,u){
                 if(err){
                     res.json({message:err});
                 }
                 // res.json();
+                // console.log(u);
                 res.redirect('/');
             })
         }
