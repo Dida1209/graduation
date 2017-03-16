@@ -173,9 +173,6 @@
             // console.log(JSON.parse(t));
             $('input[name="course[test]"]').val(_testList);
             console.log(this);
-            // var data=$(this).serialize();
-            //data+=testList;
-            // console.log(data);
         }
        // e.preventDefault();
         this.submit();

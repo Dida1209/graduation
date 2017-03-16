@@ -55,9 +55,9 @@ module.exports = function(app){
 
 //做测试尝试
     //测试submenu
-    // app.get('/submenu',function(req,res){
-    //     res.render('resource',{
-    //
-    //     })
-    // })
+    app.get('/testRes',function(req,res){
+        res.render('resource',{
+
+        })
+    })
 }

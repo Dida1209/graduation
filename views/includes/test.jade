@@ -1,3 +1,40 @@
 //
    Created by lenovo-pc on 2017/3/8.
 
+#testList
+    .test-left
+        span.glyphicon.glyphicon-chevron-left
+    .test-right
+        span.glyphicon.glyphicon-chevron-right
+    each item in onlineTest
+        #test
+            .test-question.clear
+                span 题目
+                    = item.question
+            .test-answer
+                if item.A
+                    .answer-A
+                        input(type='radio',name="choose",value='A')
+                        span A
+                            = item.A
+                if item.B
+                    .answer-B
+                        input(type='radio',name="choose",value='B')
+                        span B
+                            = item.B
+                if item.C
+                    .answer-C
+                        input(type='radio',name="choose",value='C')
+                        span C
+                            = item.C
+                if item.D
+                    .answer-D
+                        input(type='radio',name="choose",value='D')
+                        span D
+                            = item.D
+            .test-check
+                if item.answer
+                    input(name="answer",type="hidden",value=item.answer)
+                    a.btn.sure 确定
+                a#explanation 详解
+                p#test-why=item.why
