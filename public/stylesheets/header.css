@@ -91,7 +91,8 @@
     vertical-align:top;
     text-align:right;
 }
-.modal-dialog{
+#signinModal.modal-dialog,
+#signupModal.modal-dialog{
     width:360px;
 }
 /*.modelAim{*/

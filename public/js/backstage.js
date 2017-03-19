@@ -65,19 +65,27 @@
             errorShow('测试题目和详解是必填项，请检查是否已填写！')
         }else;
         console.log(testList);
-        greenBtn();
+        // greenBtn();
     }
     //添加小绿钮
-    function greenBtn(){
+    function greenBtn(obj1,obj2){
         var template='';
-        var greenLast=$(testLand).find('a').length;
-        var difference=$(testLand).find('a').length-testList.length;
-        console.log($(testLand).find('a').length,testList.length);
+        // var greenLast=$(testLand).find('a').length;
+        var greenLast=$(obj1).find('a').length;
+        // var difference=$(testLand).find('a').length-testList.length;
+        var difference=greenLast-obj2.length;
+        // console.log($(testLand).find('a').length,testList.length);
+        console.log(greenLast,difference);
         if(difference<0){
-            template='<a class="testLandBtn btn-success">'+testList.length+'</a>'
-            $(testLand).append(template);
+            for(var i=greenLast;i<obj2.length;i++){
+                template+='<a class="testLandBtn btn-success">'+(i+1)+'</a>';
+            }
+            $(obj1).append(template);
         }else if(difference>0){
-            $(testLand).find('a').eq(greenLast-1).remove();
+            while(difference>0){
+                $(obj1).find('a').eq(greenLast-1).remove();
+                difference--;
+            }
         }else
             return;
     }
@@ -136,12 +144,14 @@
     testBtn.addEventListener('click',function(e) {
         testList[testList.length]={};
         listChange(testList.length-1,1);
+        greenBtn($(testLand),testList);
         bgblack.style.display='none';
         removeClass(testSubmit,'active');
     })
     //题目表单修改按钮被点击时
     testModify.addEventListener('click',function(e){
         listChange(greenKey,1);
+        greenBtn($(testLand),testList);
         bgblack.style.display='none';
         removeClass(testSubmit,'active');
     })
@@ -149,6 +159,7 @@
     testDel.addEventListener('click',function(e){
         testForm.reset();
         listChange(greenKey,0);
+        greenBtn($(testLand),testList);
         bgblack.style.display='none';
         removeClass(testSubmit,'active');
     })
@@ -176,5 +187,51 @@
         }
        // e.preventDefault();
         this.submit();
+    })
+
+
+
+    //获取表单
+    function resTable(){
+
+    }
+    // $('#updateSubmit').modal('loaded.bs.modal',function(){
+    //     setTimeout(function(){$('#updateSubmit').modal('show')},5000);
+    // });
+    //删除和更改
+    $('.update').click(function(){
+        //console.log($(this).siblings('.tableId').attr('data-resId')); //存id
+        var template='';
+        var id=$(this).siblings('input[name="res[_id]"]').val();
+        var title=$(this).siblings('input[name="res[title]"]').val();
+        var type=$(this).siblings('input[name="res[type]"]').val();
+        var summary=$(this).siblings('input[name="res[summary]"]').val();
+        var subjection=$(this).siblings('input[name="res[subjection]"]').val();
+        template='<div id="updateForm">'+
+            '<input type="hidden" name="course[_id]" value='+id+'>'+
+            '<input type="hidden" name="course[type]" value='+type+'>'+
+            '<div class="form-group"><label class="col-sm-3 control-label">题目</label><div class="col-sm-9"><input class="form-control" type="text" name="course[title]" value='+title+'>'+'</div></div>'+
+            '<div class="form-group"><label class="col-sm-3 control-label">简介</label><div class="col-sm-9"><textarea class="form-control" type="text" name="course[summary]" rows="5">'+summary+'</textarea>'+'</div></div>'+
+            '<div class="form-group"><label class="col-sm-3 control-label">属性</label><div class="col-sm-9"><input class="form-control" type="text" name="course[subjection]" value='+subjection+'>'+'</div></div>';
+        if(type==1){
+            var flash=$(this).siblings('input[name="res[flash]"]').val();
+            template+='<div class="form-group"><label class="col-sm-3 control-label">视频地址</label><div class="col-sm-9"><input class="form-control" type="text" name="course[flash]" value='+flash+'>'+'</div></div></form>'
+            console.log(flash);
+        }else if(type==2){
+            var doc=$(this).siblings('input[name="res[doc]"]').val();
+            console.log(doc);
+        }else{
+            var _changeList=$(this).siblings('input[name="res[testList]"]').val();   //记得最后模态框提交的时候要把这个input的value改了
+            var changeList=JSON.parse(_changeList);
+            template+='<div class="form-group"><label class="col-sm-3 control-label">在线测试题目</label><div class="col-sm-9"><a id="changeAdd" class="btn">+</a><span class="testAdd">添加</span></div></div>' +
+                '<div class="form-group"><div class="col-sm-3"></div><div class="col-sm-9" id="changeLand">';
+            for(var i=0;i<changeList.length;i++){
+                template+='<a class="testLandBtn btn-success">'+(i+1)+'</a>';
+            }
+            template+='</div></div></form>';
+            console.log(testList);
+        }
+        $('#updateSubmit .modal-body').html(template);
+        console.log(id,title,type,summary,subjection);
     })
 })()
