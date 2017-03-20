@@ -46,6 +46,70 @@ exports.save=function(req,res){
         })
     }
 }
+exports.update=function(req,res){
+    var data=req.body.data;
+
+    console.log(data);
+    Resource.findOne({_id:data._id},function(err,resource){
+        if(err){
+            console.log(err);
+        }else{
+                resource.title=data.title,
+                resource.type=data.type,
+                resource.subjection=data.subjection,
+                resource.summary=data.summary,
+                resource.flash=data.flash,
+                resource.save(function(err,resour){
+                    if(err){
+                        console.log(err);
+                    }
+                    if(resour.type==3){
+                        var _testList=JSON.parse(data.testList);
+                        for (var i = 0; i < _testList.length; i++) {
+                            OnlineTest.findOne({_id:_testList[i]._id},function(err,onlineTest){
+                                onlineTest.question=_testlist[i].question;
+                                onlineTest.A=_testlist[i].A;
+                                onlineTest.B=_testlist[i].B;
+                                onlineTest.C=_testlist[i].C;
+                                onlineTest.D=_testlist[i].D;
+                                onlineTest.answer=_testlist[i].answer;
+                                onlineTest.why=_testlist[i].why;
+                                onlineTest.save(function(){
+                                    if (err) {
+                                        console.log('save test err' + err);
+                                    }
+                                })
+                            })
+                        }
+                    }
+                })
+            res.json({success:1,message:'操作成功',resource:resour,testList:_testList});
+        }
+
+    })
+
+}
+
+exports.del=function(req,res){
+    var data=req.body.data;
+    Resource.remove({_id:data._id},function(err,resource){
+        if(err){
+            console.log(err);
+        }else if(data.type==3){
+            OnlineTest.remove({resourId:data._id},function(err,onlineTest){
+                if(err){
+                    console.log(err);
+                }else{
+                    res.json({success:1,message:'操作成功'});
+                }
+            })
+        }
+        else{
+            res.json({success:1,message:'操作成功'});
+        }
+    }
+}
+
 exports.findRes=function(req,res){
     var resId=req.params.id;
     var user=req.session.user;

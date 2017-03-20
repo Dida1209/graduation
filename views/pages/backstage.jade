@@ -74,10 +74,10 @@ block content
                             th 操作
                     tbody
                     - var resources=[{'_id':'1','type':'1','title':'学会栈','subjection':'栈','flash':'http://1111','summary':'简介简介简介简介简介简介简介简介简介'},{'summary':'简介简介简介简介简介简介简介简介简介','_id':'2','type':'3','title':'学会栈','subjection':'栈','testList':'[{"question":"duiduiduidui","A":"A","B":"B","C":"C","D":"D","answer":"D","why":"shishishishishsi"},{"question":"bububububu","A":"D","B":"C","C":"B","D":"A","answer":"B","why":"yesyesyesyes"},{"question":"yeanyeanyean","A":"B","B":"D","C":"A","D":"C","answer":"C","why":"hihihihi"}]'},{'summary':'简介简介简介简介简介简介简介简介简介','_id':'3','type':'3','title':'学会栈','subjection':'栈','testList':'[{"question":"duiduiduidui","A":"A","B":"B","C":"C","D":"D","answer":"D","why":"shishishishishsi"},{"question":"yeanyeanyean","A":"B","B":"D","C":"A","D":"C","answer":"C","why":"hihihihi"}]'}]
-                        input.tableId(type='hidden',data-resId=n++)
+                    - var n=0
                         if resources
                             each item in resources
-                                tr
+                                tr.tableTr(data-trId=n++)
                                     td(scope='row')
                                         if item.type==1
                                             | 视频
@@ -150,17 +150,17 @@ block content
                     h4.modal-title 更改资源
                 .modal-body.form-horizontal
                 .modal-footer
-                    button.btn.btn-primary 确定
-                    button.btn.btn-danger 取消
+                    button#updateSure.btn.btn-primary(type="submit") 确定
+                    button#updateCancel.btn.btn-danger(type="button",data-dismiss="modal") 取消
 
     #delSubmit.modal.fade(role='dialog')
         .modal-dialog
             .modal-content
                 .modal-header
                     h4.modal-title 删除资源
-                .modal-body
+                .modal-body.form-horizontal
                 .modal-footer
-                    button.btn.btn-primary 确定
-                    button.btn.btn-danger 取消
+                    button#delSure.btn.btn-primary(type="submit") 确定
+                    button#delCancel.btn.btn-danger(type="button",data-dismiss="modal") 取消
 block append script
     script(src='/js/backstage.js')

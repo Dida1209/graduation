@@ -52,7 +52,8 @@ module.exports = function(app){
     app.get('/user/findComment',userPocket.findComment);
 //后台功能
     app.post('/admin/course/new',resource.save);
-
+    app.post('/admin/course/update',resource.update);
+    app.post('/admin/course/del',resource.del)
 //做测试尝试
     //测试submenu
     app.get('/testRes',function(req,res){
