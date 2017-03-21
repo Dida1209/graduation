@@ -44,7 +44,12 @@ exports.signin = function(req,res) {
             if (isMatch) {
                 req.session.user = user;
                 console.log('match ' + req.session.user);
-                res.redirect('/');
+                if(user.isAdmin){
+                    res.redirect('/backstage');
+                }else{
+                    res.redirect('/');
+                }
+
                 // res.render('index',{user:user});
             }else {
                 console.log('no match'+isMatch);
