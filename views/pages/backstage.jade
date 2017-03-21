@@ -76,15 +76,26 @@ block content
                     - var resources=[{'_id':'1','type':'1','title':'学会栈','subjection':'栈','flash':'http://1111','summary':'简介简介简介简介简介简介简介简介简介'},{'summary':'简介简介简介简介简介简介简介简介简介','_id':'2','type':'3','title':'学会栈','subjection':'栈','testList':'[{"question":"duiduiduidui","A":"A","B":"B","C":"C","D":"D","answer":"D","why":"shishishishishsi"},{"question":"bububububu","A":"D","B":"C","C":"B","D":"A","answer":"B","why":"yesyesyesyes"},{"question":"yeanyeanyean","A":"B","B":"D","C":"A","D":"C","answer":"C","why":"hihihihi"}]'},{'summary':'简介简介简介简介简介简介简介简介简介','_id':'3','type':'3','title':'学会栈','subjection':'栈','testList':'[{"question":"duiduiduidui","A":"A","B":"B","C":"C","D":"D","answer":"D","why":"shishishishishsi"},{"question":"yeanyeanyean","A":"B","B":"D","C":"A","D":"C","answer":"C","why":"hihihihi"}]'}]
                     - var n=0
                         if resources
-                            each item in resources
-                                tr.tableTr(data-trId=n++)
-                                    td(scope='row')
-                                        if item.type==1
-                                            | 视频
-                                        if item.type == 2
-                                            | 文档
-                                        if item.type == 3
-                                            | 在线测试
+                            each resour in resources
+                                each item in resour
+                                    if item.active
+                                        tr.tableTr.act(data-trId=n++)
+                                            td(scope='row')
+                                                if item.type == 1
+                                                    | 视频
+                                                if item.type == 2
+                                                    | 文档
+                                                if item.type == 3
+                                                    | 在线测试
+                                    else
+                                        tr.tableTr(data-trId=n++)
+                                            td(scope='row')
+                                                if item.type==1
+                                                    | 视频
+                                                if item.type == 2
+                                                    | 文档
+                                                if item.type == 3
+                                                    | 在线测试
                                     td=item.title
                                     td=item.summary
                                     td
@@ -95,11 +106,11 @@ block content
                                         input(type='hidden',name='res[type]',value=item.type)
                                         input(type='hidden',name='res[_id]',value=item._id)
                                         input(type='hidden',name='res[subjection]',value=item.subjection)
-                                        if item.type==1
+                                        if item.type == 1
                                             input(type='hidden',name='res[flash]',value=item.flash)
-                                        if item.type==2
+                                        if item.type == 2
                                             input(type='hidden',name='res[doc]',value=item.doc)
-                                        if item.type==3
+                                        if item.type == 3
                                             input(type='hidden',name='res[testList]',value=item.testList)
     #bgblack
     #testSubmit.form-horizontal

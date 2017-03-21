@@ -24,7 +24,8 @@ module.exports = function(app){
         })
 
     //资源
-        app.get('/resource/:id',resource.findRes)
+        app.get('/resource/:id',resource.findRes);
+        app.get('/backstage/:id',resource.findAll);//如果是从资源页点击资源目录过来的后台的。
 
     //总结
         app.get('/summarize',function(req,res){
@@ -36,8 +37,7 @@ module.exports = function(app){
     //用户
         app.get('/user',user.detail);
     //背景
-        app.get('/backstage',function(req,res){
-            res.render('backstage',{})
+        app.get('/backstage',resource.findAll)
         })
 
 //用户功能

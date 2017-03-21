@@ -2,7 +2,12 @@
    Created by lenovo-pc on 2017/2/25.
 
 .coursetable
-    .courseName #{resource.title}
+    if user.isAdmin
+        .courseName
+            a(href='/backstage/#{resource._id}')
+            |#{resource.title}
+    else
+        .courseName #{resource.title}
     .courseContainer
         .courseDetail
             span 内容类型

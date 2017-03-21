@@ -5,6 +5,7 @@ var Resource=require('../models/resourceSchema');
 var OnlineTest=require('../models/onlineTestSchema');
 var User=require('../models/userSchema');
 var Comment=require('../models/commentSchema');
+var moment=require('moment');
 
 exports.save=function(req,res){
     console.log("...............");
@@ -107,7 +108,53 @@ exports.del=function(req,res){
         else{
             res.json({success:1,message:'操作成功'});
         }
+    })
+}
+
+exports.findAll=function(req,res){
+    var id=req.params.id;
+    var resource=[];
+    if(id){
+        Resource.find({_id:id},function(err,resour){
+            if(err){
+
+            }else{
+                resour.active=true;
+                resource.push(resour);
+            }
+        })
+    }else{
+        Resource.find({type:1},function(err,resour){
+            if(err){
+                console.log(err);
+            }else{
+                resource.push(resour);
+            }
+        })
+        Resource.find({type:2},function(err,resour){
+            if(err){
+                console.log(err);
+            }else{
+                resource.push(resour);
+            }
+        })
+        Resource.find({type:3},function(err,resour){
+            if(err){
+                console.log(err);
+            }else{
+                for(var i=0;i<resour.length;i++){
+                    (function(){
+                        OnlineTest.find({resourId:resour[i]._id},function(err,testarr){
+                            resour[i].testList=testarr;
+                        })
+                    })(i);
+                }
+                resource.push(resour);
+            }
+        })
     }
+    res.render('backstage',{resource:resource});
+
 }
 
 exports.findRes=function(req,res){
@@ -154,7 +201,8 @@ exports.findRes=function(req,res){
                             ifdoComment:ifdoComment,
                             resource:resour,
                             video:resour,
-                            comments:comments
+                            comments:comments,
+                            moment:moment
                         })
                         console.log({
                             ifdoLike:ifdoLike,
@@ -162,7 +210,8 @@ exports.findRes=function(req,res){
                             ifdoComment:ifdoComment,
                             resource:resour,
                             video:resour,
-                            comments:comments
+                            comments:comments,
+                            moment:moment
                         });
                     }
                     // if(resour.type==2){
@@ -185,7 +234,8 @@ exports.findRes=function(req,res){
                                 resource:resour,
                                 test:resour,
                                 comment:comments,
-                                onlineTest:onlinetests
+                                onlineTest:onlinetests,
+                                moment:moment
                             })
                         })
                     }

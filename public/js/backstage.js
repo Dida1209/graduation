@@ -362,17 +362,4 @@
             }
         })
     })
-    // $('#updateForm').submit(function(){
-    //     console.log($('#updateForm'),typeKey);
-    //     if(typeKey==3){
-    //         var _changeList=JSON.stringify(changeList);
-    //         console.log(_changeList);
-    //         // console.log(t);
-    //         // console.log(JSON.parse(t));
-    //         $(this).find('input[name="course[test]"]').val(_changeList);
-    //         console.log(this);
-    //     }
-    //     // e.preventDefault();
-    //     this.submit();
-    // })
 })()
