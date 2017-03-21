@@ -37,7 +37,34 @@ block content
                             .form-group
                                 label.col-sm-2.control-label(for="inputSubjection") 课程分类
                                 .col-sm-10
-                                    input#inputSubjection.form-control(type="text",name="course[subjection]")
+                                    input#inputSubjection.form-control(type="hidden",name="course[subjection]")
+                                    .btn-group(data-btn='1')
+                                        button.btn.btn-default(type='button',data-toggle='dropdown')
+                                            | 请选择
+                                            span.caret
+                                        ul.dropdown-menu
+                                            li
+                                                a(data-index='0',data-value='') 1
+                                            li
+                                                a(data-index='1',data-value='') 1
+                                            li
+                                                a(data-index='2',data-value='') 1
+                                            li
+                                                a(data-index='3',data-value='') 1
+                                            li
+                                                a(data-index='4',data-value='') 1
+                                            li
+                                                a(data-index='5',data-value='') 1
+                                    .btn-group(data-btn='2')
+                                        button.btn.btn-default(type='button',data-toggle='dropdown')
+                                            | 请选择
+                                            span.caret
+                                        ul.dropdown-menu
+                                    .btn-group(data-btn='3')
+                                        button.btn.btn-default(type='button',data-toggle='dropdown')
+                                            | 请选择
+                                            span.caret
+                                        ul.dropdown-menu
                             .form-group
                                 label.col-sm-2.control-label(for="inputSummary") 课程简介
                                 .col-sm-10
