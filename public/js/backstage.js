@@ -24,6 +24,8 @@
 //更新和删除
     //更新删除面板上的小绿按钮
     var changeLand, changeList = [], supper;
+//课程属性
+    var flag=false,str='';
 
 //数组事件公用方法
     //把题目添加到testList数组
@@ -361,5 +363,74 @@
                 }
             }
         })
+    })
+
+//课程属性
+    var d=[[{'name':'顺序表','child':''},{'name':'链表','child':['线性链表','循环链表','双向链表']}],[{'name':'栈','child':''},{'name':'队列','child':['循环队列','链队列']}],[{'name':'树','child':''},{'name':'二叉树','child':['遍历二叉树','线索二叉树']},{'name':'森林','child':''},{'name':'赫尔曼树','child':''}],[{'name':'遍历图','child':''},{'name':'图的连通性','child':''},{'name':'最短路径','child':''},],[{'name':'静态查找表','child':['顺序表查找','有序表查找','索引顺序表查找']},{'name':'动态查找表','child':['二叉排序树','平衡二叉树']},{'name':'哈希表','child':''}],[{'name':'插入排序','child':''},{'name':'快速排序','child':''},{'name':'选择排序','child':['简单排序','堆排序']}]];
+    function subjectionTem(ind,name){
+        var subData;
+        var template='';
+        if(flag){
+            subData=d[flag][ind][name];
+            if(subData.length) {
+                for (var i = 0; i < subData.length; i++) {
+                    template += '<li><a data-index="' + i + '" data-value="' + subData[i] + '">' + subData[i] + '</a></li>'
+                }
+            }
+        }else{
+            flag=ind;
+            subData=d[ind];
+            if(subData.length){
+                for(var i=0;i<subData.length;i++){
+                    template+='<li><a data-index="'+i+'" data-value="'+subData[i].name+'">'+subData[i].name+'</a></li>'
+                }
+            }
+        }
+        return template;
+    }
+    $('.data-btn[data-btn="1"]').click(function(e){
+        $('.data-btn[data-btn="2"]').find('button').html('请选择<span class="caret"></span>');
+        $('.data-btn[data-btn="3"]').find('button').html('请选择<span class="caret"></span>');
+        var index=e.target.getAttribute('data-index');
+        flag=false;
+        var val=e.target.getAttribute('data-value');
+        if(val){
+            $(this).find('button').text(val);
+            var templ=subjectionTem(index,'name');
+            str=val+'-';
+            $('.data-btn[data-btn="2"]').find('ul.dropdown-menu').html(templ);
+        }
+    })
+
+    $('.data-btn[data-btn="2"]').click(function(e){
+        $('.data-btn[data-btn="3"]').find('button').html('请选择<span class="caret"></span>');
+        var index=e.target.getAttribute('data-index');
+        var val=e.target.getAttribute('data-value');
+        if(val){
+            $(this).find('button').text(val);
+            var templ=subjectionTem(index,'child');
+            if(str){
+                var arr=str.split('-');
+                str=arr[0]+'-'+val;
+                if(templ){
+                    $('.data-btn[data-btn="3"]').find('ul.dropdown-menu').html(templ);
+                    $('.data-btn[data-btn="3"]').show();
+                }else{
+                    $('.data-btn[data-btn="3"]').hide();
+                    $('input[name="course[subjection]"]').val(str);
+                }
+            }
+        }
+    })
+    $('.data-btn[data-btn="3"]').click(function(e){
+        var val=e.target.getAttribute('data-value');
+        if(val){
+            $(this).find('button').text(val);
+            if(str){
+                var arr=str.split('-');
+                str=arr[0]+'-'+arr[1]+'-'+val;
+                $('input[name="course[subjection]"]').val(str);
+            }
+        }
     })
 })()

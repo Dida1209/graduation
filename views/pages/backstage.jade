@@ -37,30 +37,30 @@ block content
                             .form-group
                                 label.col-sm-2.control-label(for="inputSubjection") 课程分类
                                 .col-sm-10
-                                    input#inputSubjection.form-control(type="hidden",name="course[subjection]")
-                                    .btn-group(data-btn='1')
+                                    input#inputSubjection.form-control(type="hidden",name="course[subjection]",value)
+                                    .data-btn.btn-group(data-btn='1')
                                         button.btn.btn-default(type='button',data-toggle='dropdown')
                                             | 请选择
                                             span.caret
                                         ul.dropdown-menu
                                             li
-                                                a(data-index='0',data-value='') 1
+                                                a(data-index='0',data-value='线性表') 线性表
                                             li
-                                                a(data-index='1',data-value='') 1
+                                                a(data-index='1',data-value='栈和队列') 栈和队列
                                             li
-                                                a(data-index='2',data-value='') 1
+                                                a(data-index='2',data-value='树和二叉树') 树和二叉树
                                             li
-                                                a(data-index='3',data-value='') 1
+                                                a(data-index='3',data-value='图') 图
                                             li
-                                                a(data-index='4',data-value='') 1
+                                                a(data-index='4',data-value='查找') 查找
                                             li
-                                                a(data-index='5',data-value='') 1
-                                    .btn-group(data-btn='2')
+                                                a(data-index='5',data-value='排序') 排序
+                                    .data-btn.btn-group(data-btn='2')
                                         button.btn.btn-default(type='button',data-toggle='dropdown')
                                             | 请选择
                                             span.caret
                                         ul.dropdown-menu
-                                    .btn-group(data-btn='3')
+                                    .data-btn.btn-group(data-btn='3')
                                         button.btn.btn-default(type='button',data-toggle='dropdown')
                                             | 请选择
                                             span.caret

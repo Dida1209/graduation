@@ -37,8 +37,8 @@ module.exports = function(app){
     //用户
         app.get('/user',user.detail);
     //背景
-        app.get('/backstage',resource.findAll)
-        })
+        app.get('/backstage',resource.findAll);
+
 
 //用户功能
     app.post('/user/signup',user.signup);
@@ -57,8 +57,8 @@ module.exports = function(app){
     app.post('/admin/course/del',resource.del)
 //做测试尝试
     //测试submenu
-    app.get('/testRes',function(req,res){
-        res.render('resource',{
+    app.get('/test',function(req,res){
+        res.render('backstage',{
 
         })
     })
