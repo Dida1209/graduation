@@ -34,14 +34,17 @@ exports.save=function(req,res){
             }
             // console.log(resource);
             for (var i = 0; i < _testList.length; i++) {
-                var _onlineTest = new OnlineTest(_testList[i]);
-                _onlineTest.resourId = resource._id;
-                _onlineTest.save(function (err, onlineTest) {
-                    if (err) {
-                        console.log('save test err' + err);
-                    }
-                    // resource.testList.push(onlineTest._id);
-                })
+                var _id=resource._id;
+                (function(){
+                    var _onlineTest = new OnlineTest(_testList[i]);
+                    _onlineTest.resourId = _id;
+                    _onlineTest.save(function (err, onlineTest) {
+                        if (err) {
+                            console.log('save test err' + err);
+                        }
+                        // resource.testList.push(onlineTest._id);
+                    })
+                })(i)(_id)
             }
             res.redirect('/resource/' + resource._id);
         })

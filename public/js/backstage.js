@@ -164,7 +164,7 @@
     //题目表单确定按钮被点击时
     testBtn.addEventListener('click', function (e) {
         testList[testList.length] = {};
-        listChange(testList.length - 1, 1);
+        listChange(testList.length - 1, testList);
         greenBtn($(testLand), testList);
         bgblack.style.display = 'none';
         removeClass(testSubmit, 'active');
@@ -397,8 +397,9 @@
         if(val){
             $(this).find('button').text(val);
             var templ=subjectionTem(index,'name');
-            str=val+'-';
+            str=val;
             $('.data-btn[data-btn="2"]').find('ul.dropdown-menu').html(templ);
+            $('input[name="course[subjection]"]').val(str);
         }
     })
 
@@ -415,6 +416,7 @@
                 if(templ){
                     $('.data-btn[data-btn="3"]').find('ul.dropdown-menu').html(templ);
                     $('.data-btn[data-btn="3"]').show();
+                    $('input[name="course[subjection]"]').val(str);
                 }else{
                     $('.data-btn[data-btn="3"]').hide();
                     $('input[name="course[subjection]"]').val(str);

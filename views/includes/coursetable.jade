@@ -4,8 +4,7 @@
 .coursetable
     if user.isAdmin
         .courseName
-            a(href='/backstage/#{resource._id}')
-            |#{resource.title}
+            a(href='/backstage/#{resource._id}') #{resource.title}
     else
         .courseName #{resource.title}
     .courseContainer
