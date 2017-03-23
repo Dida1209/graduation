@@ -13,7 +13,7 @@ var ResourceSchema = new mongoose.Schema({
     subjection:String,
     summary:String,
     flash:String,
-    // testList:[{type:ObjectId,ref:'OnlineTest'}],
+    testList:[],
     meta:{
         createAt:{
             type:Date,

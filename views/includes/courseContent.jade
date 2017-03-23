@@ -4,11 +4,11 @@
 .courseContent
     //input(type="hidden",name="resource[id]",value="#{resource._id}")
     .shareBlock
-        if video
+        if resource.type==1
             include ../includes/video
-        if document
+        if resource.type==2
             include ../includes/document
-        if test
+        if resource.type==3
             include ../includes/test
     .publish.clear
         form#commentForm(method="POST",action="/user/doComment")
