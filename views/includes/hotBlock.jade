@@ -5,4 +5,5 @@
     .hotList
         span 热门推荐
     .hotDetail
-            span 热门推荐1
+        each item in hotList
+            a(href='/resource/'+item._id)=item.title

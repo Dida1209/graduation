@@ -32,7 +32,7 @@ $(function(){
                     }
                     aZan.find('span').text(data.likeNum);
                 }else{
-                    alert(data.message)
+                    errorShow(data.message);
                 }
             }
         })
@@ -65,7 +65,7 @@ $(function(){
                     }
                     aCollect.find('span').text(data.collectNum);
                 }else{
-                    alert(data.message)
+                    errorShow(data.message);
                 }
             }
         })

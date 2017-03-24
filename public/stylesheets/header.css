@@ -46,10 +46,12 @@
     vertical-align:top;
 }
 .search-icon{
+    display:inline-block;
     padding-left: 3px;
     width:36px;
     height:38px;
     background:#1abc9c;
+    cursor:pointer;
 }
 .search-icon img{
     vertical-align:middle;

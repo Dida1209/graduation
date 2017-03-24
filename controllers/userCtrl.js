@@ -68,8 +68,13 @@ exports.isLogin=function(req,res,next){
     var user=req.session.user;
     if(!user){
         console.log('isLogin没登录');
+        res.json({
+            success: 0,
+            message: '用户没登录！'
+        });
+    }else{
+        next();
     }
-    next();
 }
 
 exports.detail=function(req,res){

@@ -1,5 +1,4 @@
 .sumCourseContainer{
-    cursor:pointer;
     padding:5px 0 20px 0;
     width:100%;
     border-top:1px solid #D7DCDE;
@@ -14,10 +13,27 @@
 }
 .courseName{
     display:inline-block;
-    width:520px;
+    width:480px;
     height:24px;
     font-size:16px;
     color:#2F4B93;
+    margin-right:20px;
+}
+.courseFirst #zan,
+.courseFirst #comment,
+.courseFirst #collect{
+    display:inline-block;
+    width:40px;
+    height:16px;
+    line-height:16px;
+    margin-top:8px;
+    padding-left:20px;
+    color:#2F4B93;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    cursor:pointer;
+    vertical-align:middle;
 }
 .courseSecond{
     float:left;
@@ -59,4 +75,27 @@
     width:160px;
     height:160px;
 }
-
+.courseFirst #zan{
+    background:url('/img/icon.png') no-repeat 0 -60px ;
+    background-size:15px;
+}
+.courseFirst #zan .active{
+    background:url('/img/icon.png') no-repeat 0 -75px ;
+    background-size:15px;
+}
+.courseFirst #comment{
+    background:url('/img/icon.png') no-repeat 0 -30px ;
+    background-size:15px;
+}
+.courseFirst #comment .active{
+    background:url('/img/icon.png') no-repeat 0 -45px ;
+    background-size:15px;
+}
+.courseFirst #collect{
+    background:url('/img/icon.png') no-repeat 0 0px ;
+    background-size:15px;
+}
+.courseFirst #collect .active{
+    background:url('/img/icon.png') no-repeat 0 -15px ;
+    background-size:15px;
+}

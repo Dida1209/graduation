@@ -168,6 +168,7 @@
         greenBtn($(testLand), testList);
         bgblack.style.display = 'none';
         removeClass(testSubmit, 'active');
+        e.stopPropagation();
     })
     //题目表单修改按钮被点击时
     testModify.addEventListener('click', function (e) {
@@ -181,6 +182,7 @@
 
         bgblack.style.display = 'none';
         removeClass(testSubmit, 'active');
+        e.stopPropagation();
     })
     //题目表单删除按钮被点击时
     testDel.addEventListener('click', function (e) {
@@ -196,6 +198,7 @@
         greenBtn($(testLand), testList);
         bgblack.style.display = 'none';
         removeClass(testSubmit, 'active');
+        e.stopPropagation();
     })
     //每一个小题绿色的按钮被点击时
     testLand.addEventListener('click', function (e) {
@@ -237,7 +240,7 @@
         testDel.style.display = 'block';
         listTestDetail(greenKey, changeList);
         e.stopPropagation();
-        console.log(target, greenKey);
+        // console.log(target, greenKey);
         console.log(changeList);
     }
 
@@ -279,7 +282,7 @@
     }
 
     //删除和更改
-    $('.update').click(function () {
+    $('.update').click(function (e) {
         // console.log(this);
         supper = $(this).parents('.tableTr').attr('data-trId');
         // console.log($('tr[data-trId="' + supper + '"]'));
@@ -293,6 +296,7 @@
                 greenBtnClick(e)
             });
         }
+        e.stopPropagation();
     })
     $('.delete').click(function () {
         // console.log(this);
@@ -305,6 +309,7 @@
                 greenBtnClick(e)
             });
         }
+        e.stopPropagation();
     })
 
     //表单上的确定和取消按钮
@@ -370,6 +375,12 @@
                 }
             }
         })
+    })
+    $('tr').click(function(e){
+        var tar=this;
+        var url=$(tar).attr('data-href');
+        // console.log(url);
+        window.open(url);
     })
 
 //课程属性

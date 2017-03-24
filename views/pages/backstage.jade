@@ -102,7 +102,7 @@ block content
                     - var n=0
                         if resources
                             each item in resources
-                                tr.tableTr(data-trId=n++)
+                                tr.tableTr(data-trId=n++,data-href='/resource/'+item._id)
                                     td(scope='row')
                                         if item.type == 1
                                             | 视频

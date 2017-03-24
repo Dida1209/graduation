@@ -46,6 +46,8 @@
             errorShow('注册用户名、密码不能为空！');
         }
     })
-
-
+//搜索功能
+    $('input[name="searchKey"]').change(function(){
+        $('.search-icon').attr('href','/search/'+$(this).val());
+    })
 })()

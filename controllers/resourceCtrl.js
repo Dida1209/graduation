@@ -116,27 +116,53 @@ exports.del=function(req,res){
     })
 }
 
-exports.findAll=function(req,res){
-    var id=req.params.id;
-    var resource=[];
+exports.findAll=function(req,res) {
+    var url = req.url;
+    var id = req.params.id;
+    var resources;
     // console.log(id);
-    if(id){
-        Resource.find({_id:id},function(err,resour){
-            if(err){
+    if (id) {
+        Resource.find({_id: id}, function (err, resour) {
+            if (err) {
 
-            }else{
-                res.render('backstage',{resources:resour});
+            } else {
+                console.log(url, url == '/summarize')
+                if (url == '/summarize') {
+                    res.render('summarize', {resources: resour});
+                }
+                else {
+                    res.render('backstage', {resources: resour});
+                }
             }
         })
-    }else{
-        Resource.find({},function(err,resour){
-            if(err){
+    } else {
+        if (url == '/summarize') {
+            Resource.find({},function(err,resour){
+                if(err){
 
-            }else{
+                }else{
+                    resources=resour;
+                }
+            })
+            Resource.find().sort({likeNum: -1}).limit(1)
+                .exec(function (err, resour) {
+                    if (err) {
 
-                res.render('backstage',{resources:resour});
-            }
-        })
+                    } else {
+                        console.log(url, url == '/summarize')
+                        res.render('summarize', {resources: resources,hotList:resour});
+                    }
+                })
+        }
+        else {
+            Resource.find({},function(err,resour){
+                if(err){
+
+                }else{
+                    res.render('backstage', {resources: resour});
+                }
+            })
+        }
     }
 
 
@@ -163,86 +189,149 @@ exports.findAll=function(req,res){
     //         }
     //     })
     // }
-
-
 }
 
-exports.findRes=function(req,res){
-    var resId=req.params.id;
-    var user=req.session.user;
-    var userId=user._id;
-    var ifdoLike=false;
-    var ifdoCollect=false;
-    var ifdoComment=false;
+exports.findRes=function(req,res) {
+    var resId = req.params.id;
+    var user = req.session.user;
+    if (user) {
+        var userId = user._id;
+    }
+    var ifdoLike = false;
+    var ifdoCollect = false;
+    var ifdoComment = false;
 
     console.log(resId);
-    Resource.findOne({_id:resId},function(err,resour){
-        Comment.find({resource:resId})
-            .populate('from','name')
-            .populate('reply.from reply.to','name')
-            .exec(function(err,comments){
-                if(err){
+    Resource.findOne({_id: resId}, function (err, resour) {
+        Comment.find({resource: resId})
+            .populate('from', 'name')
+            .populate('reply.from reply.to', 'name')
+            .exec(function (err, comments) {
+                if (err) {
                     console.log(err);
                 }
-                console.log(resour+"  aaaa  "+comments);
-                console.log('shsihis'+resour.type);
-                User.findOne({_id:userId},function(err,user){
-                    for(var i=0;i<user.myLike.reslist.length;i++){
-                        if(user.myLike.reslist[i].toString()==resour._id.toString()){
-                            ifdoLike=true;
-                            console.log('dianzanguolede');
-                        }
-                    }
-                    for(var i=0;i<user.myCollect.reslist.length;i++){
-                        if(user.myCollect.reslist[i].toString()==resour._id.toString()){
-                            ifdoCollect=true;
-                        }
-                    }
-                    for(var i=0;i<user.myComment.reslist.length;i++){
-                        if(user.myComment.reslist[i].toString()==resour._id.toString()){
-                            ifdoComment=true;
-                        }
-                    }
-                    console.log(ifdoLike,ifdoCollect,ifdoComment);
-                    // if(resour.type==1){
-                    resour.testList=JSON.parse(resour.testList);
-                    console.log(resour.testList);
-                        res.render('resource',{
-                            ifdoLike:ifdoLike,
-                            ifdoCollect:ifdoCollect,
-                            ifdoComment:ifdoComment,
-                            resource:resour,
-                            // video:resour,
-                            comments:comments,
-                            moment:moment
-                        })
-                        console.log({
-                            ifdoLike:ifdoLike,
-                            ifdoCollect:ifdoCollect,
-                            ifdoComment:ifdoComment,
-                            resource:resour,
-                            // video:resour,
-                            comments:comments,
-                            moment:moment
-                        });
-                    // }
-                    // if(resour.type==3){
-                    //     OnlineTest.find({resourId:resour._id},function(err,onlinetests){
-                    //         console.log(onlinetests);
-                    //         res.render('resource',{
-                    //             ifdoLike:ifdoLike,
-                    //             ifdoCollect:ifdoCollect,
-                    //             ifdoComment:ifdoComment,
-                    //             resource:resour,
-                    //             test:resour,
-                    //             comment:comments,
-                    //             onlineTest:onlinetests,
-                    //             moment:moment
-                    //         })
-                    //     })
-                    // }
-                })
+                console.log(resour + "  aaaa  " + comments);
+                console.log('shsihis' + resour.type);
+                if (user) {
 
+                    User.findOne({_id: userId}, function (err, user) {
+                        for (var i = 0; i < user.myLike.reslist.length; i++) {
+                            if (user.myLike.reslist[i].toString() == resour._id.toString()) {
+                                ifdoLike = true;
+                                console.log('dianzanguolede');
+                            }
+                        }
+                        for (var i = 0; i < user.myCollect.reslist.length; i++) {
+                            if (user.myCollect.reslist[i].toString() == resour._id.toString()) {
+                                ifdoCollect = true;
+                            }
+                        }
+                        for (var i = 0; i < user.myComment.reslist.length; i++) {
+                            if (user.myComment.reslist[i].toString() == resour._id.toString()) {
+                                ifdoComment = true;
+                            }
+                        }
+                    })
+                }
+                console.log(ifdoLike, ifdoCollect, ifdoComment);
+                // if(resour.type==1){
+                resour.testList = JSON.parse(resour.testList);
+                console.log(resour.testList);
+                res.render('resource', {
+                    ifdoLike: ifdoLike,
+                    ifdoCollect: ifdoCollect,
+                    ifdoComment: ifdoComment,
+                    resource: resour,
+                    // video:resour,
+                    comments: comments,
+                    moment: moment
+                })
+                console.log({
+                    ifdoLike: ifdoLike,
+                    ifdoCollect: ifdoCollect,
+                    ifdoComment: ifdoComment,
+                    resource: resour,
+                    // video:resour,
+                    comments: comments,
+                    moment: moment
+                });
+                // }
+                // if(resour.type==3){
+                //     OnlineTest.find({resourId:resour._id},function(err,onlinetests){
+                //         console.log(onlinetests);
+                //         res.render('resource',{
+                //             ifdoLike:ifdoLike,
+                //             ifdoCollect:ifdoCollect,
+                //             ifdoComment:ifdoComment,
+                //             resource:resour,
+                //             test:resour,
+                //             comment:comments,
+                //             onlineTest:onlinetests,
+                //             moment:moment
+                //         })
+                //     })
+                // }
             })
     })
+}
+exports.findType=function(req,res){
+    var _type=req.params.type;
+    var resource;
+    var _key;
+    if(_type==1){
+        _key='视频';
+    }if(_type==2){
+        _key='文档';
+    }if(_type==3){
+        _key='测试';
+    }
+    Resource.find({type:_type},function(err,resour){
+        if(err){
+
+        }   else{
+            resource=resour;
+        }
+    })
+    Resource.find().sort({likeNum: -1}).limit(1)
+        .exec(function (err, resour) {
+            if (err) {
+
+            } else {
+                console.log('resource111',resource,"breaknav",_key);
+                res.render('summarize', {resources: resource,hotList:resour,breadnav:_key});
+            }
+        })
+}
+exports.findKey=function(req,res){
+    var _key=req.params.key;
+    var pattern=new RegExp("^.*"+_key+".*$");
+    console.log(_key);
+    var resource=[];
+    Resource.find({subjection:pattern},function(err,resourType){
+        if(err){
+
+        }else{
+            resource=resource.concat(resourType);
+        }
+    })
+    Resource.find({summary:pattern},function(err,resourSum){
+        if(err){
+
+        }else{
+            resource=resource.concat(resourSum);
+        }
+    })
+    Resource.find({title:pattern},function(err,resourTitle) {
+        resource=resource.concat(resourTitle);
+        console.log(resource);
+    })
+    Resource.find().sort({likeNum: -1}).limit(1)
+        .exec(function (err, resour) {
+            if (err) {
+
+            } else {
+                console.log('resource111',resource,"breaknav",_key);
+                res.render('summarize', {resources: resource,hotList:resour,breadnav:_key});
+            }
+        })
 }
