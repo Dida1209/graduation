@@ -237,7 +237,7 @@
         testDel.style.display = 'block';
         listTestDetail(greenKey, changeList);
         e.stopPropagation();
-        // console.log(target, greenKey);
+        console.log(target, greenKey);
         console.log(changeList);
     }
 
@@ -267,7 +267,7 @@
         } else {
             var _changeList = $(that).siblings('input[name="res[testList]"]').val();   //记得最后模态框提交的时候要把这个input的value改了
             changeList = JSON.parse(_changeList);
-            template += '<div class="form-group"><label class="col-sm-3 control-label">在线测试题目</label><div class="col-sm-9"><a id="changeAdd" class="btn">+</a><span class="testAdd">添加</span></div></div>' +
+            template += '<div class="form-group"><label class="col-sm-3 control-label">在线测试题目</label></div>' +
                 '<div class="form-group"><div class="col-sm-3"></div><div class="col-sm-9" id="changeLand">';
             for (var i = 0; i < changeList.length; i++) {
                 template += '<a class="testLandBtn btn-success">' + (i + 1) + '</a>';
@@ -282,7 +282,7 @@
     $('.update').click(function () {
         // console.log(this);
         supper = $(this).parents('.tableTr').attr('data-trId');
-        console.log($('tr[data-trId="' + supper + '"]'));
+        // console.log($('tr[data-trId="' + supper + '"]'));
         var temp = createTemplate(this, 'update');
         $('#updateSubmit .modal-body').html(temp);
         changeLand = document.getElementById('changeLand');
@@ -299,7 +299,14 @@
         supper = $('.tableId').attr('data-resId');
         var temp = createTemplate(this, 'del');
         $('#delSubmit .modal-body').html(temp);
+        changeLand = document.getElementById('changeLand');
+        if (changeLand) {
+            changeLand.addEventListener('click', function (e) {
+                greenBtnClick(e)
+            });
+        }
     })
+
     //表单上的确定和取消按钮
     $('#updateSure').click(function () {
         var uForm = $('#updateSubmit .modal-body');

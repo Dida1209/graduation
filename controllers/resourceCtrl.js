@@ -119,7 +119,7 @@ exports.del=function(req,res){
 exports.findAll=function(req,res){
     var id=req.params.id;
     var resource=[];
-    console.log(id);
+    // console.log(id);
     if(id){
         Resource.find({_id:id},function(err,resour){
             if(err){
@@ -133,8 +133,8 @@ exports.findAll=function(req,res){
             if(err){
 
             }else{
-                resource.push(resour);
-                res.render('backstage',{resources:resource});
+
+                res.render('backstage',{resources:resour});
             }
         })
     }

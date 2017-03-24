@@ -115,8 +115,6 @@ block content
                                     td
                                         if item.type==1||item.type==2
                                             button.update.btn.btn-group.btn-warning(data-toggle='modal',data-target='#updateSubmit') 更改
-                                        if item.type==3
-                                            button.browse.btn.btn-group.btn-primary(data-toggle='modal',data-target='#browseSubmit') 查看
                                         button.delete.btn.btn-group.btn-danger(data-toggle='modal',data-target='#delSubmit') 删除
                                         input(type='hidden',name='res[summary]',value=item.summary)
                                         input(type='hidden',name='res[title]',value=item.title)
