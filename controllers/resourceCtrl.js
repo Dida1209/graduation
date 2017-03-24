@@ -2,7 +2,7 @@
  * Created by lenovo-pc on 2017/3/3.
  */
 var Resource=require('../models/resourceSchema');
-var OnlineTest=require('../models/onlineTestSchema');
+// var OnlineTest=require('../models/onlineTestSchema');
 var User=require('../models/userSchema');
 var Comment=require('../models/commentSchema');
 var moment=require('moment');
