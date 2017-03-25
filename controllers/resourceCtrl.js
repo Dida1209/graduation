@@ -6,6 +6,7 @@ var Resource=require('../models/resourceSchema');
 var User=require('../models/userSchema');
 var Comment=require('../models/commentSchema');
 var moment=require('moment');
+var busboy=require('busboy');
 
 exports.save=function(req,res){
     console.log("...............");
@@ -18,14 +19,17 @@ exports.save=function(req,res){
         flash:_course.flash,
         testList:_course.test
     });
-    // if(_resource.type==1) {
+     if(_resource.type!=2) {
         _resource.save(function (err, resource) {
             if (err) {
                 console.log(err);
             }
             res.redirect('/resource/' + resource._id);
         })
-    // }
+    }
+    else{
+
+     }
     // if(_resource.type==3) {
     //     // var _testList = JSON.parse(_course.test);
     //     // console.log("_course is",_testList[0]);

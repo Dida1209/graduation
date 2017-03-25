@@ -104,6 +104,21 @@
 　　　　收藏分类（收藏的评论、收藏的资源）
 　　　　我的评论被其他人点赞可以增高我的人气，人气越高，她的收藏就会在热门中排的越前
 　　　　
-　　　　
-　　　　
+　
+connect-multiparty是朱门处理post数据相关的依赖包　　　
+busboy:express4.0的中间件，busboy在上传文件时会监听事件on('file')，而表单中非文件类型的其他参数会在on('field')上监听。
+而这个事件会在enctype="multipart/form-data"的form表单post提交数据时被监听。
+
+function(fieldname, file, filename, encoding, mimetype) 回调函数中是服务器获取到的文件相关处理信息
+fieldname 是一个上传文件的标识
+file 是上传的文件流句柄
+filenname 是文件名(包含扩展名)
+encoding 是文件编码类型
+mimetype 是文件mime类型
+var tmp_path=path.join(os.tmpDir(), path.basename(filename));根据系统临时目录 和 文件名,来定位文件临时存放路径
+os.tmpDir()是当前系统临时目录，需要引用require('os'),path.basename(filename)是提取filename路径中最后一个/之后的文件名
+
+gridfs-stream:　mongodb中的一个内置功能，可以用于存放大量文件　
+gridfs存放大文件，观察fs.files和fs.chunks，fs.files存放的是这个文件的信息，fs.chunks存放的是内容，如果内容太大，这个文件会被分割成多个chunk。
+两者通过_id和file._id关联
 　　　　
