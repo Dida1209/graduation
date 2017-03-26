@@ -6,30 +6,37 @@ var Resource=require('../models/resourceSchema');
 var User=require('../models/userSchema');
 var Comment=require('../models/commentSchema');
 var moment=require('moment');
-var busboy=require('busboy');
+//上传文件
+var mongo=require('mongodb');
+var Busboy=require('busboy');
+var Grid=require('gridfs-stream');
+//create or use an existing mongodb-native db instance
+var db=new mongo.Db('graduation',new mongo.Server("127.0.0.1",27017));
+var gfs=Grid(db,mongo);
+
 
 exports.save=function(req,res){
-    console.log("...............");
-    var _course=req.body.course;
-    var _resource=new Resource({
-        title:_course.title,
-        type:_course.type,
-        subjection:_course.subjection,
-        summary:_course.summary,
-        flash:_course.flash,
-        testList:_course.test
-    });
-     if(_resource.type!=2) {
+    console.log("111111111111111...............",req.body);
+    // var _course=req.body.course;
+         var _resource=new Resource({
+         title:req.body.title,
+         type:req.body.type,
+         subjection:req.body.subjection,
+         summary:req.body.summary
+        });
+         if(req.body.type==1){
+             _resource.flash=req.body.flash;
+         }else{
+             _resource.testList=req.body.test;
+         }
         _resource.save(function (err, resource) {
             if (err) {
                 console.log(err);
             }
             res.redirect('/resource/' + resource._id);
         })
-    }
-    else{
 
-     }
+
     // if(_resource.type==3) {
     //     // var _testList = JSON.parse(_course.test);
     //     // console.log("_course is",_testList[0]);
@@ -55,6 +62,43 @@ exports.save=function(req,res){
     //     })
     // }
 }
+
+exports.saveDoc=function(req,res){
+        // console.log(req.body);
+        var busboy=new Busboy({headers:req.headers});
+        console.log('busboy',busboy);
+        var _id=new mongo.ObjectId();
+        var body={};
+        console.log("66666666666"+body,_id);
+        busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+            console.log('file',fieldname,filename)
+            //streaming to gridfs
+            var writeStream=gfs.createWriteStream({
+                //Alternatively you could read the file using an _id.This is often a better option,since filenames don't have to be unique within the collection.e.g.
+                _id:_id,
+                filename:filename,
+                mode:'w',
+                content_type:mimetype
+            });
+            console.log(writeStream);
+            file.pipe(writeStream);
+        }).on('field',function(key,value){
+            body[key]=value;
+            console.log('field',body);
+        }).on('finish',function(){
+            var _res=new Resource(
+                {
+                    title:_course.title,
+                    type:_course.type,
+                    subjection:_course.subjection,
+                    summary:_course.summary
+                });
+            console.log(_res);
+        })
+
+
+}
+
 exports.update=function(req,res){
     var data=req.body.data;
 
@@ -238,8 +282,9 @@ exports.findRes=function(req,res) {
                     })
                 }
                 console.log(ifdoLike, ifdoCollect, ifdoComment);
-                // if(resour.type==1){
-                resour.testList = JSON.parse(resour.testList);
+                if(resour.type==3) {
+                    resour.testList = JSON.parse(resour.testList);
+                }
                 console.log(resour.testList);
                 res.render('resource', {
                     ifdoLike: ifdoLike,

@@ -6,8 +6,8 @@
     var f = true, greenKey;//默认添加的，false删除的 greenKey小绿按钮上的值
 //添加
     //资源面板
-    var testAdd = document.getElementById('testAdd');   //资源表单上的添加
-    var testLand = document.getElementById('testLand');  //资源表单上的题目标号
+    var testAdd;   //资源表单上的添加
+    var testLand; //资源表单上的题目标号
     //资源面板上的表单
     var resForm = document.getElementById('resForm');
     //测试题目的面板
@@ -112,32 +112,44 @@
 //添加的事件
     //资源面板上不同课程类型显示不同的输入表格
     function resGroup(i) {
-        for (var j = 1; j < 4; j++) {
-            if (i == j) {
-                // console.log('i       ' +i)
-                $('#group' + i).show();
-            } else {
-                // console.log('j    '+j)
-                console.log($('#group' + j).find('input'));
-                $('#group' + j).find('input').val('');
-                $('#group' + j).hide();
-            }
+        var tem='';
+        if(i==1){
+            tem='<label class="col-sm-2 control-label" for="inputFlash">片源地址</label>'+
+                    '<div class="col-sm-10"><input id="inputFlash" class="form-control" type="text" name="flash"/></div>';
+            $('.resGroup').html(tem);
+            $('.resLand').html('');
+        }else if(i==2){
+            tem='<label class="col-sm-2 control-label" for="inputDoc">文件地址</label>'+
+                '<div class="col-sm-10"><input id="inputDoc" class="form-control" type="file" name="doc"/></div>';
+            $('.resGroup').html(tem);
+            $('.resLand').html('');
+        }else{
+            tem='<label class="col-sm-2 control-label" >在线测试题目</label>'+
+                '<div class="col-sm-10"><a id="testAdd" class="btn">+</a><span class="testAdd">添加</span><input type="hidden" name="test"/></div>';
+            $('.resGroup').html(tem);
+            tem='<div class="col-sm-2"></div><div class="col-sm-10" id="testLand"></div>';
+            $('.resLand').html(tem);
+            testAdd = document.getElementById('testAdd');
+            testAdd.addEventListener('click', testFun);
+            testLand= document.getElementById('testLand');
+            testLand.addEventListener('click', testLandFun);
         }
     }
 
     //按钮事件
     //课程类型radio的点击，不同类型，显示不同的group
-    $.each($('input[name="course[type]"]'), function () {
+    $.each($('#resForm input[name="type"]'), function () {
         $(this).click(function (e) {
             console.log('each ' + $(this).val());
             typeKey = $(this).val();
             resGroup($(this).val());
+            testList=[];
             e.stopPropagation();
         })
 
     })
     //题目的答案，点击radio把value值传给testAns
-    $.each($('input[name="test[answer]"]'), function () {
+    $.each($('#resForm input[name="test[answer]"]'), function () {
         $(this).click(function (e) {
             console.log('radio' + $(this).val())
             testAns = $(this).val();
@@ -145,15 +157,16 @@
         })
     })
     //点击添加按钮
-    testAdd.addEventListener('click', function (e) {
-        testForm.reset();
-        bgblack.style.display = 'block';
-        addClass(testSubmit, 'active');
-        testBtn.style.display = 'block';
-        testModify.style.display = 'none';
-        testDel.style.display = 'none';
-        e.stopPropagation();
-    })
+    function testFun(e){
+            testForm.reset();
+            bgblack.style.display = 'block';
+            addClass(testSubmit, 'active');
+            testBtn.style.display = 'block';
+            testModify.style.display = 'none';
+            testDel.style.display = 'none';
+            e.stopPropagation();
+    }
+
     //遮罩层点击，等同于取消
     bgblack.addEventListener('click', function (e) {
         testForm.reset();
@@ -201,7 +214,7 @@
         e.stopPropagation();
     })
     //每一个小题绿色的按钮被点击时
-    testLand.addEventListener('click', function (e) {
+    function testLandFun(e){
         var target = e.target;
         greenKey = target.innerHTML - 1;
         bgblack.style.display = 'block';
@@ -211,7 +224,7 @@
         testDel.style.display = 'block';
         listTestDetail(greenKey, testList);
         e.stopPropagation();
-    })
+    }
     //最后资源表单的提交，提交前把隐藏域放进form
     resForm.addEventListener('submit', function (e) {
         if (typeKey == 3) {
@@ -219,7 +232,7 @@
             console.log(_testList);
             // console.log(t);
             // console.log(JSON.parse(t));
-            $('input[name="course[test]"]').val(_testList);
+            $('#resForm input[name="test"]').val(_testList);
             console.log(this);
         }
         // e.preventDefault();
@@ -254,21 +267,21 @@
         var summary = $(that).siblings('input[name="res[summary]"]').val();
         var subjection = $(that).siblings('input[name="res[subjection]"]').val();
         template = '<div id="' + n + 'Form">' +
-            '<input type="hidden" name="course[_id]" value=' + id + '>' +
-            '<input type="hidden" name="course[type]" value=' + typeKey + '>' +
+            '<input type="hidden" name="_id" value=' + id + '>' +
+            '<input type="hidden" name="type" value=' + typeKey + '>' +
             // '<input type="hidden" name="course[test]" value>'+
-            '<div class="form-group"><label class="col-sm-3 control-label">题目</label><div class="col-sm-9"><input class="form-control" type="text" name="course[title]" value=' + title + '>' + '</div></div>' +
-            '<div class="form-group"><label class="col-sm-3 control-label">简介</label><div class="col-sm-9"><textarea class="form-control" type="text" name="course[summary]" rows="5">' + summary + '</textarea>' + '</div></div>' +
-            '<div class="form-group"><label class="col-sm-3 control-label">属性</label><div class="col-sm-9"><input class="form-control" type="text" name="course[subjection]" value=' + subjection + '>' + '</div></div>';
+            '<div class="form-group"><label class="col-sm-3 control-label">题目</label><div class="col-sm-9"><input class="form-control" type="text" name="title" value=' + title + '>' + '</div></div>' +
+            '<div class="form-group"><label class="col-sm-3 control-label">简介</label><div class="col-sm-9"><textarea class="form-control" type="text" name="summary" rows="5">' + summary + '</textarea>' + '</div></div>' +
+            '<div class="form-group"><label class="col-sm-3 control-label">属性</label><div class="col-sm-9"><input class="form-control" type="text" name="subjection" value=' + subjection + '>' + '</div></div>';
         if (typeKey == 1) {
             var flash = $(that).siblings('input[name="res[flash]"]').val();
-            template += '<div class="form-group"><label class="col-sm-3 control-label">视频地址</label><div class="col-sm-9"><input class="form-control" type="text" name="course[flash]" value=' + flash + '>' + '</div></div></form>'
+            template += '<div class="form-group"><label class="col-sm-3 control-label">视频地址</label><div class="col-sm-9"><input class="form-control" type="text" name="flash" value=' + flash + '>' + '</div></div></form>'
             console.log(flash);
         } else if (typeKey == 2) {
-            var doc = $(that).siblings('input[name="res[doc]"]').val();
+            var doc = $(that).siblings('input[name="doc"]').val();
             console.log(doc);
         } else {
-            var _changeList = $(that).siblings('input[name="res[testList]"]').val();   //记得最后模态框提交的时候要把这个input的value改了
+            var _changeList = $(that).siblings('input[name="testList"]').val();   //记得最后模态框提交的时候要把这个input的value改了
             changeList = JSON.parse(_changeList);
             template += '<div class="form-group"><label class="col-sm-3 control-label">在线测试题目</label></div>' +
                 '<div class="form-group"><div class="col-sm-3"></div><div class="col-sm-9" id="changeLand">';
@@ -316,13 +329,13 @@
     $('#updateSure').click(function () {
         var uForm = $('#updateSubmit .modal-body');
         var data = {};
-        data._id = $(uForm).find('input[name="course[_id]"]').val();
-        data.title = $(uForm).find('input[name="course[title]"]').val();
-        data.type = $(uForm).find('input[name="course[type]"]').val();
-        data.subjection = $(uForm).find('input[name="course[subjection]"]').val();
-        data.summary = $(uForm).find('textarea[name="course[summary]"]').text();
+        data._id = $(uForm).find('input[name="_id"]').val();
+        data.title = $(uForm).find('input[name="title"]').val();
+        data.type = $(uForm).find('input[name="type"]').val();
+        data.subjection = $(uForm).find('input[name="subjection"]').val();
+        data.summary = $(uForm).find('textarea[name="summary"]').text();
         if (data.type == 1) {
-            data.flash = $(uForm).find('input[name="course[flash]"]').val();
+            data.flash = $(uForm).find('input[name="flash"]').val();
         } else if (data.type == 2) {
 
         } else {
@@ -360,8 +373,8 @@
     $('#delSure').click(function() {
         var dForm=$('#delSubmit .modal-body');
         var data={};
-        data._id=$(dForm).find('input[name="course[_id]"]').val();
-        data.type=$(uForm).find('input[name="course[type]"]').val();
+        data._id=$(dForm).find('input[name="_id"]').val();
+        data.type=$(uForm).find('input[name="type"]').val();
         $.ajax({
             url:'/admin/course/del',
             type:'post',
@@ -417,7 +430,7 @@
             var templ=subjectionTem(index,'name');
             str=val;
             $('.data-btn[data-btn="2"]').find('ul.dropdown-menu').html(templ);
-            $('input[name="course[subjection]"]').val(str);
+            $('input[name="subjection"]').val(str);
         }
     })
 
@@ -434,10 +447,10 @@
                 if(templ){
                     $('.data-btn[data-btn="3"]').find('ul.dropdown-menu').html(templ);
                     $('.data-btn[data-btn="3"]').show();
-                    $('input[name="course[subjection]"]').val(str);
+                    $('input[name="subjection"]').val(str);
                 }else{
                     $('.data-btn[data-btn="3"]').hide();
-                    $('input[name="course[subjection]"]').val(str);
+                    $('input[name="subjection"]').val(str);
                 }
             }
         }
@@ -449,8 +462,44 @@
             if(str){
                 var arr=str.split('-');
                 str=arr[0]+'-'+arr[1]+'-'+val;
-                $('input[name="course[subjection]"]').val(str);
+                $('input[name="subjection"]').val(str);
             }
         }
+    })
+
+
+
+//表单提交
+    $('#resForm').submit(function(e){
+        var _type=typeKey;
+        console.log(_type+'resForm');
+        try{
+            if (_type==2) {
+                console.log($('#resForm')[0]);
+                var data = new FormData($('#resForm')[0]);
+                console.log(data);
+                $.ajax({
+                    type: 'POST',
+                    data: data,
+                    dataType: 'json',
+                    url: '/admin/doc/new',
+                    processData: false,  // 告诉jQuery不要去处理发送的数据
+                    contentType: false   // 告诉jQuery不要去设置Content-Type请求头
+                }).done(function (data) {
+
+                })
+                return false;
+            }
+        }catch(e){
+                alert(e.message);
+                return false;
+        }
+
+
+        // }else {
+        //     console.log('submit');
+        //     this.submit();
+        // }
+        return false;
     })
 })()

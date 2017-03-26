@@ -18,26 +18,26 @@ block content
             #addNew.tab-pane.active.fade.in(role='tabpanel')
                 .container
                     .row
-                        form#resForm.form-horizontal(method="post",action="/admin/course/new")
-                            //-隐藏的表单域存储course._id方便更新电影数据,post时如果电影的id是有的，那么说明是更新数据，如果没有说明只是录入新数据
-                            //input(type="hidden",name="course[_id]")
+                        form#resForm.form-horizontal(method='post',action='/admin/course/new')
+                            //-隐藏的表单域存储_id方便更新电影数据,post时如果电影的id是有的，那么说明是更新数据，如果没有说明只是录入新数据
+                            //input(type="hidden",name="_id]")
                             .form-group
                                 label.col-sm-2.control-label(for="inputTitle") 课程名字
                                 .col-sm-10
-                                    input#inputTitle.form-control(type="text",name="course[title]")
+                                    input#inputTitle.form-control(type="text",name="title")
                             .form-group
                                 label.col-sm-2.control-label(for="inputType") 内容类型
                                 .col-sm-3
-                                    input#inputType(type="radio",name="course[type]",value="1")
+                                    input#inputType(type="radio",name="type",value="1")
                                     span 视频
-                                    input#inputType(type="radio",name="course[type]",value="2")
+                                    input#inputType(type="radio",name="type",value="2")
                                     span 文档
-                                    input#inputType(type="radio",name="course[type]",value="3")
+                                    input#inputType(type="radio",name="type",value="3")
                                     span 在线测试
                             .form-group
                                 label.col-sm-2.control-label(for="inputSubjection") 课程分类
                                 .col-sm-10
-                                    input#inputSubjection.form-control(type="hidden",name="course[subjection]",value)
+                                    input#inputSubjection.form-control(type="hidden",name="subjection",value)
                                     .data-btn.btn-group(data-btn='1')
                                         button.btn.btn-default(type='button',data-toggle='dropdown')
                                             | 请选择
@@ -68,24 +68,9 @@ block content
                             .form-group
                                 label.col-sm-2.control-label(for="inputSummary") 课程简介
                                 .col-sm-10
-                                    textarea#inputSummary.form-control(type="text",name="course[summary]",rows="5")
-                            .form-group.resGroup#group1
-                                label.col-sm-2.control-label(for="inputFlash") 片源地址
-                                .col-sm-10
-                                    input#inputFlash.form-control(type="text",name="course[flash]")
-                            .form-group.resGroup#group2
-                                label.col-sm-2.control-label(for="inputDoc") 文档地址
-                                .col-sm-10
-                                    input#inputDoc.form-control(type="text",name="course[doc]")
-                            .form-group.resGroup#group3
-                                label.col-sm-2.control-label 在线测试题目
-                                .col-sm-10
-                                    a#testAdd.btn +
-                                    span.testAdd 添加
-                                    input(type="hidden",name="course[test]")
-                            .form-group
-                                .col-sm-2
-                                .col-sm-10#testLand
+                                    textarea#inputSummary.form-control(type="text",name="summary",rows="5")
+                            .form-group.resGroup
+                            .form-group.resLand
                             .form-group
                                 .col-sm-offset-2.col-sm-10
                                 button#reBtn.btn.btn-default(type="submit") 录入
@@ -116,17 +101,17 @@ block content
                                         if item.type==1||item.type==2
                                             button.update.btn.btn-group.btn-warning(data-toggle='modal',data-target='#updateSubmit') 更改
                                         button.delete.btn.btn-group.btn-danger(data-toggle='modal',data-target='#delSubmit') 删除
-                                        input(type='hidden',name='res[summary]',value=item.summary)
-                                        input(type='hidden',name='res[title]',value=item.title)
-                                        input(type='hidden',name='res[type]',value=item.type)
-                                        input(type='hidden',name='res[_id]',value=item._id)
-                                        input(type='hidden',name='res[subjection]',value=item.subjection)
+                                        input(type='hidden',name='summary',value=item.summary)
+                                        input(type='hidden',name='title',value=item.title)
+                                        input(type='hidden',name='type',value=item.type)
+                                        input(type='hidden',name='_id',value=item._id)
+                                        input(type='hidden',name='subjection',value=item.subjection)
                                         if item.type == 1
-                                            input(type='hidden',name='res[flash]',value=item.flash)
+                                            input(type='hidden',name='flash',value=item.flash)
                                         if item.type == 2
-                                            input(type='hidden',name='res[doc]',value=item.doc)
+                                            input(type='hidden',name='doc',value=item.doc)
                                         if item.type == 3
-                                            input(type='hidden',name='res[testList]',value=item.testList)
+                                            input(type='hidden',name='testList',value=item.testList)
     #bgblack
     #testSubmit.form-horizontal
         form#testForm
@@ -189,5 +174,6 @@ block content
                     button#delSure.btn.btn-primary(type="submit") 确定
                     button#delCancel.btn.btn-danger(type="button",data-dismiss="modal") 取消
 block append script
+    script(src='/js/resForm.js')
     script(src='/js/backstage.js')
-//                    //- var resources=[{'_id':'1','type':'1','title':'学会栈','subjection':'栈','flash':'http://1111','summary':'简介简介简介简介简介简介简介简介简介'},{'summary':'简介简介简介简介简介简介简介简介简介','_id':'2','type':'3','title':'学会栈','subjection':'栈','testList':'[{"question":"duiduiduidui","A":"A","B":"B","C":"C","D":"D","answer":"D","why":"shishishishishsi"},{"question":"bububububu","A":"D","B":"C","C":"B","D":"A","answer":"B","why":"yesyesyesyes"},{"question":"yeanyeanyean","A":"B","B":"D","C":"A","D":"C","answer":"C","why":"hihihihi"}]'},{'summary':'简介简介简介简介简介简介简介简介简介','_id':'3','type':'3','title':'学会栈','subjection':'栈','testList':'[{"question":"duiduiduidui","A":"A","B":"B","C":"C","D":"D","answer":"D","why":"shishishishishsi"},{"question":"yeanyeanyean","A":"B","B":"D","C":"A","D":"C","answer":"C","why":"hihihihi"}]'}]
+    //- var resources=[{'_id':'1','type':'1','title':'学会栈','subjection':'栈','flash':'http://1111','summary':'简介简介简介简介简介简介简介简介简介'},{'summary':'简介简介简介简介简介简介简介简介简介','_id':'2','type':'3','title':'学会栈','subjection':'栈','testList':'[{"question":"duiduiduidui","A":"A","B":"B","C":"C","D":"D","answer":"D","why":"shishishishishsi"},{"question":"bububububu","A":"D","B":"C","C":"B","D":"A","answer":"B","why":"yesyesyesyes"},{"question":"yeanyeanyean","A":"B","B":"D","C":"A","D":"C","answer":"C","why":"hihihihi"}]'},{'summary':'简介简介简介简介简介简介简介简介简介','_id':'3','type':'3','title':'学会栈','subjection':'栈','testList':'[{"question":"duiduiduidui","A":"A","B":"B","C":"C","D":"D","answer":"D","why":"shishishishishsi"},{"question":"yeanyeanyean","A":"B","B":"D","C":"A","D":"C","answer":"C","why":"hihihihi"}]'}]
