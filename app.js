@@ -1,6 +1,3 @@
-/**
- * Created by lenovo-pc on 2017/2/23.
- */
 var express = require('express');
 var port = process.env.port || 5000;
 var bodyParser = require('body-parser');
@@ -43,4 +40,3 @@ app.locals.moment = require('moment');
 app.listen(port);
 
 console.log('success in '+port);
-

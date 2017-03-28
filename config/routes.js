@@ -13,7 +13,7 @@ module.exports = function(app){
         var _user=req.session.user;
             app.locals.user=_user;
             next();
-            //console.log(req.session.user);
+            // console.log('session',req.session.user);
     });
 //所以要加载的页面
     //首页

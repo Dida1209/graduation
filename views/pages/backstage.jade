@@ -18,7 +18,7 @@ block content
             #addNew.tab-pane.active.fade.in(role='tabpanel')
                 .container
                     .row
-                        form#resForm.form-horizontal(method='post',action='/admin/course/new')
+                        form#resForm.form-horizontal
                             //-隐藏的表单域存储_id方便更新电影数据,post时如果电影的id是有的，那么说明是更新数据，如果没有说明只是录入新数据
                             //input(type="hidden",name="_id]")
                             .form-group
@@ -87,7 +87,7 @@ block content
                     - var n=0
                         if resources
                             each item in resources
-                                tr.tableTr(data-trId=n++,data-href='/resource/'+item._id)
+                                tr.tableTr(data-trId=n++)
                                     td(scope='row')
                                         if item.type == 1
                                             | 视频
@@ -95,11 +95,11 @@ block content
                                             | 文档
                                         if item.type == 3
                                             | 在线测试
-                                    td=item.title
+                                    td.resName(data-href='/resource/'+item._id)=item.title
                                     td=item.summary
                                     td
                                         if item.type==1||item.type==2
-                                            button.update.btn.btn-group.btn-warning(data-toggle='modal',data-target='#updateSubmit') 更改
+                                            button.update.btn.btn-group.btn-warning(data-toggle='modal',data-target='#updSubmit') 更改
                                         button.delete.btn.btn-group.btn-danger(data-toggle='modal',data-target='#delSubmit') 删除
                                         input(type='hidden',name='summary',value=item.summary)
                                         input(type='hidden',name='title',value=item.title)
@@ -154,7 +154,7 @@ block content
             button#testBtn.btn.btn-info 确定
             button#testModify.btn.btn-warning 修改
             button#testDel.btn.btn-danger 删除
-    #updateSubmit.modal.fade(role='dialog')
+    #updSubmit.modal.fade
         .modal-dialog
             .modal-content
                 .modal-header
@@ -164,7 +164,7 @@ block content
                     button#updateSure.btn.btn-primary(type="submit") 确定
                     button#updateCancel.btn.btn-danger(type="button",data-dismiss="modal") 取消
 
-    #delSubmit.modal.fade(role='dialog')
+    #delSubmit.modal.fade
         .modal-dialog
             .modal-content
                 .modal-header

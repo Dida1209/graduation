@@ -117,11 +117,14 @@
             tem='<label class="col-sm-2 control-label" for="inputFlash">片源地址</label>'+
                     '<div class="col-sm-10"><input id="inputFlash" class="form-control" type="text" name="flash"/></div>';
             $('.resGroup').html(tem);
+            // console.log($('#resForm').eq(0));
+            // $('#resForm').attr('enctype','application/x-www-form-urlencoded');
             $('.resLand').html('');
         }else if(i==2){
             tem='<label class="col-sm-2 control-label" for="inputDoc">文件地址</label>'+
                 '<div class="col-sm-10"><input id="inputDoc" class="form-control" type="file" name="doc"/></div>';
             $('.resGroup').html(tem);
+            // $('#resForm').attr('enctype','multipart/form-data');
             $('.resLand').html('');
         }else{
             tem='<label class="col-sm-2 control-label" >在线测试题目</label>'+
@@ -129,6 +132,8 @@
             $('.resGroup').html(tem);
             tem='<div class="col-sm-2"></div><div class="col-sm-10" id="testLand"></div>';
             $('.resLand').html(tem);
+            // console.log($('#resForm').eq(0));
+            // $('#resForm').attr('enctype','application/x-www-form-urlencoded');
             testAdd = document.getElementById('testAdd');
             testAdd.addEventListener('click', testFun);
             testLand= document.getElementById('testLand');
@@ -261,11 +266,11 @@
     function createTemplate(t, n) {
         var template = '';
         var that = t;
-        var id = $(that).siblings('input[name="res[_id]"]').val();
-        var title = $(that).siblings('input[name="res[title]"]').val();
-        typeKey = $(that).siblings('input[name="res[type]"]').val();
-        var summary = $(that).siblings('input[name="res[summary]"]').val();
-        var subjection = $(that).siblings('input[name="res[subjection]"]').val();
+        var id = $(that).siblings('input[name="_id"]').val();
+        var title = $(that).siblings('input[name="title"]').val();
+        typeKey = $(that).siblings('input[name="type"]').val();
+        var summary = $(that).siblings('input[name="summary"]').val();
+        var subjection = $(that).siblings('input[name="subjection"]').val();
         template = '<div id="' + n + 'Form">' +
             '<input type="hidden" name="_id" value=' + id + '>' +
             '<input type="hidden" name="type" value=' + typeKey + '>' +
@@ -274,7 +279,7 @@
             '<div class="form-group"><label class="col-sm-3 control-label">简介</label><div class="col-sm-9"><textarea class="form-control" type="text" name="summary" rows="5">' + summary + '</textarea>' + '</div></div>' +
             '<div class="form-group"><label class="col-sm-3 control-label">属性</label><div class="col-sm-9"><input class="form-control" type="text" name="subjection" value=' + subjection + '>' + '</div></div>';
         if (typeKey == 1) {
-            var flash = $(that).siblings('input[name="res[flash]"]').val();
+            var flash = $(that).siblings('input[name="flash"]').val();
             template += '<div class="form-group"><label class="col-sm-3 control-label">视频地址</label><div class="col-sm-9"><input class="form-control" type="text" name="flash" value=' + flash + '>' + '</div></div></form>'
             console.log(flash);
         } else if (typeKey == 2) {
@@ -296,24 +301,21 @@
 
     //删除和更改
     $('.update').click(function (e) {
-        // console.log(this);
+        console.log(this);
         supper = $(this).parents('.tableTr').attr('data-trId');
-        // console.log($('tr[data-trId="' + supper + '"]'));
         var temp = createTemplate(this, 'update');
-        $('#updateSubmit .modal-body').html(temp);
+        $('#updSubmit .modal-body').html(temp);
         changeLand = document.getElementById('changeLand');
         console.log(changeLand);
-        // console.log(id,title,type,summary,subjection);
         if (changeLand) {
             changeLand.addEventListener('click', function (e) {
                 greenBtnClick(e)
             });
         }
-        e.stopPropagation();
     })
     $('.delete').click(function () {
-        // console.log(this);
-        supper = $('.tableId').attr('data-resId');
+        console.log(this);
+        supper = $(this).parents('.tableTr').attr('data-trId');
         var temp = createTemplate(this, 'del');
         $('#delSubmit .modal-body').html(temp);
         changeLand = document.getElementById('changeLand');
@@ -322,12 +324,12 @@
                 greenBtnClick(e)
             });
         }
-        e.stopPropagation();
+        // e.stopPropagation();
     })
 
     //表单上的确定和取消按钮
     $('#updateSure').click(function () {
-        var uForm = $('#updateSubmit .modal-body');
+        var uForm = $('#updSubmit .modal-body');
         var data = {};
         data._id = $(uForm).find('input[name="_id"]').val();
         data.title = $(uForm).find('input[name="title"]').val();
@@ -363,7 +365,7 @@
                     if(data.resource.type==3){
                         $(that).find('input[name="res[testList]"]').val(JSON.stringify(data.testList));
                     }
-                    errorMessage(data.message);
+                    errorShow(data.message);
                 }
             }
         })
@@ -374,7 +376,7 @@
         var dForm=$('#delSubmit .modal-body');
         var data={};
         data._id=$(dForm).find('input[name="_id"]').val();
-        data.type=$(uForm).find('input[name="type"]').val();
+        data.type=$(dForm).find('input[name="type"]').val();
         $.ajax({
             url:'/admin/course/del',
             type:'post',
@@ -384,16 +386,18 @@
             success:function(data){
                 if(data.success==1){
                     $('tr[data-trId="' + supper + '"]').remove();
-                    errorMessage(data.message);
+                    errorShow(data.message);
                 }
             }
         })
     })
-    $('tr').click(function(e){
-        var tar=this;
-        var url=$(tar).attr('data-href');
-        // console.log(url);
-        window.open(url);
+    $.each($('.resName'),function(e){
+        $(this).click(function(){
+            var url=$(this).attr('data-href');
+            // console.log(url);
+            window.open(url);
+            e.stopPropagation();
+        });
     })
 
 //课程属性
@@ -467,39 +471,51 @@
         }
     })
 
-
+//表单数据json
+    function formDataJson(form){
+        var formString=$(form).serialize();
+        console.log(formString);
+    }
 
 //表单提交
-    $('#resForm').submit(function(e){
-        var _type=typeKey;
-        console.log(_type+'resForm');
-        try{
-            if (_type==2) {
-                console.log($('#resForm')[0]);
+    $('#resForm').submit(function(e) {
+        var _type = typeKey;
+        console.log(_type + 'resForm');
+        // formDataJson($('#resForm')[0]);
+        if (_type == 2) {
                 var data = new FormData($('#resForm')[0]);
                 console.log(data);
                 $.ajax({
                     type: 'POST',
                     data: data,
                     dataType: 'json',
-                    url: '/admin/doc/new',
+                    url: '/admin/course/new',
                     processData: false,  // 告诉jQuery不要去处理发送的数据
                     contentType: false   // 告诉jQuery不要去设置Content-Type请求头
-                }).done(function (data) {
-
+                }).done(function (results) {
+                    console.log('success',results);
+                    if (results.success == 1) {
+                        console.log("ok");
+                        window.open = '/resource/' + results.resource._id;
+                    }
                 })
-                return false;
+            }else{
+                console.log('submit');
+                $.ajax({
+                    type: 'POST',
+                    data: $('#resForm').serialize(),
+                    dataType: 'json',
+                    url: '/admin/course/new',
+                    success:function (results) {
+                        console.log(results);
+                        if (results.success == 1) {
+                            console.log("ok");
+                            window.open = '/resource/' + results.resource._id;
+                        }
+                    }
+                })
+            return false;
             }
-        }catch(e){
-                alert(e.message);
-                return false;
-        }
-
-
-        // }else {
-        //     console.log('submit');
-        //     this.submit();
-        // }
         return false;
     })
 })()

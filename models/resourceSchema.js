@@ -13,6 +13,7 @@ var ResourceSchema = new mongoose.Schema({
     subjection:String,
     summary:String,
     flash:String,
+    doc:[{type:String}],
     testList:[],
     meta:{
         createAt:{

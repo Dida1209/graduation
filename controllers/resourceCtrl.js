@@ -12,30 +12,73 @@ var Busboy=require('busboy');
 var Grid=require('gridfs-stream');
 //create or use an existing mongodb-native db instance
 var db=new mongo.Db('graduation',new mongo.Server("127.0.0.1",27017));
-var gfs=Grid(db,mongo);
-
+var gfs;
+db.open(function (err) {
+    if (err) {
+        throw err;
+    }
+    gfs = Grid(db, mongo);
+});
 
 exports.save=function(req,res){
-    console.log("111111111111111...............",req.body);
-    // var _course=req.body.course;
-         var _resource=new Resource({
-         title:req.body.title,
-         type:req.body.type,
-         subjection:req.body.subjection,
-         summary:req.body.summary
+    console.log("111111111111111...............");
+    // console.log(req.body.doc);
+    if(req.body.type){
+        var _resource=new Resource({
+            title:req.body.title,
+            type:req.body.type,
+            subjection:req.body.subjection,
+            summary:req.body.summary,
+            flash:req.body.flash,
+            testList:req.body.test
         });
-         if(req.body.type==1){
-             _resource.flash=req.body.flash;
-         }else{
-             _resource.testList=req.body.test;
-         }
         _resource.save(function (err, resource) {
             if (err) {
                 console.log(err);
             }
-            res.redirect('/resource/' + resource._id);
+            res.json({'success':1,'resource':resource});
         })
-
+    }else{
+        var busboy=new Busboy({headers:req.headers});
+        console.log('busboy',busboy);
+        var fileIds = [];
+        var body={};
+        console.log("66666666666");
+        busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+            console.log('file');
+            fileIds.push(new mongo.ObjectId());
+            //streaming to gridfs
+            var writeStream=gfs.createWriteStream({
+                //Alternatively you could read the file using an _id.This is often a better option,since filenames don't have to be unique within the collection.e.g.
+                _id: fileIds[fileIds.length-1],
+                filename:filename,
+                mode:'w',
+                content_type:mimetype
+            });
+            console.log(writeStream);
+            file.pipe(writeStream);
+        }).on('field',function(key,value){
+            body[key]=value;
+            console.log('field',body);
+        }).on('finish',function(){
+            var _res=new Resource({
+                    title:body.title,
+                    type:body.type,
+                    subjection:body.subjection,
+                    summary:body.summary
+                });
+            _res.doc.push.apply(_res.doc, fileIds);
+            console.log(_res);
+            _res.save(function (err, resource) {
+                if (err) {
+                    console.log(err);
+                }
+                console.log('save chenggong',resource);
+                res.json({'success':1,'resource':resource});
+            })
+        });
+        req.pipe(busboy);
+    }
 
     // if(_resource.type==3) {
     //     // var _testList = JSON.parse(_course.test);
@@ -65,36 +108,6 @@ exports.save=function(req,res){
 
 exports.saveDoc=function(req,res){
         // console.log(req.body);
-        var busboy=new Busboy({headers:req.headers});
-        console.log('busboy',busboy);
-        var _id=new mongo.ObjectId();
-        var body={};
-        console.log("66666666666"+body,_id);
-        busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
-            console.log('file',fieldname,filename)
-            //streaming to gridfs
-            var writeStream=gfs.createWriteStream({
-                //Alternatively you could read the file using an _id.This is often a better option,since filenames don't have to be unique within the collection.e.g.
-                _id:_id,
-                filename:filename,
-                mode:'w',
-                content_type:mimetype
-            });
-            console.log(writeStream);
-            file.pipe(writeStream);
-        }).on('field',function(key,value){
-            body[key]=value;
-            console.log('field',body);
-        }).on('finish',function(){
-            var _res=new Resource(
-                {
-                    title:_course.title,
-                    type:_course.type,
-                    subjection:_course.subjection,
-                    summary:_course.summary
-                });
-            console.log(_res);
-        })
 
 
 }
@@ -241,16 +254,22 @@ exports.findAll=function(req,res) {
 
 exports.findRes=function(req,res) {
     var resId = req.params.id;
+    console.log(resId,'resid');
     var user = req.session.user;
     if (user) {
         var userId = user._id;
+        console.log(userId,'useid');
     }
     var ifdoLike = false;
     var ifdoCollect = false;
     var ifdoComment = false;
 
-    console.log(resId);
     Resource.findOne({_id: resId}, function (err, resour) {
+        if (resour.type == 3) {
+            resour.testList = JSON.parse(resour.testList);
+        }
+        console.log(resour.testList);
+
         Comment.find({resource: resId})
             .populate('from', 'name')
             .populate('reply.from reply.to', 'name')
@@ -258,11 +277,11 @@ exports.findRes=function(req,res) {
                 if (err) {
                     console.log(err);
                 }
-                console.log(resour + "  aaaa  " + comments);
+                console.log("  aaaa  " + comments);
                 console.log('shsihis' + resour.type);
                 if (user) {
-
                     User.findOne({_id: userId}, function (err, user) {
+                        console.log('find user',user);
                         for (var i = 0; i < user.myLike.reslist.length; i++) {
                             if (user.myLike.reslist[i].toString() == resour._id.toString()) {
                                 ifdoLike = true;
@@ -279,31 +298,38 @@ exports.findRes=function(req,res) {
                                 ifdoComment = true;
                             }
                         }
+                        console.log(ifdoLike, ifdoCollect, ifdoComment);
+                        res.render('resource', {
+                            ifdoLike: ifdoLike,
+                            ifdoCollect: ifdoCollect,
+                            ifdoComment: ifdoComment,
+                            resource: resour,
+                            // video:resour,
+                            comments: comments,
+                            moment: moment
+                        })
+                        console.log({
+                            ifdoLike: ifdoLike,
+                            ifdoCollect: ifdoCollect,
+                            ifdoComment: ifdoComment,
+                            resource: resour,
+                            // video:resour,
+                            comments: comments,
+                            moment: moment
+                        });
                     })
                 }
-                console.log(ifdoLike, ifdoCollect, ifdoComment);
-                if(resour.type==3) {
-                    resour.testList = JSON.parse(resour.testList);
+                else {
+                    res.render('resource', {
+                        ifdoLike: ifdoLike,
+                        ifdoCollect: ifdoCollect,
+                        ifdoComment: ifdoComment,
+                        resource: resour,
+                        // video:resour,
+                        comments: comments,
+                        moment: moment
+                    })
                 }
-                console.log(resour.testList);
-                res.render('resource', {
-                    ifdoLike: ifdoLike,
-                    ifdoCollect: ifdoCollect,
-                    ifdoComment: ifdoComment,
-                    resource: resour,
-                    // video:resour,
-                    comments: comments,
-                    moment: moment
-                })
-                console.log({
-                    ifdoLike: ifdoLike,
-                    ifdoCollect: ifdoCollect,
-                    ifdoComment: ifdoComment,
-                    resource: resour,
-                    // video:resour,
-                    comments: comments,
-                    moment: moment
-                });
                 // }
                 // if(resour.type==3){
                 //     OnlineTest.find({resourId:resour._id},function(err,onlinetests){
