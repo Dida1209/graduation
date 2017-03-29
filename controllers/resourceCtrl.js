@@ -35,8 +35,15 @@ exports.save=function(req,res){
         _resource.save(function (err, resource) {
             if (err) {
                 console.log(err);
+            }else{
+                Resource.findOne({_id:resource._id},function(err,resource){
+                    console.log('find chenggong',resource);
+                    res.json({"success":1,"resource":resource});
+                    // res.render('resource',function(){
+                    //
+                    // })
+                })
             }
-            res.json({'success':1,'resource':resource});
         })
     }else{
         var busboy=new Busboy({headers:req.headers});
@@ -69,12 +76,16 @@ exports.save=function(req,res){
                 });
             _res.doc.push.apply(_res.doc, fileIds);
             console.log(_res);
-            _res.save(function (err, resource) {
+            _res.save(function (err, resour) {
                 if (err) {
                     console.log(err);
+                }else{
+                    Resource.findOne({_id:resour._id},function(err,resource){
+                        console.log('find chenggong',resource);
+                        res.json({"success":1,"resource":resource});
+                    })
                 }
-                console.log('save chenggong',resource);
-                res.json({'success':1,'resource':resource});
+
             })
         });
         req.pipe(busboy);
@@ -269,6 +280,9 @@ exports.findRes=function(req,res) {
             resour.testList = JSON.parse(resour.testList);
         }
         console.log(resour.testList);
+        if (resour.type == 2){
+
+        }
 
         Comment.find({resource: resId})
             .populate('from', 'name')
