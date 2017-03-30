@@ -280,9 +280,9 @@ exports.findRes=function(req,res) {
             resour.testList = JSON.parse(resour.testList);
         }
         console.log(resour.testList);
-        if (resour.type == 2){
-
-        }
+        // if (resour.type == 2){
+        //     console.log(resour.doc);
+        // }
 
         Comment.find({resource: resId})
             .populate('from', 'name')
@@ -423,4 +423,25 @@ exports.findKey=function(req,res){
                 res.render('summarize', {resources: resource,hotList:resour,breadnav:_key});
             }
         })
+}
+exports.findDoc=function(req,res){
+    var fileId=new mongo.ObjectId(req.params.id);
+    gfs.files.findOne({_id:fileId},function(err,file){
+        if (err) return res.status(400).send(err);
+        if (!file) return res.status(404).send('');
+
+        res.set('Content-Type', file.contentType);
+        res.set('Content-Disposition', 'attachment; filename=""');
+
+        var readstream = gfs.createReadStream({
+            _id: file._id
+        });
+
+        readstream.on("error", function(err) {
+            console.log("Got error while processing stream " + err.message);
+            res.end();
+        });
+
+        readstream.pipe(res);
+    })
 }

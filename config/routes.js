@@ -26,7 +26,7 @@ module.exports = function(app){
     //资源
         app.get('/resource/:id',resource.findRes);
         app.get('/backstage/:id',resource.findAll);//如果是从资源页点击资源目录过来的后台的。
-
+        app.get('/doc/id',resource.findDoc);
     //总结
         app.get('/summarize',resource.findAll);
         app.get('/summarize/:type',resource.findType);

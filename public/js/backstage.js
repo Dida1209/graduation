@@ -241,8 +241,8 @@
                 $('#resForm input[name="test"]').val(_testList);
                 console.log(this);
             }
-            // e.preventDefault();
-            this.submit();
+            e.preventDefault();
+            // this.submit();
         })
 
 
@@ -373,6 +373,7 @@
 
         })
 
+
         $('#delSure').click(function () {
             var dForm = $('#delSubmit .modal-body');
             var data = {};
@@ -388,6 +389,7 @@
                     if (data.success == 1) {
                         $('tr[data-trId="' + supper + '"]').remove();
                         errorShow(data.message);
+                        // $(dForm).find('button').attr('disable','true');
                     }
                 }
             })
@@ -490,18 +492,17 @@
         })
 
 //表单数据json
-        function formDataJson(form) {
-            var formString = $(form).serialize();
-            console.log(formString);
-        }
+//         function formDataJson(form) {
+//             var formString = $(form).serialize();
+//             console.log(formString);
+//         }
 
 //表单提交
 //     $('#resForm').submit(function(e) {
     $('#reBtn').click(function () {
-        var _type = typeKey;
-        console.log(_type + 'resForm');
+        // console.log(_type + 'resForm');
         // formDataJson($('#resForm')[0]);
-        if (_type == 2) {
+        if (typeKey == 2) {
             var data = new FormData($('#resForm')[0]);
             console.log(data);
             $.ajax({
@@ -519,6 +520,14 @@
                 }
             })
         } else {
+            if (typeKey == 3) {
+                var _testList = JSON.stringify(testList);
+                console.log(_testList);
+                // console.log(t);
+                // console.log(JSON.parse(t));
+                $('#resForm input[name="test"]').val(_testList);
+                console.log(this);
+            }
             console.log('submit');
             $.ajax({
                 type: 'POST',
