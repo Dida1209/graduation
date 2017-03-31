@@ -26,16 +26,16 @@ module.exports = function(app){
     //资源
         app.get('/resource/:id',resource.findRes);
         app.get('/backstage/:id',resource.findAll);//如果是从资源页点击资源目录过来的后台的。
-        app.get('/doc/id',resource.findDoc);
+        app.get('/doc/:id',resource.findDoc);
     //总结
         app.get('/summarize',resource.findAll);
         app.get('/summarize/:type',resource.findType);
 
         app.get('/search/:key',resource.findKey);
     //用户
-        app.get('/user',user.detail);
+        app.get('/user',user.isLogin,user.detail);
     //背景
-        app.get('/backstage',resource.findAll);
+        app.get('/backstage',user.isAdmin,resource.findAll);
 
 
 //用户功能

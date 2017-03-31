@@ -39,9 +39,6 @@ exports.save=function(req,res){
                 Resource.findOne({_id:resource._id},function(err,resource){
                     console.log('find chenggong',resource);
                     res.json({"success":1,"resource":resource});
-                    // res.render('resource',function(){
-                    //
-                    // })
                 })
             }
         })
@@ -58,7 +55,7 @@ exports.save=function(req,res){
             var writeStream=gfs.createWriteStream({
                 //Alternatively you could read the file using an _id.This is often a better option,since filenames don't have to be unique within the collection.e.g.
                 _id: fileIds[fileIds.length-1],
-                filename:filename,
+                filename:fileIds[fileIds.length-1],
                 mode:'w',
                 content_type:mimetype
             });
@@ -280,9 +277,6 @@ exports.findRes=function(req,res) {
             resour.testList = JSON.parse(resour.testList);
         }
         console.log(resour.testList);
-        // if (resour.type == 2){
-        //     console.log(resour.doc);
-        // }
 
         Comment.find({resource: resId})
             .populate('from', 'name')
@@ -312,7 +306,7 @@ exports.findRes=function(req,res) {
                                 ifdoComment = true;
                             }
                         }
-                        console.log(ifdoLike, ifdoCollect, ifdoComment);
+                        // console.log(ifdoLike, ifdoCollect, ifdoComment);
                         res.render('resource', {
                             ifdoLike: ifdoLike,
                             ifdoCollect: ifdoCollect,
@@ -322,15 +316,15 @@ exports.findRes=function(req,res) {
                             comments: comments,
                             moment: moment
                         })
-                        console.log({
-                            ifdoLike: ifdoLike,
-                            ifdoCollect: ifdoCollect,
-                            ifdoComment: ifdoComment,
-                            resource: resour,
-                            // video:resour,
-                            comments: comments,
-                            moment: moment
-                        });
+                        // console.log({
+                        //     ifdoLike: ifdoLike,
+                        //     ifdoCollect: ifdoCollect,
+                        //     ifdoComment: ifdoComment,
+                        //     resource: resour,
+                        //     // video:resour,
+                        //     comments: comments,
+                        //     moment: moment
+                        // });
                     })
                 }
                 else {
@@ -381,7 +375,7 @@ exports.findType=function(req,res){
             resource=resour;
         }
     })
-    Resource.find().sort({likeNum: -1}).limit(1)
+    Resource.find().sort({likeNum: -1}).limit(10)
         .exec(function (err, resour) {
             if (err) {
 
@@ -414,25 +408,34 @@ exports.findKey=function(req,res){
         resource=resource.concat(resourTitle);
         console.log(resource);
     })
-    Resource.find().sort({likeNum: -1}).limit(1)
+    Resource.find().sort({likeNum: -1}).limit(10)
         .exec(function (err, resour) {
             if (err) {
 
             } else {
                 console.log('resource111',resource,"breaknav",_key);
+                for(var i=0;i<resource.length;i++){
+                    for(var j=i+1;j<resource.length;j++){
+                        if(resource[i]._id.toString()==resource[j]._id.toString()){
+                            resource.splice(j,1);
+                            j--;
+                        }
+                    }
+                }
                 res.render('summarize', {resources: resource,hotList:resour,breadnav:_key});
             }
         })
 }
 exports.findDoc=function(req,res){
+    console.log(req.params.id);
     var fileId=new mongo.ObjectId(req.params.id);
     gfs.files.findOne({_id:fileId},function(err,file){
         if (err) return res.status(400).send(err);
         if (!file) return res.status(404).send('');
 
-        res.set('Content-Type', file.contentType);
-        res.set('Content-Disposition', 'attachment; filename=""');
-
+        res.set('Content-Type', 'application/PDF');
+        res.set('Content-Disposition', 'inline; filename=""');
+        // var read;
         var readstream = gfs.createReadStream({
             _id: file._id
         });
@@ -441,6 +444,7 @@ exports.findDoc=function(req,res){
             console.log("Got error while processing stream " + err.message);
             res.end();
         });
+        console.log(readstream);
 
         readstream.pipe(res);
     })

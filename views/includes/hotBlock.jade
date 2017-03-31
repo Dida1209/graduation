@@ -4,6 +4,6 @@
 .hotContainer
     .hotList
         span 热门推荐
-    .hotDetail
-        each item in hotList
+    each item in hotList
+        .hotDetail
             a(href='/resource/'+item._id)=item.title

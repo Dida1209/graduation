@@ -3,9 +3,12 @@
  */
 $(function(){
     var chooseAns;
-    $('#explanation').click(function(e){
-        $(this).next().toggle();
-        e.stopPropagation();
+    $.each($('.explanation'),function(){
+        $(this).click(function(e){
+            $(this).next().toggle();
+            console.log($(this));
+            e.stopPropagation();
+        })
     })
     $.each($('input[name="choose"]'),function(){
         $(this).click(function(e){

@@ -1,5 +1,5 @@
 var express = require('express');
-var port = process.env.port || 5000;
+var port = process.env.port || 3000;
 var bodyParser = require('body-parser');
 var path = require('path');
 var logger = require('morgan');

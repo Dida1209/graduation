@@ -232,18 +232,18 @@
         }
 
         //最后资源表单的提交，提交前把隐藏域放进form
-        resForm.addEventListener('submit', function (e) {
-            if (typeKey == 3) {
-                var _testList = JSON.stringify(testList);
-                console.log(_testList);
-                // console.log(t);
-                // console.log(JSON.parse(t));
-                $('#resForm input[name="test"]').val(_testList);
-                console.log(this);
-            }
-            e.preventDefault();
-            // this.submit();
-        })
+        // resForm.addEventListener('submit', function (e) {
+        //     if (typeKey == 3) {
+        //         var _testList = JSON.stringify(testList);
+        //         console.log(_testList);
+        //         // console.log(t);
+        //         // console.log(JSON.parse(t));
+        //         $('#resForm input[name="test"]').val(_testList);
+        //         console.log(this);
+        //     }
+        //     e.preventDefault();
+        //     // this.submit();
+        // })
 
 
 //更改，删除
@@ -394,8 +394,8 @@
                 }
             })
         })
-        $.each($('.resName'), function (e) {
-            $(this).click(function () {
+        $.each($('.resName'), function () {
+            $(this).click(function (e) {
                 var url = $(this).attr('data-href');
                 // console.log(url);
                 window.open(url);
@@ -526,7 +526,7 @@
                 // console.log(t);
                 // console.log(JSON.parse(t));
                 $('#resForm input[name="test"]').val(_testList);
-                console.log(this);
+                // console.log(this);this是button
             }
             console.log('submit');
             $.ajax({
@@ -537,7 +537,7 @@
                 success: function (results) {
                     console.log(results.resource);
                     if (results.success == 1) {
-                        console.log("ok",window.location);
+                        // console.log("ok",window.location);
                         document.location.href = '/resource/' + results.resource._id;
                     }
                 }

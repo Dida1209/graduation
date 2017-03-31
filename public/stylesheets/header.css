@@ -15,6 +15,7 @@
     height:34px;
     background:url('/img/logo.png') no-repeat 0 -35px;
     background-size:100%;
+    cursor:pointer;
 }
 .panel-right > div,
 .search-box > div{

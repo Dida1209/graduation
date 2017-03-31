@@ -77,6 +77,15 @@ exports.isLogin=function(req,res,next){
     }
 }
 
+exports.isAdmin=function(req,res){
+    var user=req.session.user;
+    if(!user.isAdmin){
+
+    }else{
+        next();
+    }
+}
+
 exports.detail=function(req,res){
     res.render('user',{
         resources:''
