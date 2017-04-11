@@ -51,7 +51,6 @@ module.exports = function(app){
 //后台功能
     app.get('/backstage',resource.findAll);
     app.post('/admin/course/new',resource.save);
-    app.post('/admin/doc/new',resource.saveDoc);
     app.post('/admin/course/update',resource.update);
     app.post('/admin/course/del',resource.del)
 //做测试尝试

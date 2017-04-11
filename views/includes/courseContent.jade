@@ -12,7 +12,7 @@
             include ../includes/test
     .publish.clear
         form#commentForm(method="POST",action="/user/doComment")
-            //input(type="text",name="comment[resource]",value= resource._id)
+            input(type="hidden",name="comment[resource]",value= resource._id)
             .form-group
                 textarea.form-control(type='text',name="comment[content]")
                 button.btn(type="submit") 发布

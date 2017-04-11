@@ -20,66 +20,66 @@ db.open(function (err) {
     gfs = Grid(db, mongo);
 });
 
-exports.save=function(req,res){
+exports.save=function(req,res) {
     console.log("111111111111111...............");
     // console.log(req.body.doc);
-    if(req.body.type){
-        var _resource=new Resource({
-            title:req.body.title,
-            type:req.body.type,
-            subjection:req.body.subjection,
-            summary:req.body.summary,
-            flash:req.body.flash,
-            testList:req.body.test
+    if (req.body.type) {
+        var _resource = new Resource({
+            title: req.body.title,
+            type: req.body.type,
+            subjection: req.body.subjection,
+            summary: req.body.summary,
+            flash: req.body.flash,
+            testList: req.body.test
         });
         _resource.save(function (err, resource) {
             if (err) {
                 console.log(err);
-            }else{
-                Resource.findOne({_id:resource._id},function(err,resource){
-                    console.log('find chenggong',resource);
-                    res.json({"success":1,"resource":resource});
+            } else {
+                Resource.findOne({_id: resource._id}, function (err, resource) {
+                    console.log('find chenggong', resource);
+                    res.json({"success": 1, "resource": resource});
                 })
             }
         })
-    }else{
-        var busboy=new Busboy({headers:req.headers});
-        console.log('busboy',busboy);
+    } else {
+        var busboy = new Busboy({headers: req.headers});
+        console.log('busboy', busboy);
         var fileIds = [];
-        var body={};
+        var body = {};
         console.log("66666666666");
-        busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+        busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
             console.log('file');
             fileIds.push(new mongo.ObjectId());
             //streaming to gridfs
-            var writeStream=gfs.createWriteStream({
+            var writeStream = gfs.createWriteStream({
                 //Alternatively you could read the file using an _id.This is often a better option,since filenames don't have to be unique within the collection.e.g.
-                _id: fileIds[fileIds.length-1],
-                filename:fileIds[fileIds.length-1],
-                mode:'w',
-                content_type:mimetype
+                _id: fileIds[fileIds.length - 1],
+                filename: fileIds[fileIds.length - 1],
+                mode: 'w',
+                content_type: mimetype
             });
             console.log(writeStream);
             file.pipe(writeStream);
-        }).on('field',function(key,value){
-            body[key]=value;
-            console.log('field',body);
-        }).on('finish',function(){
-            var _res=new Resource({
-                    title:body.title,
-                    type:body.type,
-                    subjection:body.subjection,
-                    summary:body.summary
-                });
+        }).on('field', function (key, value) {
+            body[key] = value;
+            console.log('field', body);
+        }).on('finish', function () {
+            var _res = new Resource({
+                title: body.title,
+                type: body.type,
+                subjection: body.subjection,
+                summary: body.summary
+            });
             _res.doc.push.apply(_res.doc, fileIds);
             console.log(_res);
             _res.save(function (err, resour) {
                 if (err) {
                     console.log(err);
-                }else{
-                    Resource.findOne({_id:resour._id},function(err,resource){
-                        console.log('find chenggong',resource);
-                        res.json({"success":1,"resource":resource});
+                } else {
+                    Resource.findOne({_id: resour._id}, function (err, resource) {
+                        console.log('find chenggong', resource);
+                        res.json({"success": 1, "resource": resource});
                     })
                 }
 
@@ -112,12 +112,6 @@ exports.save=function(req,res){
     //         res.redirect('/resource/' + resource._id);
     //     })
     // }
-}
-
-exports.saveDoc=function(req,res){
-        // console.log(req.body);
-
-
 }
 
 exports.update=function(req,res){
@@ -333,7 +327,6 @@ exports.findRes=function(req,res) {
                         ifdoCollect: ifdoCollect,
                         ifdoComment: ifdoComment,
                         resource: resour,
-                        // video:resour,
                         comments: comments,
                         moment: moment
                     })

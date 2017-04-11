@@ -77,7 +77,7 @@ exports.isLogin=function(req,res,next){
     }
 }
 
-exports.isAdmin=function(req,res){
+exports.isAdmin=function(req,res,next){
     var user=req.session.user;
     if(!user.isAdmin){
 

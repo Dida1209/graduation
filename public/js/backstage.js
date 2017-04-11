@@ -30,6 +30,7 @@
 //数组事件公用方法
         //把题目添加到testList数组
         function listNewTest() {
+            console.log(testAns);
             var test = {
                 question: $('textarea[name="test[question]"]').val(),
                 A: $('input[name="choose[A]"]').val(),
@@ -154,10 +155,12 @@
 
         })
         //题目的答案，点击radio把value值传给testAns
-        $.each($('#resForm input[name="test[answer]"]'), function () {
+        $.each($('#testForm input[name="test[answer]"]'), function () {
+            console.log('testanswer');
             $(this).click(function (e) {
                 console.log('radio' + $(this).val())
                 testAns = $(this).val();
+                console.log(testAns);
                 e.stopPropagation();
             })
         })
