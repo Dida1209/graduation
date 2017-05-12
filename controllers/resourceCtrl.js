@@ -2,7 +2,6 @@
  * Created by lenovo-pc on 2017/3/3.
  */
 var Resource=require('../models/resourceSchema');
-// var OnlineTest=require('../models/onlineTestSchema');
 var User=require('../models/userSchema');
 var Comment=require('../models/commentSchema');
 var moment=require('moment');
@@ -407,14 +406,15 @@ exports.findKey=function(req,res){
 
             } else {
                 console.log('resource111',resource,"breaknav",_key);
-                for(var i=0;i<resource.length;i++){
-                    for(var j=i+1;j<resource.length;j++){
-                        if(resource[i]._id.toString()==resource[j]._id.toString()){
-                            resource.splice(j,1);
-                            j--;
-                        }
-                    }
-                }
+                // for(var i=0;i<resource.length;i++){
+                //     for(var j=i+1;j<resource.length;j++){
+                //         if(resource[i]._id.toString()==resource[j]._id.toString()){
+                //             resource.splice(j,1);
+                //             j--;
+                //         }
+                //     }
+                // }
+                console.log('summarize');
                 res.render('summarize', {resources: resource,hotList:resour,breadnav:_key});
             }
         })

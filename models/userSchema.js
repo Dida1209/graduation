@@ -29,6 +29,10 @@ var UserSchema = new mongoose.Schema({
             "default":Date.now()
         }
     },
+    myFoot:{
+        reslist:[{type:objectId,ref:"Resource"}],
+        "default":[]
+    },
     myLike:{
         reslist:[{type:objectId,ref:"Resource"}],
         "default":[]

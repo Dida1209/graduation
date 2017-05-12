@@ -30,32 +30,28 @@ exports.signup=function(req,res){
 }
 
 exports.signin = function(req,res) {
-    var _user = req.body.user;
-    console.log(_user);
-
-    User.findOne({name: _user.name}, function (err, user) {
-        if (err) {
-            res.json({message: '找不到用户，请先注册，后登陆！'});
-        }
-        user.comparePassword(_user.password, function (err, isMatch) {
-            if (err) {
-                res.json({message:'密码错误！'});
-            }
-            if (isMatch) {
-                req.session.user = user;
-                console.log('match ' + req.session.user);
-                if(user.isAdmin){
-                    res.redirect('/backstage');
-                }else{
-                    res.redirect('/');
-                }
-
-                // res.render('index',{user:user});
-            }else {
-                console.log('no match'+isMatch);
-            }
-        })
-    })
+var _user = req.body.user;
+User.findOne({name: _user.name}, function (err, user) {
+if (err) {
+res.json({message: '找不到用户，请先注册，后登陆！'});
+}
+user.comparePassword(_user.password, function (err, isMatch) {
+if (err) {
+    res.json({message:'密码错误！'});
+}
+if (isMatch) {
+    req.session.user = user;
+    console.log('match ' + req.session.user);
+    if(user.isAdmin){
+        res.redirect('/backstage');
+    }else{
+        res.redirect('/');
+    }
+}else {
+    console.log('no match'+isMatch);
+}
+})
+})
 }
 exports.loginout=function(req,res){
     delete req.session.user;

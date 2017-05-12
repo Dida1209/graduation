@@ -1,0 +1,29 @@
+.conceptPic a{
+    color:#d1d1da;
+    cursor:none;
+}
+.concept-box{
+    position:relative;
+    height:635px;
+}
+.concept-box a{
+    visibility:hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:5;
+}
+#canvasImg{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:0;
+}
+#canvas{
+    /*width:100%;*/
+    /*height:635px;*/
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:10;
+}

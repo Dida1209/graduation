@@ -8,6 +8,7 @@ var share=require('../controllers/shareCtrl');
 var userPocket=require('../controllers/userPocketCtrl');
 
 module.exports = function(app){
+
 //pre heandle user
     app.use(function(req,res,next){
         var _user=req.session.user;
@@ -27,6 +28,11 @@ module.exports = function(app){
         app.get('/resource/:id',resource.findRes);
         app.get('/backstage/:id',resource.findAll);//如果是从资源页点击资源目录过来的后台的。
         app.get('/doc/:id',resource.findDoc);
+        app.get('/concept',function(req,res){
+            res.render('concept',{
+
+            })
+        })
     //总结
         app.get('/summarize',resource.findAll);
         app.get('/summarize/:type',resource.findType);

@@ -1,0 +1,15 @@
+//
+   Created by lenovo-pc on 2017/5/11.
+extend ../layout
+
+block append style
+    link(rel='stylesheet',href='/stylesheets/concept.css')
+block content
+    include ../includes/header
+    .concept-box
+        a(href)#conceptSearch &nbsp;&nbsp;
+        canvas#canvasImg
+        canvas#canvas
+block append script
+    script(src="/js/header.js")
+    script(src="/js/concept.js")

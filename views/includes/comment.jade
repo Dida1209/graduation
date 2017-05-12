@@ -17,7 +17,7 @@
                         span= moment(item.created).format("YYYY-MM-DD HH:mm:ss")
                         span
                             a.reply 回复
-                    form.replayForm(method='POST',action='/user/doComment',style='display:block;')
+                    form.replayForm(method='POST',action='/user/doComment')
                         input(type='hidden',name='comment[cid]',value='#{item._id}')
                         input(type='hidden',name='comment[tid]',value='#{item.from._id}')
                         input(type='hidden',name='comment[resource]',value='#{resource._id}')
@@ -41,7 +41,7 @@
                                         span= moment(reply.created).format("YYYY-MM-DD HH:mm:ss")
                                         span
                                             a.reply 回复
-                                    form.replayForm(method='POST',action='/user/doComment',style='display:block;')
+                                    form.replayForm(method='POST',action='/user/doComment')
                                         input(type='hidden',name='comment[cid]',value='#{item._id}')
                                         input(type='hidden',name='comment[tid]',value='#{reply.from._id}')
                                         input(type='hidden',name='comment[resource]',value='#{resource._id}')
